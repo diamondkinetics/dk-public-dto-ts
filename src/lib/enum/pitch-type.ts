@@ -1,0 +1,23 @@
+export enum PitchType {
+	FASTBALL = 'Fastball',
+	CURVEBALL = 'Curveball',
+	CHANGEUP = 'Changeup',
+	SLIDER = 'Slider',
+	SPLITTER = 'Splitter',
+	RISE_BALL = 'Rise Ball',
+	DROP_BALL = 'Drop Ball',
+	SCREWBALL = 'Screwball',
+	KNUCKLEBALL = 'Knuckleball',
+	OTHER = 'Other',
+	OTHER_BREAKING = 'Other Breaking',
+	OTHER_OFF_SPEED = 'Other Off Speed',
+	FASTBALL_TWO_SEAM = 'Two Seam Fastball',
+	SINKER = 'Sinker',
+	CUTTER = 'Cutter',
+	KNUCKLECURVE = 'Knuckle Curve',
+	FORKBALL = 'Forkball',
+	EEPHUS = 'Eephus',
+	THROW = 'Throw',
+	RETURN_THROW = 'Return Throw',
+	LONG_TOSS = 'Long Toss'
+}
