@@ -1,5 +1,5 @@
 import { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
-import { GroupMembershipDTOV2 } from './group-membership-dto-v2';
+import { GroupMembershipDTOV2 } from './group-membership.dto.v2';
 import { RoleDTOV2 } from './role.dto.v2';
 import { UserProfileDTOV2 } from './user-profile.dto.v2';
 
