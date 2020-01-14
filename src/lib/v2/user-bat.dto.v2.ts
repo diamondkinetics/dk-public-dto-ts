@@ -1,4 +1,4 @@
-import { MaterialType } from '../enum/material-type';
+import { MaterialType } from './../enum/material-type';
 import { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
 import { BatModelDTOV2 } from './bat-model.dto.v2';
 
