@@ -1,3 +1,4 @@
+import { BattingOrientation } from './../enum/batting-orientation';
 import { AbstractSyncableDTOV3 } from './abstract-syncable.dto.v3';
 import { VideoDTOV3 } from './video.dto.v3';
 
@@ -13,7 +14,7 @@ export interface AbstractSensorEventDTOV3 extends AbstractSyncableDTOV3 {
 	hardwareVersionMinor?: number;
 	hardwareSerialNumber?: string;
 	firmwareVersion?: string;
-	handedness?: string;
+	handedness?: BattingOrientation;
 	visionVersion?: string;
 	analyzerVersion?: string;
 	video?: VideoDTOV3;
