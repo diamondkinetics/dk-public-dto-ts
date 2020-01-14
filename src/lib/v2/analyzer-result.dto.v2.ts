@@ -1,4 +1,4 @@
-export interface AnalyzerResultsDTOV2 {
+export interface AnalyzerResultDTOV2 {
 	version?: string;
 	resultCode?: number;
 	resultMessage?: string;

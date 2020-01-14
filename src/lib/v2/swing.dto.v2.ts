@@ -1,5 +1,5 @@
 import { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
-import { AnalyzerResultsDTOV2 } from './analyzer-result.dto.v2';
+import { AnalyzerResultDTOV2 } from './analyzer-result.dto.v2';
 import { MechanicsDTOV2 } from './mechanics.dto.v2';
 
 export interface SwingDTOV2 extends AbstractSyncableDTOV2 {
@@ -16,6 +16,6 @@ export interface SwingDTOV2 extends AbstractSyncableDTOV2 {
 	hardwareVersionMinor: number;
 	hardwareSerialNumber: string;
 	firmwareVersion: string;
-	analyzerResult?: AnalyzerResultsDTOV2;
+	analyzerResult?: AnalyzerResultDTOV2;
 	mechanics: MechanicsDTOV2[]
 }
