@@ -40,6 +40,7 @@ export interface UserProfileDTOV2 extends AbstractSyncableDTOV2 {
 	renewalDate?: string;
 	appleRenewalDate?: string;
 	subscribed?: boolean;
+	subscribedTo?: string;
 	hadApplePaymentApplied?: boolean;
 	referringOrganizationUuid?: string;
 	pitchingAccountStatus?: string;
