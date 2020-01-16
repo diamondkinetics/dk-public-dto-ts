@@ -55,7 +55,7 @@ export interface UserProfileDTOV2 extends AbstractSyncableDTOV2 {
 	hittingGoal?: number;
 	paidViaLicense?: boolean;
 	licenseOwner?: boolean;
-	paidLicenseForCurrentBillingCycle?: number;
+	paidLicensesForCurrentBillingCycle?: number;
 	appVersionOverrides?: UserAppVersionOverrideDTOV2[];
 	state?: string;
 	graduationYear?: string;
