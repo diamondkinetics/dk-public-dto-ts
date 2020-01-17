@@ -4,5 +4,6 @@ export { BattingOrientation } from './batting-orientation';
 export { DKSubscription } from './dk-subscription';
 export { MaterialType } from './material-type';
 export { PitchType } from './pitch-type';
+export { PlayType } from './play-type';
 export { Position } from './position';
 export { SessionType } from './session-type';
