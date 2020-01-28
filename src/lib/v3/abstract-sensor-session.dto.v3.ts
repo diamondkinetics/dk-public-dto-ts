@@ -12,5 +12,6 @@ export interface AbstractSensorSessionDTOV3<EVENT extends AbstractSensorEventDTO
 	competitionLevelUuid: string;
 	playType?: PlayType;
 	notes?: string;
-	allEvents: EVENT[]
+	allEvents: EVENT[],
+	associatedGroupUuid?: string;
 }
