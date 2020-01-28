@@ -25,6 +25,9 @@ export interface PitchDTOV3 extends AbstractSensorEventDTOV3 {
 	deliveryTimeToPlate?: number;
 	effortBallForce?: number;
 	effortBallTorque?: number;
+	flightProjectedDistance?: number;
+	flightHorizontalBreak?: number;
+	flightVerticalBreak?: number;
 	zone?: number;
 	locationX?: number;
 	locationY?: number;
