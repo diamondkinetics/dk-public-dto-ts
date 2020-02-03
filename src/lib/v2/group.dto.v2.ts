@@ -9,6 +9,7 @@ export interface GroupDTOV2 extends AbstractSyncableDTOV2 {
 	desc?: string;
 	groupImageUrl?: string;
 	joinOpen: boolean;
+	joinByInvite: boolean;
 	joinByRequest: boolean;
 	joinByPassword: boolean;
 	searchable: boolean;
