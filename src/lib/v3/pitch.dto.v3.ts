@@ -1,4 +1,3 @@
-import { PitchType } from '../enum/pitch-type';
 import { AbstractSensorEventDTOV3 } from './abstract-sensor-event.dto.v3';
 
 export interface PitchDTOV3 extends AbstractSensorEventDTOV3 {
@@ -34,8 +33,8 @@ export interface PitchDTOV3 extends AbstractSensorEventDTOV3 {
 	intendedZone?: number;
 	intendedLocationX?: number;
 	intendedLocationY?: number;
-	pitchType?: PitchType;
-	intendedPitchType?: PitchType;
+	pitchType?: string;
+	intendedPitchType?: string;
 	effort?: string;
 	setPosition?: string;
 }

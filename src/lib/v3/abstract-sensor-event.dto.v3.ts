@@ -14,7 +14,7 @@ export interface AbstractSensorEventDTOV3 extends AbstractSyncableDTOV3 {
 	hardwareVersionMinor?: number;
 	hardwareSerialNumber?: string;
 	firmwareVersion?: string;
-	handedness?: BattingOrientation;
+	handedness?: string;
 	visionVersion?: string;
 	analyzerVersion?: string;
 	video?: VideoDTOV3;

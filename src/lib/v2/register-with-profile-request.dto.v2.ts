@@ -1,4 +1,3 @@
-import { PlayType } from './../enum/play-type';
 import { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
 import { EventDTOV2 } from './event.dto.v2';
 
@@ -18,7 +17,7 @@ export interface RegisterWithProfileRequestDTOV2 extends AbstractSyncableDTOV2 {
 	weight?: string;
 	profileImageUrl?: string;
 	battingOrientation?: string;
-	playType?: PlayType;
+	playType?: string;
 	hittingGoal?: number;
 	privateProfile?: boolean;
 	userMetaData?: string;

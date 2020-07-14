@@ -10,7 +10,8 @@ export interface ExportRequestDTOV3 extends AbstractSyncableDTOV3 {
 	spreadsheetId?: string;
 	url?: string;
 	groupUuid: string;
-	exportRequestUserUuids: string[];
+	exportRequestUserUuids?: string[];
 	startDate?: string;
 	endDate?: string;
+	includeCoaches: boolean;
 }

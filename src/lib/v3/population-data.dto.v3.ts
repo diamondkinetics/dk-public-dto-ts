@@ -1,9 +1,8 @@
-import { PlayType } from './../enum/play-type';
 import { AbstractSyncableDTOV3 } from './abstract-syncable.dto.v3';
 
 export interface PopulationDataDTOV3 extends AbstractSyncableDTOV3 {
 	competitionLevelUuid?: string;
-	playType?: PlayType;
+	playType?: string;
 
 	// Power Metrics Bounds
 	powerBatAvgLowerBound?: number;

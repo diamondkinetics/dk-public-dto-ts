@@ -1,8 +1,8 @@
-import { AnalyzerResultDTOV2 } from '../v2/analyzer-result.dto.v2';
+import { SwingAnalyzerResultDTOV2 } from '../v2/swing-analyzer-result.dto.v2';
 import { AbstractSensorEventDTOV3 } from './abstract-sensor-event.dto.v3';
 
 export interface SwingDTOV3 extends AbstractSensorEventDTOV3 {
-	analyzerResult?: AnalyzerResultDTOV2;
+	analyzerResult?: SwingAnalyzerResultDTOV2;
 	powerApplied?: number;
 	powerAccelMax?: number;
 	powerMomentumImpact?: number;

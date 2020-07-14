@@ -1,8 +1,3 @@
-import { AccountStatus } from './../enum/account-status';
-import { BattingOrientation } from './../enum/batting-orientation';
-import { DKSubscription } from './../enum/dk-subscription';
-import { PlayType } from './../enum/play-type';
-import { Position } from './../enum/position';
 import { UserAppVersionOverrideDTOV2 } from './../v2/user-app-version-override.dto.v2';
 import { AbstractSyncableDTOV3 } from './abstract-syncable.dto.v3';
 
@@ -19,9 +14,9 @@ export interface UserProfileDTOV3 extends AbstractSyncableDTOV3 {
 	birthDate?: string;
 	height?: string;
 	weight?: string;
-	playType: PlayType;
-	battingOrientation?: BattingOrientation;
-	throwsHandedness?: BattingOrientation;
+	playType: string;
+	battingOrientation?: string;
+	throwsHandedness?: string;
 	competitionLevelUuid?: string;
 	coach?: boolean;
 	hideFromSearch?: boolean;
@@ -31,21 +26,21 @@ export interface UserProfileDTOV3 extends AbstractSyncableDTOV3 {
 	youthRegistration?: boolean;
 	trialing?: boolean;
 	activeMembership?: boolean;
-	accountStatus?: AccountStatus;
+	accountStatus?: string;
 	renewalDate?: string;
 	appleRenewalDate?: string;
 	subscribed?: boolean;
-	subscribedTo?: DKSubscription;
+	subscribedTo?: string;
 	hadApplePaymentApplied?: boolean;
 	referringOrganizationUuid?: string;
-	pitchingAccountStatus?: AccountStatus;
+	pitchingAccountStatus?: string;
 	pitchingRenewalDate?: string;
 	pitchingAppleRenewalDate?: string;
 	pitchingHadApplePaymentApplied?: boolean;
 	pitchingTrialing?: boolean;
 	pitchingActiveMembership?: boolean;
 	pitchingSubscribed?: boolean;
-	pitchingSubscribedTo?: DKSubscription;
+	pitchingSubscribedTo?: string;
 	axonBaseballId?: string;
 	axonSoftballId?: string;
 	paidViaLicense?: boolean;
@@ -54,5 +49,5 @@ export interface UserProfileDTOV3 extends AbstractSyncableDTOV3 {
 	appVersionOverrides?: UserAppVersionOverrideDTOV2[];
 	state?: string;
 	graduationYear?: string;
-	position?: Position;
+	position?: string;
 }

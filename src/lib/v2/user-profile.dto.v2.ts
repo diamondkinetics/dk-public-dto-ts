@@ -1,4 +1,3 @@
-import { PlayType } from '../enum/play-type';
 import { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
 import { UserAppVersionOverrideDTOV2 } from './user-app-version-override.dto.v2';
 
@@ -16,7 +15,7 @@ export interface UserProfileDTOV2 extends AbstractSyncableDTOV2 {
 	birthDate?: string;
 	height?: string;
 	weight?: string;
-	playType?: PlayType;
+	playType?: string;
 	battingOrientation?: string;
 	throwsHandedness?: string;
 	competitionLevelUuid?: string;

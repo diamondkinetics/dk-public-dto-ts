@@ -1,5 +1,3 @@
-import { BattingOrientation } from './../enum/batting-orientation';
-import { PlayType } from './../enum/play-type';
 import { EventDTOV2, UserBatDTOV2 } from './../v2';
 import { AbstractSyncableDTOV3 } from './abstract-syncable.dto.v3';
 
@@ -11,11 +9,11 @@ export interface RegisterWithProfileRequestDTOV3 extends AbstractSyncableDTOV3 {
 	firstName: string;
 	lastName: string;
 	coach: boolean;
-	batsHandedness?: BattingOrientation;
-	throwsHandedness?: BattingOrientation;
+	batsHandedness?: string;
+	throwsHandedness?: string;
 	profileImageUrl?: string;
 	zipCode?: string;
-	playType?: PlayType;
+	playType?: string;
 	competitionLevelUuid?: string;
 	birthDate?: string;
 	height?: string;

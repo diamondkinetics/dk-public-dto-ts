@@ -1,5 +1,3 @@
-import { PlayType } from "../enum/play-type";
-
 export interface CreateCouponRequestDTOV2 {
 	creatorFirstName: string;
 	creatorLastName: string;
@@ -9,5 +7,6 @@ export interface CreateCouponRequestDTOV2 {
 	orderId: number;
 	chargeId: string;
 	recipientEmails: string[];
-	playType?: PlayType;
+	playType?: string;
+	shopSKU?: string;
 }
