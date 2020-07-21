@@ -21,7 +21,7 @@ export const userProfileMockDTOV2 = Factory.Sync.makeFactory<UserProfileDTOV2>({
 	birthDate: faker.date.past(18).toISOString(),
 	height: faker.random.number(80).toString(),
 	weight: faker.random.number(250).toString(),
-	playType: PlayType.BASEBALL,
+	playType: PlayType.BASEBALL.getName,
 	battingOrientation: BattingOrientation.RIGHTY.getName,
 	throwsHandedness: BattingOrientation.RIGHTY.getName,
 	competitionLevelUuid: faker.random.uuid(),
