@@ -1,4 +1,3 @@
-import { BattingOrientation } from './../enum/batting-orientation';
 import { AbstractSyncableDTOV3 } from './abstract-syncable.dto.v3';
 import { VideoDTOV3 } from './video.dto.v3';
 
