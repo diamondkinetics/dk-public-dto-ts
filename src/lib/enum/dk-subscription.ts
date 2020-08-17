@@ -33,4 +33,18 @@ export class DKSubscription {
 		return this.durationInMonths;
 	}
 
+	public static asArray(): DKSubscription[] {
+		return [
+			DKSubscription.ANNUAL_PREMIUM_HITTER,
+			DKSubscription.ANNUAL_PREMIUM_PITCHER,
+			DKSubscription.MONTHLY_PREMIUM_HITTER,
+			DKSubscription.MONTHLY_PREMIUM_PITCHER,
+			DKSubscription.LICENSE_MONTHLY_PREMIUM_HITTER
+		];
+	}
+
+	public static byName(name: string): DKSubscription | undefined {
+		return DKSubscription.asArray().find(sub => sub.getName === name);
+	}
+
 }
