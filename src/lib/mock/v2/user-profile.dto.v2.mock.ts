@@ -1,4 +1,4 @@
-import { define, array } from 'cooky-cutter';
+import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
 
 import { BattingOrientation, DKSubscription, PlayType, Position } from '../../enum';
@@ -7,9 +7,9 @@ import { UserProfileDTOV2 } from '../../v2';
 import { mockAbstractSyncableDTOV2 } from './abstract-syncable.dto.v2.mock';
 import { mockUserAppVersionOverrideDTOV2 } from './user-app-version-override.dto.v2.mock';
 
-const overrides = array(mockUserAppVersionOverrideDTOV2, 3);
+const overrides = cookyCutter.array(mockUserAppVersionOverrideDTOV2, 3);
 
-export const mockUserProfileDTOV2 = define<UserProfileDTOV2>({
+export const mockUserProfileDTOV2 = cookyCutter.define<UserProfileDTOV2>({
 	...mockAbstractSyncableDTOV2(),
 	primaryEmail: faker.internet.email(),
 	nickname: faker.internet.userName(),
