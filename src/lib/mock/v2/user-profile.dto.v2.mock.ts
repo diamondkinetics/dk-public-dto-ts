@@ -1,14 +1,16 @@
-import * as Factory from 'factory.ts';
+import { define, array } from 'cooky-cutter';
 import * as faker from 'faker';
 
-import { BattingOrientation, DKSubscription, PlayType, Position } from '~lib/enum';
-import { UserProfileDTOV2 } from '~lib/v2';
+import { BattingOrientation, DKSubscription, PlayType, Position } from '../../enum';
+import { UserProfileDTOV2 } from '../../v2';
 
-import { mockAbstractSyncableDTOV2Factory } from './abstract-syncable.dto.v2.mock-factory';
-import { mockUserAppVersionOverrideDTOV2Factory } from './user-app-version-override.dto.v2.mock-factory';
+import { mockAbstractSyncableDTOV2 } from './abstract-syncable.dto.v2.mock';
+import { mockUserAppVersionOverrideDTOV2 } from './user-app-version-override.dto.v2.mock';
 
-export const mockUserProfileDTOV2Factory = Factory.Sync.makeFactory<UserProfileDTOV2>({
-	...mockAbstractSyncableDTOV2Factory.build(),
+const overrides = array(mockUserAppVersionOverrideDTOV2, 3);
+
+export const mockUserProfileDTOV2 = define<UserProfileDTOV2>({
+	...mockAbstractSyncableDTOV2(),
 	primaryEmail: faker.internet.email(),
 	nickname: faker.internet.userName(),
 	firstName: faker.name.firstName(),
@@ -63,7 +65,7 @@ export const mockUserProfileDTOV2Factory = Factory.Sync.makeFactory<UserProfileD
 	paidViaLicense: faker.random.boolean(),
 	licenseOwner: faker.random.boolean(),
 	paidLicensesForCurrentBillingCycle: faker.random.number(),
-	appVersionOverrides: mockUserAppVersionOverrideDTOV2Factory.buildList(3),
+	appVersionOverrides: overrides(),
 	state: faker.address.stateAbbr(),
 	graduationYear: faker.date.future().getFullYear().toString(),
 	position: Position.CENTER_FIELD.getName

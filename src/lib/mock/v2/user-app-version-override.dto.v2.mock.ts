@@ -1,9 +1,9 @@
-import * as Factory from 'factory.ts';
+import { define } from 'cooky-cutter';
 import * as faker from 'faker';
 
-import { UserAppVersionOverrideDTOV2 } from '~lib/v2';
+import { UserAppVersionOverrideDTOV2 } from '../../v2';
 
-export const mockUserAppVersionOverrideDTOV2Factory = Factory.Sync.makeFactory<UserAppVersionOverrideDTOV2>({
+export const mockUserAppVersionOverrideDTOV2 = define<UserAppVersionOverrideDTOV2>({
 	deleted: faker.random.boolean(),
 	effectiveStarting: faker.date.past(1).toISOString(),
 	effectiveUntil: faker.date.past(0.5).toISOString(),
