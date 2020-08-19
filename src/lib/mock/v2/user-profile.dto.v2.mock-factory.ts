@@ -4,11 +4,11 @@ import * as faker from 'faker';
 import { BattingOrientation, DKSubscription, PlayType, Position } from '~lib/enum';
 import { UserProfileDTOV2 } from '~lib/v2';
 
-import { abstractSyncableMockDTOV2 } from './abstract-syncable.mock.dto.v2';
-import { userAppVersionOverrideMockDTOV2 } from './user-app-version-override.mock.dto.v2';
+import { mockAbstractSyncableDTOV2Factory } from './abstract-syncable.dto.v2.mock-factory';
+import { mockUserAppVersionOverrideDTOV2Factory } from './user-app-version-override.mock.dto.v2';
 
-export const userProfileMockDTOV2 = Factory.Sync.makeFactory<UserProfileDTOV2>({
-	...abstractSyncableMockDTOV2.build(),
+export const mockUserProfileDTOV2Factory = Factory.Sync.makeFactory<UserProfileDTOV2>({
+	...mockAbstractSyncableDTOV2Factory.build(),
 	primaryEmail: faker.internet.email(),
 	nickname: faker.internet.userName(),
 	firstName: faker.name.firstName(),
@@ -63,7 +63,7 @@ export const userProfileMockDTOV2 = Factory.Sync.makeFactory<UserProfileDTOV2>({
 	paidViaLicense: faker.random.boolean(),
 	licenseOwner: faker.random.boolean(),
 	paidLicensesForCurrentBillingCycle: faker.random.number(),
-	appVersionOverrides: userAppVersionOverrideMockDTOV2.buildList(3),
+	appVersionOverrides: mockUserAppVersionOverrideDTOV2Factory.buildList(3),
 	state: faker.address.stateAbbr(),
 	graduationYear: faker.date.future().getFullYear().toString(),
 	position: Position.CENTER_FIELD.getName
