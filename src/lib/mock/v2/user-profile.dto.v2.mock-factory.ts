@@ -5,7 +5,7 @@ import { BattingOrientation, DKSubscription, PlayType, Position } from '~lib/enu
 import { UserProfileDTOV2 } from '~lib/v2';
 
 import { mockAbstractSyncableDTOV2Factory } from './abstract-syncable.dto.v2.mock-factory';
-import { mockUserAppVersionOverrideDTOV2Factory } from './user-app-version-override.mock.dto.v2';
+import { mockUserAppVersionOverrideDTOV2Factory } from './user-app-version-override.dto.v2.mock-factory';
 
 export const mockUserProfileDTOV2Factory = Factory.Sync.makeFactory<UserProfileDTOV2>({
 	...mockAbstractSyncableDTOV2Factory.build(),
