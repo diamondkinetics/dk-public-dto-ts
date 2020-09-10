@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
 
-import { CouponDetailsResponseDTOV2 } from '../../v2';
+import { CouponDetailsResponseDTOV2 } from '../../dto/v2';
 import { DKSubscription } from '../../enum';
 
 export const mockCouponDetailsResponseDTOV2 = cookyCutter.define<CouponDetailsResponseDTOV2>({
