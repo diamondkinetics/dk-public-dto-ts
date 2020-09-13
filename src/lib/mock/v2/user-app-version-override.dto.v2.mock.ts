@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
 
-import { UserAppVersionOverrideDTOV2 } from '../../dto/v2';
+import { UserAppVersionOverrideDTOV2 } from '../../dto';
 
 export const mockUserAppVersionOverrideDTOV2 = cookyCutter.define<UserAppVersionOverrideDTOV2>({
 	deleted: faker.random.boolean(),

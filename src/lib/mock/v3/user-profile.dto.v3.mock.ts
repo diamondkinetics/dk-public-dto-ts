@@ -2,7 +2,7 @@ import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
 
 import { BattingOrientation, DKSubscription, PlayType, Position } from '../../enum';
-import { UserProfileDTOV3 } from '../../v3';
+import { UserProfileDTOV3 } from '../../dto';
 
 import { mockAbstractSyncableDTOV3 } from './abstract-syncable.dto.v3.mock';
 import { mockUserAppVersionOverrideDTOV2 } from './../v2/user-app-version-override.dto.v2.mock';
