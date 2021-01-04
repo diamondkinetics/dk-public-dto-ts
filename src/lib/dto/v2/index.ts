@@ -22,3 +22,4 @@ export { UserInvitationDTOV2 } from './user-invitation.dto.v2';
 export { UserProfileBasicsDTOV2 } from './user-profile-basics.dto.v2';
 export { UserProfileDTOV2 } from './user-profile.dto.v2';
 export { UserToUserConnectionDTOV2 } from './user-to-user-connection.dto.v2';
+export { WebHookDTOV2 } from './web-hook.dto.v2';
