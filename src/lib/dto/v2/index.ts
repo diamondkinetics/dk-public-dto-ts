@@ -2,7 +2,6 @@ export { AbstractSyncableDTOV2 } from './abstract-syncable.dto.v2';
 export { AbstractTimestampDTOV2 } from './abstract-timestamp.dto.v2';
 export { BatBrandDTOV2 } from './bat-brand.dto.v2';
 export { BatModelDTOV2 } from './bat-model.dto.v2';
-export { BatModelConfigurationDTOV2 } from './bat-model-configuration.dto.v2';
 export { CardCreationDTOV2 } from './card-creation.dto.v2';
 export { CardResultDTOV2 } from './card-result.dto.v2';
 export { ClientProfileDTOV2 } from './client-profile.dto.v2';
