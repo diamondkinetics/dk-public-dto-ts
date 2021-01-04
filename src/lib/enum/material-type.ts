@@ -20,5 +20,14 @@ export class MaterialType {
 	get getName(): string {
 		return this.name;
 	}
-	
+
+	public static asArray(): MaterialType[] {
+		return [
+			MaterialType.WOOD,
+			MaterialType.ALUMINUM,
+			MaterialType.COMPOSITE,
+			MaterialType.OTHER
+		];
+	}
+
 }
