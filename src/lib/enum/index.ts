@@ -7,3 +7,4 @@ export { PitchType } from './pitch-type';
 export { PlayType } from './play-type';
 export { Position } from './position';
 export { SessionType } from './session-type';
+export { HittingMetric } from './hitting-metric';
