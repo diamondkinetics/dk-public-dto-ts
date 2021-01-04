@@ -31,6 +31,8 @@ export interface PopulationDataDTOV3 extends AbstractSyncableDTOV3 {
 	controlHandsDistanceAwayMaxUpperBound?: number;
 	controlBatDistanceTraveledTowardPitcherLowerBound?: number;
 	controlBatDistanceTraveledTowardPitcherUpperBound?: number;
+	controlBatVerticalAngleImpactLowerBound?: number;
+	controlBatVerticalAngleImpactUpperBound?: number;
 
 	// Other Bounds
 	exitSpeedMphLowerBound?: number;
