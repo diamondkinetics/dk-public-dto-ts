@@ -68,4 +68,39 @@ export class PitchType {
 		return this.playTypes;
 	}
 
+	public static asArray(): PitchType[] {
+		return [
+			PitchType.CHANGEUP,
+			PitchType.CURVEBALL,
+			PitchType.CUTTER,
+			PitchType.DROP_BALL,
+			PitchType.EEPHUS,
+			PitchType.FASTBALL,
+			PitchType.FASTBALL_TWO_SEAM,
+			PitchType.FORKBALL,
+			PitchType.KNUCKLEBALL,
+			PitchType.KNUCKLECURVE,
+			PitchType.LONG_TOSS,
+			PitchType.OTHER,
+			PitchType.OTHER_BREAKING,
+			PitchType.OTHER_OFF_SPEED,
+			PitchType.RETURN_THROW,
+			PitchType.RISE_BALL,
+			PitchType.SCREWBALL,
+			PitchType.SINKER,
+			PitchType.SLIDER,
+			PitchType.SPLITTER,
+			PitchType.THROW
+		];
+	}
+
+	public static byName(name: string): PitchType | undefined {
+		return PitchType.asArray().find(pt => pt.getName === name);
+	}
+
+	public static byPlayType(playType: PlayType): PitchType[] {
+		return PitchType.asArray()
+			.filter(pitchType => pitchType.getPlayTypes.find(pt => pt.getName === playType.getName));
+	}
+
 }

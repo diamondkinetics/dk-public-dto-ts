@@ -22,7 +22,7 @@ export interface RegisterWithProfileRequestDTOV2 extends AbstractSyncableDTOV2 {
 	privateProfile?: boolean;
 	userMetaData?: string;
 	event?: EventDTOV2;
-	teamName?: string;
-	teamUuid?: string;
-	source?: string;
+	teamName?: string | null;
+	teamUuid?: string | null;
+	source?: string | null;
 }
