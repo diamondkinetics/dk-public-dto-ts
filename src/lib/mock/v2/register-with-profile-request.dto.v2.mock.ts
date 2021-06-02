@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 
 import { RegisterWithProfileRequestDTOV2 } from '../../dto';
-import { mockUserProfileDTOV2 } from './';
+import { mockUserProfileDTOV2 } from './user-profile.dto.v2.mock';
 
 const userProfile = mockUserProfileDTOV2();
 
