@@ -12,7 +12,7 @@ export interface GroupDTOV4 extends AbstractSyncableDTOV4 {
 	inviteRole: RoleDTOV2;
 	sessionViewRole?: RoleDTOV2;
 	requestorMembership?: GroupMembershipDTOV4;
-	confirmedMembership?: GroupMembershipDTOV4[];
+	confirmedMemberships?: GroupMembershipDTOV4[];
 	invitations?: GroupMembershipDTOV4[];
 	requests?: GroupMembershipDTOV4[];
 	confirmedMemberCount?: number;

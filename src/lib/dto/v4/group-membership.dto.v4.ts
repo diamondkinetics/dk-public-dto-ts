@@ -4,7 +4,7 @@ import { GroupDTOV4 } from './group.dto.v4';
 
 export interface GroupMembershipDTOV4 extends AbstractSyncableDTOV4 {
 	user: UserProfileBasicsDTOV2;
-	group: GroupDTOV4;
+	group?: GroupDTOV4;
 	invitor?: UserProfileBasicsDTOV2;
 	role?: RoleDTOV2;
 	roleShort?: string;
