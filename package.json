@@ -1,6 +1,6 @@
 {
   "name": "@diamondkinetics/dk-public-dto-ts",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "description": "A library of DTO interfaces for integrating with the Diamond Kinetics public API.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
