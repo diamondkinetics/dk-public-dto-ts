@@ -22,7 +22,7 @@ phases:
     commands:
       - npm show -q @diamondkinetics/dk-public-dto-ts version
       - echo "//registry.npmjs.org/:_authToken=$npmToken" > ~/.npmrc
-      - npm public --access=public --dry-run=true
+      - npm publish --access=public --dry-run=true
 artifacts:
   files:
     - build/**/*
