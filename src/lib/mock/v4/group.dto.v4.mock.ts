@@ -12,40 +12,25 @@ const requests = cookyCutter.array<GroupMembershipDTOV4>(mockGroupMembershipDTOV
 
 export const mockGroupDTOV4: cookyCutter.Factory<GroupDTOV4> = cookyCutter.define<GroupDTOV4>({
 	...mockAbstractSyncableDTOV4(),
-	creator: mockUserProfileBasicsDTOV2(),
+	creator: () => mockUserProfileBasicsDTOV2(),
 	parentGroup: undefined,
 	childGroups: undefined,
-	memberViewRole: mockRoleDTOV2(),
-	descViewRole: mockRoleDTOV2(),
-	inviteRole: mockRoleDTOV2(),
-	sessionViewRole: mockRoleDTOV2(),
-	requestorMembership: mockGroupMembershipDTOV4(),
-	confirmedMemberships: members().map(gm => {
-		gm.isInvitation = false;
-		gm.isRequest = false;
-
-		return gm;
-	}),
-	invitations: invitations().map(gm => {
-		gm.isInvitation = true;
-		gm.isRequest = false;
-
-		return gm;
-	}),
-	requests: requests().map(gm => {
-		gm.isRequest = true;
-		gm.isInvitation = false;
-
-		return gm;
-	}),
-	confirmedMemberCount: members.length,
-	fullName: faker.company.companyName(),
-	description: faker.company.bsBuzz(),
-	groupImageUrl: faker.image.imageUrl(),
+	memberViewRole: () => mockRoleDTOV2(),
+	descViewRole: () => mockRoleDTOV2(),
+	inviteRole: () => mockRoleDTOV2(),
+	sessionViewRole: () => mockRoleDTOV2(),
+	requestorMembership: () => mockGroupMembershipDTOV4(),
+	confirmedMemberships: () => members({ isInvitation: false, isRequest: false }),
+	invitations: () => invitations({ isInvitation: true, isRequest: false, invitor: mockUserProfileBasicsDTOV2() }),
+	requests: () => requests({ isInvitation: false, isRequest: true, invitor: undefined }),
+	confirmedMemberCount: () => members().length,
+	fullName: () => faker.company.companyName(),
+	description: () => faker.company.bsBuzz(),
+	groupImageUrl: () => faker.image.imageUrl(),
 	joinPassword: undefined,
-	joinOpen: faker.random.boolean(),
-	joinByInvite: faker.random.boolean(),
-	joinByRequest: faker.random.boolean(),
-	joinByPassword: false,
-	searchable: faker.random.boolean()
+	joinOpen: () => faker.random.boolean(),
+	joinByInvite: () => faker.random.boolean(),
+	joinByRequest: () => faker.random.boolean(),
+	joinByPassword: () => false,
+	searchable: () => faker.random.boolean()
 });

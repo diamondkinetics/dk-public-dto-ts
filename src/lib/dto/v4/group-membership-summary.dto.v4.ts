@@ -9,8 +9,8 @@ export interface GroupMembershipSummaryDTOV4 {
 	groupImageUrl?: string;
 	groupDeleted?: boolean;
 	userRole?: string;
-	isPendingJoinRequest?: boolean;
-	isPendingInvitation?: boolean;
+	pendingJoinRequest?: boolean;
+	pendingInvitation?: boolean;
 	invitor?: UserProfileBasicsDTOV2;
 	confirmedMemberCount?: number;
 }

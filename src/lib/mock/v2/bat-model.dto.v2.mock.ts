@@ -10,5 +10,5 @@ export const mockBatModelDTOV2 = cookyCutter.define<BatModelDTOV2>({
 	name: 'DK Smart Bat',
 	embeddable: faker.random.boolean(),
 	embedded: faker.random.boolean(),
-	brand: mockBatBrandDTOV2()
+	brand: () => mockBatBrandDTOV2()
 });

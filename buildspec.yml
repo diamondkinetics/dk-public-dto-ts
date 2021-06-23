@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Updating everything...
+      - apt-get update -y && apt-get upgrade -y
+      - echo Installing AWS CLI tools...
+      - apt-get install -y awscli
+      - echo Installing package.json dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Configuring AWS CLI
+      - aws configure set aws_access_key_id $ACCESS_KEY_ID
+      - aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
+      - aws configure set default.region $DEFAULT_REGION
+      - aws configure set preview.cloudfront true
+  build:
+    commands:
+      - npm run-script build

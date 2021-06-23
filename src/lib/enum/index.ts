@@ -10,3 +10,4 @@ export { Position } from './position';
 export { SessionType } from './session-type';
 export { HittingMetric } from './hitting-metric';
 export { PitchingMetric } from './pitching-metric';
+export { GroupMembershipRole } from './group-membership-role';

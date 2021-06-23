@@ -21,5 +21,5 @@ export const mockAbstractSensorEventDTOV3 = cookyCutter.define<AbstractSensorEve
 	handedness: faker.helpers.randomize<string>(['Righty', 'Lefty']),
 	visionVersion: faker.random.alphaNumeric(6),
 	analyzerVersion: faker.random.alphaNumeric(6),
-	video: mockVideoDTOV3()
+	video: () => mockVideoDTOV3()
 });

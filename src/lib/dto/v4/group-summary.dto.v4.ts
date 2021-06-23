@@ -4,4 +4,5 @@ export interface GroupSummaryDTOV4 {
 	description?: string;
 	groupImageUrl?: string;
 	confirmedMemberCount?: number;
+	joinOpen?: boolean;
 }

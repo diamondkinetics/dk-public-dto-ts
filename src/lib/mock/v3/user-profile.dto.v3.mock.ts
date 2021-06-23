@@ -7,8 +7,6 @@ import { UserProfileDTOV3 } from '../../dto';
 import { mockAbstractSyncableDTOV3 } from './abstract-syncable.dto.v3.mock';
 import { mockUserAppVersionOverrideDTOV2 } from './../v2/user-app-version-override.dto.v2.mock';
 
-const overrides = cookyCutter.array(mockUserAppVersionOverrideDTOV2, 3);
-
 export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	...mockAbstractSyncableDTOV3(),
 	primaryEmail: faker.internet.email(),
@@ -55,7 +53,7 @@ export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	paidViaLicense: faker.random.boolean(),
 	licenseOwner: faker.random.boolean(),
 	paidLicensesForCurrentBillingCycle: faker.random.number(),
-	appVersionOverrides: overrides(),
+	appVersionOverrides: () => Array.from({ length: 3 }, () => mockUserAppVersionOverrideDTOV2()),
 	state: faker.address.stateAbbr(),
 	graduationYear: faker.date.future().getFullYear().toString(),
 	position: Position.CENTER_FIELD.getName
