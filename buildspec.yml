@@ -18,6 +18,10 @@ phases:
   build:
     commands:
       - npm run-script build
+  post_build:
+    commands:
+      - LAST_COMMIT=$(git rev-parse HEAD~1)
+      - echo $LAST_COMMIT
 artifacts:
   files:
     - build/**/*
