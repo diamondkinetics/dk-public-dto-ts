@@ -1,3 +1,5 @@
+import { RoleDTOV2, RoleDTOV3 } from '../dto';
+
 export class GroupMembershipRole {
 
 	constructor(
@@ -33,6 +35,13 @@ export class GroupMembershipRole {
 		return this.isMember;
 	}
 
+	/**
+	 * @deprecated This is used for legacy purposes stemming from from RoleDTOV2 and RoleDTOV3.
+	 */
+	public getUuid(): string {
+		return this.uuid;
+	}
+
 	public static asArray(): GroupMembershipRole[] {
 		return [
 			GroupMembershipRole.ANYONE,
@@ -47,6 +56,21 @@ export class GroupMembershipRole {
 
 	public static byShortName(shortName: string): GroupMembershipRole | undefined {
 		return GroupMembershipRole.asArray().find(r => r.getShortName() === shortName);
+	}
+
+	public static fromDTO(dto: RoleDTOV2 | RoleDTOV3): GroupMembershipRole | undefined {
+		return GroupMembershipRole.byShortName(dto.shortName ?? '');
+	}
+
+	public toDTO(role: GroupMembershipRole): RoleDTOV2 | RoleDTOV3 {
+		return {
+			uuid: '',
+			fullName: role.getFriendlyName(),
+			shortName: role.getShortName(),
+			isAdmin: role.getIsAdmin(),
+			isMember: role.getIsMember(),
+			hierarchy: role.getPriority()
+		};
 	}
 
 }
