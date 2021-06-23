@@ -62,7 +62,7 @@ export class GroupMembershipRole {
 		return GroupMembershipRole.byShortName(dto.shortName ?? '');
 	}
 
-	public toDTO(role: GroupMembershipRole): RoleDTOV2 | RoleDTOV3 {
+	public static toDTO(role: GroupMembershipRole): RoleDTOV2 | RoleDTOV3 {
 		return {
 			uuid: '',
 			fullName: role.getFriendlyName(),
