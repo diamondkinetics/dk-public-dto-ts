@@ -20,8 +20,8 @@ phases:
       - npm run-script build
   post_build:
     commands:
-      - LAST_COMMIT=$(git rev-parse HEAD~1)
-      - echo $LAST_COMMIT
+      - npm show -q @diamondkinetics/dk-public-dto-ts version
+      - npm login --registry=https://registry.npmjs.org/:_authToken=$npmToken --scope=@diamondkinetics
 artifacts:
   files:
     - build/**/*
