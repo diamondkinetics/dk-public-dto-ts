@@ -20,8 +20,8 @@ phases:
       - npm run-script build
   post_build:
     commands:
-      - CURRENT_VERSION=npm show -q @diamondkinetics/dk-public-dto-ts version
-      - SRC_VERSION=node -pe "require('./package.json').version"
+      - CURRENT_VERSION=$(npm show -q @diamondkinetics/dk-public-dto-ts version)
+      - SRC_VERSION=$(node -pe "require('./package.json').version")
       - echo "//registry.npmjs.org/:_authToken=$npmToken" > ~/.npmrc
       - if [ "$CURRENT_VERSION" != "$SRC_VERSION" ]; then npm publish --access=public --dry-run=true; fi
       - if [ "$CURRENT_VERSION" = "$SRC_VERSION "]; then echo "No new version to publish (Currently $CURRENT_VERSION)."; fi
