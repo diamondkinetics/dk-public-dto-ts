@@ -9,5 +9,6 @@ export const mockGroupSummaryDTOV4 = cookyCutter.define<GroupSummaryDTOV4>({
 	description: () => faker.company.bsBuzz(),
 	groupImageUrl: () => faker.image.imageUrl(),
 	confirmedMemberCount: () => faker.random.number(100),
-	joinOpen: () => faker.random.boolean()
+	joinOpen: () => faker.random.boolean(),
+	canViewMembers: () => faker.random.boolean()
 });
