@@ -52,7 +52,7 @@ export class HittingMetric {
 		'quicknessBatTimeTriggerImpactLowerBound');
 	static readonly CONTROL_BAT_APPROACH_ANGLE = new HittingMetric(
 		'CONTROL_BAT_APPROACH_ANGLE',
-		'Approach Angle',
+		'Attack Angle',
 		'controlApproachAngleImpact',
 		'DEG',
 		'controlBatApproachAngleImpactUpperBound');
