@@ -7,7 +7,7 @@ export interface LeaderboardDTOV2 extends AbstractSyncableDTOV2 {
 	creator?: UserProfileDTOV2;
 	groupUuid?: string;
 	fullName: string;
-	operation: AggregationOperation;
+	operation: string;
 	metric?: string;
 	maxResults: number;
 	lookbackTime?: number;
