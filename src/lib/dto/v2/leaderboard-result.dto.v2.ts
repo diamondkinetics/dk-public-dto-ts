@@ -7,7 +7,7 @@ export interface LeaderboardResultDTOV2 {
 	groupName?: string;
 	leaderboardRank?: number;
 	metricValue?: number;
-	metricUnit?: number;
+	metricUnit?: string;
 	change?: number;
 	numReps?: number;
 }
