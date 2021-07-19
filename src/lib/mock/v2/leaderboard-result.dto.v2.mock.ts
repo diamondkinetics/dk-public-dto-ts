@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
 
-import { mockGroupDTOV4 } from '../v4';
+import { mockGroupDTOV4 } from '../v4/group.dto.v4.mock';
 import { LeaderboardResultDTOV2 } from './../../dto/v2/leaderboard-result.dto.v2';
 import { mockLeaderboardDTOV2 } from './leaderboard.dto.v2.mock';
 import { mockUserProfileBasicsDTOV2 } from './user-profile-basics.dto.v2.mock';

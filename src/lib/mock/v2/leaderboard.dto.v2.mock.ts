@@ -5,7 +5,7 @@ import { mockAbstractSyncableDTOV2 } from './abstract-syncable.dto.v2.mock';
 import { mockUserProfileDTOV2 } from './user-profile.dto.v2.mock';
 import { mockGroupDTOV4 } from './../v4/group.dto.v4.mock';
 import { LeaderboardDTOV2 } from './../../dto/v2/leaderboard.dto.v2';
-import { AggregationOperation } from 'src/lib/enum';
+import { AggregationOperation } from './../../enum/aggregation-operation';
 
 export const mockLeaderboardDTOV2 = cookyCutter.define<LeaderboardDTOV2>({
 	...mockAbstractSyncableDTOV2(),
