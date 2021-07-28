@@ -1,12 +1,12 @@
 export class ExportEventType {
 
-	constructor(private friendlyName: string) {}
+	constructor(private readonly name: string) {}
 
 	static readonly SWINGS = new ExportEventType('Swings');
 	static readonly PITCHES = new ExportEventType('Pitches');
 
-	public getFriendlyName(): string {
-		return this.friendlyName;
+	public getName(): string {
+		return this.name;
 	}
 
 	public static asArray(): ExportEventType[] {
@@ -16,8 +16,8 @@ export class ExportEventType {
 		];
 	}
 
-	public static byFriendlyName(friendlyName: string): ExportEventType | undefined {
-		return ExportEventType.asArray().find(t => t.getFriendlyName() === friendlyName);
+	public static byName(name: string): ExportEventType | undefined {
+		return ExportEventType.asArray().find(t => t.getName() === name);
 	}
 
 }
