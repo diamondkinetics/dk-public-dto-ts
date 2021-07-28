@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import { AccountStatus } from 'src/lib/enum';
 
+import { AccountStatus } from './../../enum';
 import { UserProfileBasicsDTOV3 } from './../../dto/v3';
 
 export const mockUserProfileBasicsDTOV3 = cookyCutter.define<UserProfileBasicsDTOV3>({
