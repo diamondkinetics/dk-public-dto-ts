@@ -1,6 +1,29 @@
-import { AbstractSyncableResponseV5 } from './abstract-syncable.dto.v5';
+import {AbstractSyncableResponseV5, AbstractSyncableUpdateRequestV5} from './abstract-syncable.dto.v5';
 import { UserAccountResponseV5 } from './user-account.dto.v5';
 import { CollectionResponseV5 } from './collection.dto.v5';
+
+export interface UserProfileUpdateRequestV5 extends AbstractSyncableUpdateRequestV5 {
+	playType: string;
+	battingOrientation: string;
+	throwsHandedness: string;
+	competitionLevelUuid: string;
+	weight: string;
+	height: string;
+	zipCode: string;
+	birthDate: string;
+	nickname: string;
+	parentalConsent: boolean;
+}
+
+export interface AdminUserProfileUpdateRequestV5 extends UserProfileUpdateRequestV5 {
+	accountType: string;
+	emailVerified: boolean;
+	deleted: boolean;
+	coach: boolean;
+	email: string;
+	firstName: string;
+	lastName: string;
+}
 
 export interface UserProfileResponseV5 extends AbstractSyncableResponseV5 {
 	primaryEmail: string;
