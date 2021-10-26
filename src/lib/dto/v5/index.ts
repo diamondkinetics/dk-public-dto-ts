@@ -4,8 +4,11 @@ export {
     AbstractSensorEventResponseV5,
     AbstractSensorEventCollectionResponseSummaryV5 } from './abstract-sensor-event.dto.v5';
 export { AbstractSensorSessionResponseV5 } from './abstract-sensor-session.dto.v5';
-export { AbstractSyncableResponseV5, AbstractSyncableCollectionResponseSummaryV5 } from './abstract-syncable.dto.v5';
-export { AbstractTimestampResponseV5 } from './abstract-timestamp.dto.v5';
+export {
+    AbstractSyncableUpdateRequestV5,
+    AbstractSyncableResponseV5,
+    AbstractSyncableCollectionResponseSummaryV5 } from './abstract-syncable.dto.v5';
+export { AbstractTimestampUpdateResponse, AbstractTimestampResponseV5 } from './abstract-timestamp.dto.v5';
 export { AbstractUserOwnedResponseV5 } from './abstract-user-owned.dto.v5';
 export { BattingSessionResponseV5, BattingSessionCollectionResponseV5 } from './batting-session.dto.v5';
 export { CollectionResponseSummaryV5, CollectionResponseV5 } from './collection.dto.v5';
@@ -21,6 +24,8 @@ export {
     AdminUserAccountResponseV5,
     AdminUserAccountCollectionResponseV5 } from './user-account.dto.v5';
 export {
+    UserProfileUpdateRequestV5,
+    AdminUserProfileUpdateRequestV5,
     UserProfileResponseV5,
     UserProfileEnhancedResponseV5,
     AdminUserProfileResponseV5,
