@@ -1,5 +1,5 @@
 
-export  interface PitchingMetricDtoV5 {
+export  interface PitchingMetricDTOV5 {
 	// Release Metrics
 	releaseSpeed: number;
 	releaseAngle: number;

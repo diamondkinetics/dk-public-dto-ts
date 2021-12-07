@@ -8,6 +8,6 @@ export interface VideoAnalysisResponseV5 {
 	expertEngineQAPass: boolean;
 	expertEngineQACode: string;
 	poseEngineConfidence: number;
-	metricResults: Map<string, object>;
-	expertAnalysis: Map<string, object>;
+	metricResults: { [key: string]: {} };
+	expertAnalysis: { [key: string]: {} };
 }

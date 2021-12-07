@@ -14,7 +14,7 @@ export { BattingSessionResponseV5, BattingSessionCollectionResponseV5 } from './
 export { CollectionResponseSummaryV5, CollectionResponseV5 } from './collection.dto.v5';
 export { PaymentAuditEntryResponseV5, PaymentAuditEntryCollectionResponseV5 } from './payment-audit-entry.dto.v5';
 export { PitchResponseV5, PitchCollectionResponseV5 } from './pitch.dto.v5';
-export { PitchingMetricDtoV5 } from './pitching-metric.dto.v5';
+export { PitchingMetricDTOV5 } from './pitching-metric.dto.v5';
 export { PitchingSessionResponseV5, PitchingSessionCollectionResponseV5 } from './pitching-session.dto.v5';
 export { SwingResponseV5, SwingCollectionResponseV5 } from './swing.dto.v5';
 export { SwingMetricDtoV5 } from './swing-metric.dto.v5';
