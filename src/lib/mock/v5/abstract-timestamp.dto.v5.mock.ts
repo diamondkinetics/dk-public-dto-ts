@@ -1,6 +1,6 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import {AbstractTimestampResponseV5} from "../../dto";
+import { AbstractTimestampResponseV5 } from "../../dto";
 
 
 export const mockAbstractTimeStampResponseV5 = cookyCutter.define<AbstractTimestampResponseV5>({

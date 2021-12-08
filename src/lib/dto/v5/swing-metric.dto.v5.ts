@@ -1,5 +1,5 @@
 
-export interface SwingMetricDtoV5 {
+export interface SwingMetricDTOV5 {
 	// Power Metrics
 	powerApplied: number;
 	powerAccelMax: number;

@@ -1,6 +1,6 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import {AbstractSensorEventCollectionResponseSummaryV5, AbstractSensorEventResponseV5} from "../../dto";
+import { AbstractSensorEventCollectionResponseSummaryV5, AbstractSensorEventResponseV5 } from "../../dto";
 import {
     mockAbstractSyncableCollectionResponseSummaryV5,
     mockAbstractSyncableResponseV5

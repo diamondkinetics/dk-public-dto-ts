@@ -5,7 +5,7 @@ export interface AbstractSensorSessionResponseV5 extends AbstractUserOwnedRespon
 	competitionLevelUuid: string;
 	userUuid: string;
 	extensionType: string;
-	extensionDetails: { [name: string]: any };
+	extensionDetails: { [name: string]: unknown };
 	playType: string;
 	notes: string;
 	events: AbstractSensorEventCollectionResponseSummaryV5[];

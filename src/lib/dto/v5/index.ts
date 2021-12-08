@@ -17,7 +17,7 @@ export { PitchResponseV5, PitchCollectionResponseV5 } from './pitch.dto.v5';
 export { PitchingMetricDTOV5 } from './pitching-metric.dto.v5';
 export { PitchingSessionResponseV5, PitchingSessionCollectionResponseV5 } from './pitching-session.dto.v5';
 export { SwingResponseV5, SwingCollectionResponseV5 } from './swing.dto.v5';
-export { SwingMetricDtoV5 } from './swing-metric.dto.v5';
+export { SwingMetricDTOV5 } from './swing-metric.dto.v5';
 export { UserResponseV5 } from './user.dto.v5';
 export {
     UserAccountResponseV5,

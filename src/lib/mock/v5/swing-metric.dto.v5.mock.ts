@@ -1,8 +1,8 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import { SwingMetricDtoV5 } from "../../dto";
+import { SwingMetricDTOV5 } from "../../dto";
 
-export const mockSwingMetricDtoV5 = cookyCutter.define<SwingMetricDtoV5>({
+export const mockSwingMetricDtoV5 = cookyCutter.define<SwingMetricDTOV5>({
     powerApplied: faker.random.number({max: 100, min: 0, precision: 0.00001}),
     powerAccelMax: faker.random.number({max: 100, min: 0, precision: 0.00001}),
     powerMomentumImpact: faker.random.number({max: 100, min: 0, precision: 0.00001}),

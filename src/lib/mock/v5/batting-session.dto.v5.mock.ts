@@ -1,6 +1,6 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import {BattingSessionCollectionResponseV5, BattingSessionResponseV5} from "../../dto";
+import { BattingSessionCollectionResponseV5, BattingSessionResponseV5 } from "../../dto";
 import { mockAbstractSensorSessionResponseV5 } from "./abstract-sensor-session.dto.v5.mock";
 import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
 
