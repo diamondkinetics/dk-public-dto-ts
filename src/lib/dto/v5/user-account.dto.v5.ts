@@ -1,6 +1,6 @@
 import { AbstractTimestampResponseV5 } from './abstract-timestamp.dto.v5';
-import { UserProfileEnhancedResponseV5 } from './user-profile.dto.v5';
 import { CollectionResponseV5 } from './collection.dto.v5';
+import { UserProfileEnhancedResponseV5 } from './user-profile.dto.v5';
 
 export interface UserAccountResponseV5 extends AbstractTimestampResponseV5 {
 	trialing: boolean;

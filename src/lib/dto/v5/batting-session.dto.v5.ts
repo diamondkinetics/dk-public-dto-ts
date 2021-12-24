@@ -6,4 +6,3 @@ export interface BattingSessionResponseV5 extends AbstractSensorSessionResponseV
 }
 
 export interface BattingSessionCollectionResponseV5 extends CollectionResponseV5<BattingSessionResponseV5> {}
-

@@ -1,11 +1,11 @@
-import { AbstractUserOwnedResponseV5 } from './abstract-user-owned.dto.v5';
 import { AbstractSensorEventCollectionResponseSummaryV5 } from './abstract-sensor-event.dto.v5';
+import { AbstractUserOwnedResponseV5 } from './abstract-user-owned.dto.v5';
 
 export interface AbstractSensorSessionResponseV5 extends AbstractUserOwnedResponseV5 {
 	competitionLevelUuid: string;
 	userUuid: string;
 	extensionType: string;
-	extensionDetails: { [name: string]: object };
+	extensionDetails: { [name: string]: unknown };
 	playType: string;
 	notes: string;
 	events: AbstractSensorEventCollectionResponseSummaryV5[];

@@ -1,6 +1,6 @@
-import {AbstractSyncableResponseV5, AbstractSyncableUpdateRequestV5} from './abstract-syncable.dto.v5';
-import { UserAccountResponseV5 } from './user-account.dto.v5';
+import { AbstractSyncableResponseV5, AbstractSyncableUpdateRequestV5 } from './abstract-syncable.dto.v5';
 import { CollectionResponseV5 } from './collection.dto.v5';
+import { UserAccountResponseV5 } from './user-account.dto.v5';
 
 export interface UserProfileUpdateRequestV5 extends AbstractSyncableUpdateRequestV5 {
 	playType: string;
