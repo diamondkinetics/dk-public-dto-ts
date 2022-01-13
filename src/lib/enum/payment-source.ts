@@ -1,4 +1,3 @@
-
 export class PaymentSource {
 
     public static ENTERPRISE = new PaymentSource('ENTERPRISE');
@@ -9,13 +8,22 @@ export class PaymentSource {
     public static THIRD_PARTY = new PaymentSource('THIRD_PARTY');
     public static INTERNAL = new PaymentSource('INTERNAL');
 
-    private readonly name: string;
+    constructor(private readonly name: string) {}
 
-    constructor(name: string) {
-        this.name = name;
-    }
-
-    get getName(): string {
+    public getName(): string {
         return this.name;
     }
+
+    public static asArray(): PaymentSource[] {
+        return [
+            PaymentSource.ENTERPRISE,
+            PaymentSource.SENSOR_PURCHASE,
+            PaymentSource.APPLE,
+            PaymentSource.SEAT_LICENSE,
+            PaymentSource.STRIPE,
+            PaymentSource.THIRD_PARTY,
+            PaymentSource.INTERNAL
+        ];
+    }
+
 }

@@ -3,14 +3,17 @@ export class SubscriptionType {
 	public static HITTING = new SubscriptionType('HITTING');
 	public static PITCHING = new SubscriptionType('PITCHING');
 
-	private readonly name: string;
+	constructor(private readonly name: string) {}
 
-	constructor(name: string) {
-		this.name = name;
+	public getName(): string {
+		return this.name;
 	}
 
-	get getName(): string {
-		return this.name;
+	public static asArray(): SubscriptionType[] {
+		return [
+			SubscriptionType.HITTING,
+			SubscriptionType.PITCHING
+		];
 	}
 
 }

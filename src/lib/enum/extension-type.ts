@@ -11,13 +11,12 @@ export class ExtensionType {
     public static BULLPEN = new ExtensionType('BULLPEN');
     public static GAME_DAY = new ExtensionType('GAME_DAY');
 
-    private readonly name: string;
-
-    constructor(name: string) {
+    constructor(private readonly name: string) {
         this.name = name;
     }
 
-    get getName(): string {
+    public getName(): string {
         return this.name;
     }
+
 }

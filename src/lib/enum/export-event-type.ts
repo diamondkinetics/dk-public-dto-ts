@@ -1,9 +1,9 @@
 export class ExportEventType {
 
-	constructor(private readonly name: string) {}
+	public static readonly SWINGS = new ExportEventType('Swings');
+	public static readonly PITCHES = new ExportEventType('Pitches');
 
-	static readonly SWINGS = new ExportEventType('Swings');
-	static readonly PITCHES = new ExportEventType('Pitches');
+	constructor(private readonly name: string) {}
 
 	public getName(): string {
 		return this.name;

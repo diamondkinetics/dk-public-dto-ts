@@ -8,26 +8,34 @@ export class SessionType {
 	public static LIVE_PITCH_LEFTY = new SessionType('Live Pitch - Lefthander', 5, true);
 	public static LIVE_PITCH_RIGHTY = new SessionType('Live Pitch - Righthander', 6, true);
 
-	private readonly name: string;
-	private readonly sortOrder: number;
-	private readonly usePitchType: boolean;
+	constructor(
+		private readonly name: string,
+		private readonly sortOrder: number,
+		private readonly usePitchType: boolean
+	) {}
 
-	constructor(name: string, sortOrder: number, usePitchType: boolean) {
-		this.name = name;
-		this.sortOrder = sortOrder;
-		this.usePitchType = usePitchType;
-	}
-
-	get getName(): string {
+	public getName(): string {
 		return this.name;
 	}
 
-	get getSortOrder(): number {
+	public getSortOrder(): number {
 		return this.sortOrder;
 	}
 
-	get usesPitchType(): boolean {
+	public usesPitchType(): boolean {
 		return this.usePitchType;
+	}
+
+	public static asArray(): SessionType[] {
+		return [
+			SessionType.TEE,
+			SessionType.FRONT_TOSS,
+			SessionType.SOFT_TOSS,
+			SessionType.PITCHING_MACHINE,
+			SessionType.BATTING_PRACTICE,
+			SessionType.LIVE_PITCH_LEFTY,
+			SessionType.LIVE_PITCH_RIGHTY
+		];
 	}
 
 }

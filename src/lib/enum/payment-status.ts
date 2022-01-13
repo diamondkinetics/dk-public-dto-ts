@@ -1,4 +1,3 @@
-
 export class PaymentStatus {
 
     public static PRE_TRIAL = new PaymentStatus('PRE_TRIAL');
@@ -10,13 +9,10 @@ export class PaymentStatus {
     public static CANCELLED = new PaymentStatus('CANCELLED');
     public static TRIAL_ENDED = new PaymentStatus('TRIAL_ENDED');
 
-    private readonly name: string;
+    constructor(private readonly name: string) {}
 
-    constructor(name: string) {
-        this.name = name;
-    }
-
-    get getName(): string {
+    public getName(): string {
         return this.name;
     }
+
 }

@@ -1,9 +1,11 @@
 export class ExportEventSource {
 
-	constructor(private readonly name: string) {}
+	public static readonly GROUP = new ExportEventSource('Group');
+	public static readonly PLAYERS = new ExportEventSource('Players');
 
-	static readonly GROUP = new ExportEventSource('Group');
-	static readonly PLAYERS = new ExportEventSource('Players');
+	constructor(private readonly name: string) {
+		this.name = name;
+	}
 
 	public getName(): string {
 		return this.name;

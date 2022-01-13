@@ -11,19 +11,16 @@ export class Position {
 	public static RIGHT_FIELD = new Position('RF', 'Right Field');
 	public static DESIGNATED_HITTER = new Position('DH', 'Designated Hitter');
 
-	private readonly abbreviation: string;
-	private readonly name: string;
-
-	constructor(abbreviation: string, name: string) {
+	constructor(private readonly abbreviation: string, private readonly name: string) {
 		this.abbreviation = abbreviation;
 		this.name = name;
 	}
 	
-	get getAbbreviation(): string {
+	public getAbbreviation(): string {
 		return this.abbreviation;
 	}
 
-	get getName(): string {
+	public getName(): string {
 		return this.name;
 	}
 

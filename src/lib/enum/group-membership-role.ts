@@ -2,18 +2,18 @@ import { RoleDTOV2, RoleDTOV3 } from '../dto';
 
 export class GroupMembershipRole {
 
+	public static readonly ANYONE = new GroupMembershipRole(1, 'Anyone', 'anyone', false, false, '');
+	public static readonly MEMBER = new GroupMembershipRole(2, 'Member', 'member', false, true, '');
+	public static readonly ADMINISTRATOR = new GroupMembershipRole(4, 'Administrator', 'admin', true, true, '');
+
 	constructor(
 		private readonly priority: number,
 		private readonly friendlyName: string,
 		private readonly shortName: string,
 		private readonly isAdmin: boolean,
 		private readonly isMember: boolean,
-		private readonly uuid: string)
-	{}
-
-	static readonly ANYONE = new GroupMembershipRole(1, 'Anyone', 'anyone', false, false, '');
-	static readonly MEMBER = new GroupMembershipRole(2, 'Member', 'member', false, true, '');
-	static readonly ADMINISTRATOR = new GroupMembershipRole(4, 'Administrator', 'admin', true, true, '');
+		private readonly uuid: string
+	) {}
 
 	public getPriority(): number {
 		return this.priority;

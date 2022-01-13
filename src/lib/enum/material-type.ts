@@ -5,19 +5,13 @@ export class MaterialType {
 	public static COMPOSITE = new MaterialType(2, 'Composite');
 	public static OTHER = new MaterialType(3, 'Other');
 
-	private readonly id: number;
-	private readonly name: string;
+	constructor(private readonly id: number, private readonly name: string) {}
 
-	constructor(id: number, name: string) {
-		this.id = id;
-		this.name = name;
-	}
-
-	get getId(): number {
+	public getId(): number {
 		return this.id;
 	}
 
-	get getName(): string {
+	public getName(): string {
 		return this.name;
 	}
 
