@@ -9,7 +9,7 @@ import {
     UserProfileResponseV5,
     UserProfileUpdateRequestV5
 } from "../../dto";
-import { BattingOrientation, PlayType, Position, SubscriptionType } from "../../enum";
+import { BattingOrientation, PlayType, Position } from "../../enum";
 import {
     mockAbstractSyncableResponseV5,
     mockAbstractSyncableUpdateRequestV5 } from "./abstract-syncable.dto.v5.mock";
