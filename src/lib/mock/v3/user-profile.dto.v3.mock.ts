@@ -21,9 +21,9 @@ export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	birthDate: faker.date.past(18).toISOString(),
 	height: faker.random.number(80).toString(),
 	weight: faker.random.number(250).toString(),
-	playType: PlayType.BASEBALL.getName,
-	battingOrientation: BattingOrientation.RIGHTY.getName,
-	throwsHandedness: BattingOrientation.RIGHTY.getName,
+	playType: PlayType.BASEBALL.getName(),
+	battingOrientation: BattingOrientation.RIGHTY.getName(),
+	throwsHandedness: BattingOrientation.RIGHTY.getName(),
 	competitionLevelUuid: faker.random.uuid(),
 	coach: faker.random.boolean(),
 	hideFromSearch: faker.random.boolean(),
@@ -37,7 +37,7 @@ export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	renewalDate: faker.date.future(1).toISOString(),
 	appleRenewalDate: faker.date.future(1).toISOString(),
 	subscribed: faker.random.boolean(),
-	subscribedTo: DKSubscription.ANNUAL_PREMIUM_HITTER.getName,
+	subscribedTo: DKSubscription.ANNUAL_PREMIUM_HITTER.getName(),
 	hadApplePaymentApplied: faker.random.boolean(),
 	referringOrganizationUuid: faker.random.uuid(),
 	pitchingAccountStatus: faker.random.word(),
@@ -47,7 +47,7 @@ export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	pitchingTrialing: faker.random.boolean(),
 	pitchingActiveMembership: faker.random.boolean(),
 	pitchingSubscribed: faker.random.boolean(),
-	pitchingSubscribedTo: DKSubscription.ANNUAL_PREMIUM_PITCHER.getName,
+	pitchingSubscribedTo: DKSubscription.ANNUAL_PREMIUM_PITCHER.getName(),
 	axonBaseballId: faker.random.uuid(),
 	axonSoftballId: faker.random.uuid(),
 	paidViaLicense: faker.random.boolean(),
@@ -56,5 +56,5 @@ export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
 	appVersionOverrides: () => Array.from({ length: 3 }, () => mockUserAppVersionOverrideDTOV2()),
 	state: faker.address.stateAbbr(),
 	graduationYear: faker.date.future().getFullYear().toString(),
-	position: Position.CENTER_FIELD.getName
+	position: Position.CENTER_FIELD.getName()
 });

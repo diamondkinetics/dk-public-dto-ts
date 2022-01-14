@@ -15,6 +15,6 @@ export const mockUserBatDTOV2 = cookyCutter.define<UserBatDTOV2>({
 	length: 34,
 	weight: 31,
 	price: faker.random.number(400),
-	materialType: MaterialType.ALUMINUM.getName,
+	materialType: MaterialType.ALUMINUM.getName(),
 	embedded: mockBatModelDTOV2().embedded
 });

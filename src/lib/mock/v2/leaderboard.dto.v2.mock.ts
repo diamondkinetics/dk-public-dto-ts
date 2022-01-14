@@ -13,7 +13,7 @@ export const mockLeaderboardDTOV2 = cookyCutter.define<LeaderboardDTOV2>({
 	creator: () => mockUserProfileDTOV2(),
 	groupUuid: () => mockGroupDTOV4().uuid,
 	fullName: () => faker.company.catchPhrase(),
-	operation: AggregationOperation.COUNT.getFullName,
+	operation: AggregationOperation.COUNT.getFullName(),
 	metric: undefined,
 	maxResults: 10,
 	lookbackTime: 604800000,

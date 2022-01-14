@@ -18,7 +18,7 @@ import { mockUserAccountResponseV5 } from "./user-account.dto.v5.mock";
 
 export const mockUserProfileUpdateRequestV5 = cookyCutter.define<UserProfileUpdateRequestV5>({
     ...mockAbstractSyncableUpdateRequestV5(),
-    playType: faker.helpers.randomize([PlayType.BASEBALL.getName, PlayType.FAST_PITCH_SOFTBALL.getName]),
+    playType: faker.helpers.randomize([PlayType.BASEBALL.getName(), PlayType.FAST_PITCH_SOFTBALL.getName()]),
     battingOrientation: faker.helpers.randomize(['Righty', 'Lefty']),
     throwsHandedness: faker.helpers.randomize(['Righty', 'Lefty']),
     competitionLevelUuid: faker.random.uuid(),
@@ -54,9 +54,9 @@ export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV
     birthDate: faker.date.past(15).toISOString(),
     height: faker.random.number({max: 84, min: 36, precision: 1}).toString(),
     weight: faker.random.number({max: 300, min: 50, precision: 1}).toString(),
-    playType: PlayType.BASEBALL.getName,
-    battingOrientation: BattingOrientation.RIGHTY.getName,
-    throwsHandedness: BattingOrientation.RIGHTY.getName,
+    playType: PlayType.BASEBALL.getName(),
+    battingOrientation: BattingOrientation.RIGHTY.getName(),
+    throwsHandedness: BattingOrientation.RIGHTY.getName(),
     competitionLevelUuid: faker.random.uuid(),
     coach: faker.random.boolean(),
     privateProfile: faker.random.boolean(),
@@ -67,10 +67,10 @@ export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV
     referringOrganizationUuid: faker.random.uuid(),
     state: faker.address.stateAbbr(),
     graduationYear: faker.date.future(8).getFullYear.toString(),
-    position: Position.CENTER_FIELD.getName,
+    position: Position.CENTER_FIELD.getName(),
     mlbId: faker.random.uuid(),
-    hittingAccount: mockUserAccountResponseV5(SubscriptionType.HITTING.getName),
-    pitchingAccount: mockUserAccountResponseV5(SubscriptionType.PITCHING.getName)
+    hittingAccount: mockUserAccountResponseV5(SubscriptionType.HITTING.getName()),
+    pitchingAccount: mockUserAccountResponseV5(SubscriptionType.PITCHING.getName())
 });
 
 export const mockUserProfileEnhancedResponseV5 = cookyCutter.define<UserProfileEnhancedResponseV5>({

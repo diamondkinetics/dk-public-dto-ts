@@ -9,12 +9,12 @@ import { mockAbstractTimeStampResponseV5 } from "./abstract-timestamp.dto.v5.moc
 import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
 import { mockUserProfileEnhancedResponseV5 } from "./user-profile.dto.v5.mock";
 
-export const mockUserAccountResponseV5 = (subscribedTo: string = DKSubscription.MONTHLY_PREMIUM_HITTER.getName) => {
+export const mockUserAccountResponseV5 = (subscribedTo: string = DKSubscription.MONTHLY_PREMIUM_HITTER.getName()) => {
     return cookyCutter.define<UserAccountResponseV5>({
         ...mockAbstractTimeStampResponseV5(),
         trialing: faker.random.boolean(),
         activeMembership: faker.random.boolean(),
-        accountStatus: AccountStatus.PAID.getName,
+        accountStatus: AccountStatus.PAID.getName(),
         renewalDate: faker.date.future(0.5).toISOString(),
         appleRenewalDate: faker.date.future(0.5).toISOString(),
         subscribed: faker.random.boolean(),
@@ -30,10 +30,10 @@ export const mockAdminUserAccountResponseV5 = (subscriptionType: SubscriptionTyp
     let subscribedTo: string;
     switch (subscriptionType) {
         case SubscriptionType.PITCHING:
-            subscribedTo = DKSubscription.MONTHLY_PREMIUM_PITCHER.getName;
+            subscribedTo = DKSubscription.MONTHLY_PREMIUM_PITCHER.getName();
             break;
         default:
-            subscribedTo = DKSubscription.MONTHLY_PREMIUM_HITTER.getName;
+            subscribedTo = DKSubscription.MONTHLY_PREMIUM_HITTER.getName();
     }
     return cookyCutter.define<AdminUserAccountResponseV5>({
         ...mockUserAccountResponseV5(subscribedTo)(),
@@ -43,7 +43,7 @@ export const mockAdminUserAccountResponseV5 = (subscriptionType: SubscriptionTyp
         appleReceiptData: faker.random.number(20000).toString(),
         customerId: faker.random.alphaNumeric(10),
         subscriptionId: faker.random.alphaNumeric(10),
-        paymentSource: PaymentSource.APPLE.getName
+        paymentSource: PaymentSource.APPLE.getName()
     });
 };
 

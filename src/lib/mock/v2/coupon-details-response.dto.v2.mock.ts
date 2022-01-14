@@ -6,6 +6,6 @@ import { DKSubscription } from '../../enum';
 
 export const mockCouponDetailsResponseDTOV2 = cookyCutter.define<CouponDetailsResponseDTOV2>({
 	id: faker.random.alphaNumeric(),
-	dkSubscription: DKSubscription.MONTHLY_PREMIUM_HITTER.getName,
+	dkSubscription: DKSubscription.MONTHLY_PREMIUM_HITTER.getName(),
 	durationInMonths: faker.random.number(12)
 });

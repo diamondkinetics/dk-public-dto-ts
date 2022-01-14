@@ -10,9 +10,9 @@ export const mockPitchResponseV5 = cookyCutter.define<PitchResponseV5>({
     ...mockAbstractSensorEventResponseV5(),
     metrics: mockPitchingMetricDTOV5(),
     isGyroSpin: faker.random.boolean(),
-    pitchType: PitchType.FASTBALL.getName,
-    intendedPitchType: PitchType.FASTBALL.getName,
-    predictedPitchType: PitchType.FASTBALL.getName
+    pitchType: PitchType.FASTBALL.getName(),
+    intendedPitchType: PitchType.FASTBALL.getName(),
+    predictedPitchType: PitchType.FASTBALL.getName()
 });
 
 export const mockPitchCollectionResponseV5 = cookyCutter.define<PitchCollectionResponseV5>({
