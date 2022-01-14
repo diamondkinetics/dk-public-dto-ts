@@ -14,7 +14,7 @@ import {
     mockAbstractSyncableResponseV5,
     mockAbstractSyncableUpdateRequestV5 } from "./abstract-syncable.dto.v5.mock";
 import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
-import { mockUserAccountResponseV5 } from "./user-account.dto.v5.mock";
+import { mockHittingUserAccountResponseV5, mockPitchingUserAccountResponseV5 } from "./user-account.dto.v5.mock";
 
 export const mockUserProfileUpdateRequestV5 = cookyCutter.define<UserProfileUpdateRequestV5>({
     ...mockAbstractSyncableUpdateRequestV5(),
@@ -69,8 +69,8 @@ export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV
     graduationYear: faker.date.future(8).getFullYear.toString(),
     position: Position.CENTER_FIELD.getName(),
     mlbId: faker.random.uuid(),
-    hittingAccount: mockUserAccountResponseV5(SubscriptionType.HITTING.getName())(),
-    pitchingAccount: mockUserAccountResponseV5(SubscriptionType.PITCHING.getName())()
+    hittingAccount: mockHittingUserAccountResponseV5(),
+    pitchingAccount: mockPitchingUserAccountResponseV5()
 });
 
 export const mockUserProfileEnhancedResponseV5 = cookyCutter.define<UserProfileEnhancedResponseV5>({

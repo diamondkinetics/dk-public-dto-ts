@@ -9,22 +9,29 @@ import { mockAbstractTimeStampResponseV5 } from "./abstract-timestamp.dto.v5.moc
 import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
 import { mockUserProfileEnhancedResponseV5 } from "./user-profile.dto.v5.mock";
 
-export const mockUserAccountResponseV5 = (subscribedTo: string = DKSubscription.MONTHLY_PREMIUM_HITTER.getName()) => {
-    return cookyCutter.define<UserAccountResponseV5>({
-        ...mockAbstractTimeStampResponseV5(),
-        trialing: faker.random.boolean(),
-        activeMembership: faker.random.boolean(),
-        accountStatus: AccountStatus.PAID.getName(),
-        renewalDate: faker.date.future(0.5).toISOString(),
-        appleRenewalDate: faker.date.future(0.5).toISOString(),
-        subscribed: faker.random.boolean(),
-        subscribedTo,
-        hadApplePaymentApplied: faker.random.boolean(),
-        paidViaLicense: faker.random.boolean(),
-        licenseOwner: faker.random.boolean(),
-        paidLicensesForCurrentBillingCycle: faker.random.number(10)
-    })
+const mockBaseUserAccountResponseV5: UserAccountResponseV5 = {
+    ...mockAbstractTimeStampResponseV5(),
+    trialing: faker.random.boolean(),
+    activeMembership: faker.random.boolean(),
+    accountStatus: AccountStatus.PAID.getName(),
+    renewalDate: faker.date.future(0.5).toISOString(),
+    appleRenewalDate: faker.date.future(0.5).toISOString(),
+    subscribed: faker.random.boolean(),
+    hadApplePaymentApplied: faker.random.boolean(),
+    paidViaLicense: faker.random.boolean(),
+    licenseOwner: faker.random.boolean(),
+    paidLicensesForCurrentBillingCycle: faker.random.number(10),
+    subscribedTo: SubscriptionType.HITTING.getName()
 };
+
+export const mockHittingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
+    ...mockBaseUserAccountResponseV5
+});
+
+export const mockPitchingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
+    ...mockBaseUserAccountResponseV5,
+    subscribedTo: SubscriptionType.PITCHING.getName()
+});
 
 export const mockAdminUserAccountResponseV5 = (subscriptionType: SubscriptionType = SubscriptionType.HITTING) => {
     let subscribedTo: string;
@@ -36,7 +43,7 @@ export const mockAdminUserAccountResponseV5 = (subscriptionType: SubscriptionTyp
             subscribedTo = DKSubscription.MONTHLY_PREMIUM_HITTER.getName();
     }
     return cookyCutter.define<AdminUserAccountResponseV5>({
-        ...mockUserAccountResponseV5(subscribedTo)(),
+        ...mockHittingUserAccountResponseV5(),
         user: mockUserProfileEnhancedResponseV5(),
         subscriptionType: subscriptionType.getName,
         originalTransactionId: faker.random.uuid(),
