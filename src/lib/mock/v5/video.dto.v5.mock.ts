@@ -10,7 +10,7 @@ export const mockVideoResponseV5 = cookyCutter.define<VideoResponseV5>({
     finishedUploading: faker.random.boolean(),
     fileSize: faker.random.number(100000),
     processedUrl: faker.internet.url(),
-    events: {'event': faker.random.number(10)},
+    events: () => ({ event: faker.random.number(10) }),
     height: faker.random.number({min: 320, max: 3840, precision: 1}),
     width: faker.random.number({min: 414, max: 3840, precision: 1}),
     strikeZoneHeight: faker.random.number({min: 0, max: 320, precision: 0.00001}),
@@ -22,5 +22,5 @@ export const mockVideoResponseV5 = cookyCutter.define<VideoResponseV5>({
     framesPerSecond: 0,
     deviceModel: '',
     captureSettings: { 'setting': {} },
-    analysis: mockVideoAnalysisResponseV5()
+    analysis: () => mockVideoAnalysisResponseV5()
 });

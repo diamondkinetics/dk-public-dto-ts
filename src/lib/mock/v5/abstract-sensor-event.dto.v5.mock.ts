@@ -21,7 +21,7 @@ export const mockAbstractSensorEventResponseV5 = cookyCutter.define<AbstractSens
     firmwareVersion: faker.random.alphaNumeric(6),
     handedness: faker.helpers.randomize<string>(['Righty', 'Lefty']),
     analyzerVersion: faker.random.alphaNumeric(6),
-    video: mockVideoResponseV5()
+    video: () => mockVideoResponseV5()
 });
 
 export const mockAbstractSensorEventCollectionResponseSummaryV5 = cookyCutter.define<AbstractSensorEventCollectionResponseSummaryV5>({

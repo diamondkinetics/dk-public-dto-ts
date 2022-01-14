@@ -44,8 +44,8 @@ export const mockAdminUserAccountResponseV5 = (subscriptionType: SubscriptionTyp
     }
     return cookyCutter.define<AdminUserAccountResponseV5>({
         ...mockHittingUserAccountResponseV5(),
-        user: mockUserProfileEnhancedResponseV5(),
-        subscriptionType: subscriptionType.getName,
+        user: () => mockUserProfileEnhancedResponseV5(),
+        subscriptionType: subscriptionType.getName(),
         originalTransactionId: faker.random.uuid(),
         appleReceiptData: faker.random.number(20000).toString(),
         customerId: faker.random.alphaNumeric(10),

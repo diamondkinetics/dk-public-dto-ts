@@ -6,7 +6,7 @@ import { mockSwingMetricDtoV5 } from "./swing-metric.dto.v5.mock";
 
 export const mockSwingResponseV5 = cookyCutter.define<SwingResponseV5>({
     ...mockAbstractSensorEventResponseV5(),
-    metrics: mockSwingMetricDtoV5()
+    metrics: () => mockSwingMetricDtoV5()
 });
 
 export const mockSwingCollectionResponseV5 = cookyCutter.define<SwingCollectionResponseV5>({

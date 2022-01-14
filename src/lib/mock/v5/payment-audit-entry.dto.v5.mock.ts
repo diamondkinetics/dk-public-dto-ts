@@ -9,7 +9,7 @@ import { mockUserResponseV5 } from "./user.dto.v5.mock";
 
 export const mockPaymentAuditEntryResponseV5 = cookyCutter.define<PaymentAuditEntryResponseV5>({
     ...mockAbstractTimeStampResponseV5(),
-    user: mockUserResponseV5(),
+    user: () => mockUserResponseV5(),
     subscriptionType: faker.helpers.randomize([SubscriptionType.PITCHING.getName(), SubscriptionType.HITTING.getName()]),
     startingStatus: PaymentStatus.PRE_TRIAL.getName(),
     endingStatus: PaymentStatus.TRIALING.getName(),

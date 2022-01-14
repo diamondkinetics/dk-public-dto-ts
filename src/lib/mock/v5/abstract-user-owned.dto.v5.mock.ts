@@ -5,5 +5,5 @@ import { mockUserResponseV5 } from "./user.dto.v5.mock";
 
 export const mockAbstractUserOwnedResponseV5 = cookyCutter.define<AbstractUserOwnedResponseV5>({
     ...mockAbstractSyncableResponseV5(),
-    user: mockUserResponseV5()
+    user: () => mockUserResponseV5()
 });

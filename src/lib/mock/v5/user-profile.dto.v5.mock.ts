@@ -69,8 +69,8 @@ export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV
     graduationYear: faker.date.future(8).getFullYear.toString(),
     position: Position.CENTER_FIELD.getName(),
     mlbId: faker.random.uuid(),
-    hittingAccount: mockHittingUserAccountResponseV5(),
-    pitchingAccount: mockPitchingUserAccountResponseV5()
+    hittingAccount: () => mockHittingUserAccountResponseV5(),
+    pitchingAccount: () => mockPitchingUserAccountResponseV5()
 });
 
 export const mockUserProfileEnhancedResponseV5 = cookyCutter.define<UserProfileEnhancedResponseV5>({

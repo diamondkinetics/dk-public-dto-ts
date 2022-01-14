@@ -11,11 +11,11 @@ export const mockAbstractSensorSessionResponseV5 = cookyCutter.define<AbstractSe
     competitionLevelUuid: faker.random.uuid(),
     userUuid: faker.random.uuid(),
     extensionType: ExtensionType.STANDARD.getName(),
-    extensionDetails: {},
+    extensionDetails: () => ({}),
     playType: faker.helpers.randomize<string>([PlayType.BASEBALL.getName(), PlayType.FAST_PITCH_SOFTBALL.getName()]),
     notes: faker.random.words(),
-    events: Array.from({length: faker.random.number({max: 15, min: 2, precision: 1}) },
+    events: () => Array.from({length: faker.random.number({max: 15, min: 2, precision: 1}) },
         () => mockAbstractSensorEventCollectionResponseSummaryV5()),
     associatedGroupUuid: faker.random.uuid(),
-    extensionClass: ''
+    extensionClass: () => ('')
 });

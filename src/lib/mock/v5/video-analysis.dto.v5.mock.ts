@@ -7,7 +7,7 @@ const mockMetricResults = cookyCutter.define<{ [key: string]: any }>({
     "label": faker.random.words(),
     "score": 0.4,
     "value": null,
-    "parents": [
+    "parents": () => ([
         {
             "ind": faker.random.number({max: 10, min: 1, precision: 1}),
             "name": faker.random.word(),
@@ -29,15 +29,15 @@ const mockMetricResults = cookyCutter.define<{ [key: string]: any }>({
             "max_goal": null,
             "min_goal": null
         }
-    ],
+    ]),
     "children": null,
-    "identity": {
+    "identity": () => ({
         "ind": faker.random.number({max: 10, min: 1, precision: 1}),
         "name": faker.random.word(),
         "thresh": faker.random.number({max: 1, min: 0, precision: 0.01}),
         "max_goal": null,
         "min_goal": null
-    },
+    }),
     "ind_range": null
 });
 
@@ -50,7 +50,7 @@ export const mockVideoAnalysisResponseV5 = cookyCutter.define<VideoAnalysisRespo
     expertEngineQAPass: faker.random.boolean(),
     expertEngineQACode: faker.helpers.randomize<string>(['SHORT_STRIDE', 'NO_EXTENSION', 'UNKNOWN']),
     poseEngineConfidence: faker.random.number({max: 1, min: 0, precision: 0.00001}),
-    metricResults: {
+    metricResults: () => ({
                         'arm_slot': mockMetricResults(),
                         'sequence': mockMetricResults(),
                         'foot_plant': mockMetricResults(),
@@ -63,8 +63,8 @@ export const mockVideoAnalysisResponseV5 = cookyCutter.define<VideoAnalysisRespo
                         'shoulders_start': mockMetricResults(),
                         'pitch_arm_height': mockMetricResults(),
                         'pitch_elbow_flex': mockMetricResults()
-                    },
-    expertAnalysis: {
+                    }),
+    expertAnalysis: () => ({
                         "max_arm_slot": faker.random.number({max: 1, min: 0, precision: 0.0000000000000001}),
                         "lead_arm_alignment": faker.random.number({max: 1, min: 0, precision: 0.0000000000000001}),
                         "lead_arm_alignment_tip": faker.random.words(),
@@ -76,5 +76,5 @@ export const mockVideoAnalysisResponseV5 = cookyCutter.define<VideoAnalysisRespo
                         "hips_shoulders_arm_sequence_tip": faker.random.words(),
                         "pitching_elbow_flexion_description": faker.random.words(),
                         "hips_shoulders_arm_sequence_description": faker.random.words()
-                    }
+                    })
 });
