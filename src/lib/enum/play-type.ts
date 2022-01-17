@@ -17,5 +17,20 @@ export class PlayType {
 	public getMarketingName(): string {
 		return this.marketingName;
 	}
+
+	public static asArray(filterSlowPitch?: boolean): PlayType[] {
+		const playTypes: PlayType[] = [
+			this.BASEBALL,
+			this.FAST_PITCH_SOFTBALL
+		];
+
+		if (filterSlowPitch) {
+			return playTypes;
+		}
+
+		playTypes.push(this.SLOW_PITCH_SOFTBALL);
+
+		return playTypes;
+	}
 	
 }

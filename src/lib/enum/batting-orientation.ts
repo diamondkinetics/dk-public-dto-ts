@@ -14,12 +14,19 @@ export class BattingOrientation {
 		return this.name;
 	}
 
-	public static asArray(): BattingOrientation[] {
-		return [
+	public static asArray(filterSwitch?: boolean): BattingOrientation[] {
+		const orientations: BattingOrientation[] = [
 			BattingOrientation.RIGHTY,
-			BattingOrientation.LEFTY,
-			BattingOrientation.SWITCH
+			BattingOrientation.LEFTY
 		];
+
+		if (filterSwitch) {
+			return orientations;
+		}
+
+		orientations.push(BattingOrientation.SWITCH);
+
+		return orientations;
 	}
 
 }
