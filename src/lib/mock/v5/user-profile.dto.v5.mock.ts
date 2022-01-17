@@ -1,5 +1,6 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
+
 import {
     AdminUserProfileCollectionResponseV5,
     AdminUserProfileResponseV5,
@@ -8,13 +9,19 @@ import {
     UserProfileEnhancedResponseV5,
     UserProfileResponseV5,
     UserProfileUpdateRequestV5
-} from "../../dto";
-import { BattingOrientation, PlayType, Position } from "../../enum";
+} from './../../dto/v5/user-profile.dto.v5';
+import { UserAccountResponseV5 } from './../../dto/v5/user-account.dto.v5';
+import { AccountStatus } from './../../enum/account-status';
+import { BattingOrientation } from './../../enum/batting-orientation';
+import { DKSubscription } from './../../enum/dk-subscription';
+import { PlayType } from './../../enum/play-type';
+import { Position } from './../../enum/position';
 import {
     mockAbstractSyncableResponseV5,
-    mockAbstractSyncableUpdateRequestV5 } from "./abstract-syncable.dto.v5.mock";
+    mockAbstractSyncableUpdateRequestV5
+} from "./abstract-syncable.dto.v5.mock";
+import { mockAbstractTimeStampResponseV5 } from './abstract-timestamp.dto.v5.mock';
 import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
-import { mockHittingUserAccountResponseV5, mockPitchingUserAccountResponseV5 } from "./user-account.dto.v5.mock";
 
 export const mockUserProfileUpdateRequestV5 = cookyCutter.define<UserProfileUpdateRequestV5>({
     ...mockAbstractSyncableUpdateRequestV5(),
@@ -39,6 +46,32 @@ export const mockAdminUserProfileUpdateRequestV5 = cookyCutter.define<AdminUserP
     email: faker.internet.email(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName()
+});
+
+// The following three mocks are needed to avoid circular dependency issues between these mocks and the v5 user account
+// dto mocks.
+const baseMockUserAccountResponseV5: UserAccountResponseV5 = {
+    ...mockAbstractTimeStampResponseV5(),
+    trialing: faker.random.boolean(),
+    activeMembership: faker.random.boolean(),
+    accountStatus: AccountStatus.PAID.getName(),
+    renewalDate: faker.date.future(0.5).toISOString(),
+    appleRenewalDate: faker.date.future(0.5).toISOString(),
+    subscribed: faker.random.boolean(),
+    hadApplePaymentApplied: faker.random.boolean(),
+    paidViaLicense: faker.random.boolean(),
+    licenseOwner: faker.random.boolean(),
+    paidLicensesForCurrentBillingCycle: faker.random.number(10),
+    subscribedTo: DKSubscription.MONTHLY_PREMIUM_HITTER.getName()
+};
+
+const mockHittingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
+    ...baseMockUserAccountResponseV5
+});
+
+const mockPitchingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
+    ...baseMockUserAccountResponseV5,
+    subscribedTo: DKSubscription.MONTHLY_PREMIUM_PITCHER.getName()
 });
 
 export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV5>({
