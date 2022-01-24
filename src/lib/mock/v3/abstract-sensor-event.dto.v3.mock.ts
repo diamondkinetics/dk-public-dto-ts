@@ -1,26 +1,29 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { extend } from 'cooky-cutter';
+import { date, helpers, random } from 'faker';
 
 import { BattingOrientation } from './../../enum/batting-orientation';
+import { AbstractSyncableDTOV3 } from './../../dto/v3/abstract-syncable.dto.v3';
 import { AbstractSensorEventDTOV3 } from './../../dto/v3/abstract-sensor-event.dto.v3';
 import { mockAbstractSyncableDTOV3 } from './abstract-syncable.dto.v3.mock';
 import { mockVideoDTOV3 } from './video.dto.v3.mock';
 
-export const mockAbstractSensorEventDTOV3 = cookyCutter.define<AbstractSensorEventDTOV3>({
-	...mockAbstractSyncableDTOV3(),
-	parentSessionUuid: () => faker.random.uuid(),
-	startTime: () => faker.random.alphaNumeric(12),
-	sensorTimeSeconds: () => faker.date.past().getTime(),
-	eventOffset: () => faker.random.number(1000),
-	flagged: () => faker.random.boolean(),
-	hasVideo: () => faker.random.boolean(),
-	rawSensorData: () => faker.random.alphaNumeric(30),
-	hardwareVersionMajor: () => faker.random.number(9),
-	hardwareVersionMinor: () => faker.random.number(9),
-	hardwareSerialNumber: () => faker.random.alphaNumeric(16),
-	firmwareVersion: () => faker.random.alphaNumeric(6),
-	handedness: () => faker.helpers.randomize<string>(BattingOrientation.asArray(true).map(bo => bo.getName())),
-	visionVersion: () => faker.random.alphaNumeric(6),
-	analyzerVersion: () => faker.random.alphaNumeric(6),
-	video: () => mockVideoDTOV3()
-});
+export const mockAbstractSensorEventDTOV3 = extend<AbstractSyncableDTOV3, AbstractSensorEventDTOV3>(
+	mockAbstractSyncableDTOV3,
+	{
+		parentSessionUuid: () => random.uuid(),
+		startTime: () => random.alphaNumeric(12),
+		sensorTimeSeconds: () => date.past().getTime(),
+		eventOffset: () => random.number(1000),
+		flagged: () => random.boolean(),
+		hasVideo: () => random.boolean(),
+		rawSensorData: () => random.alphaNumeric(30),
+		hardwareVersionMajor: () => random.number(9),
+		hardwareVersionMinor: () => random.number(9),
+		hardwareSerialNumber: () => random.alphaNumeric(16),
+		firmwareVersion: () => random.alphaNumeric(6),
+		handedness: () => helpers.randomize<string>(BattingOrientation.asArray(true).map(bo => bo.getName())),
+		visionVersion: () => random.alphaNumeric(6),
+		analyzerVersion: () => random.alphaNumeric(6),
+		video: () => mockVideoDTOV3()
+	}
+);

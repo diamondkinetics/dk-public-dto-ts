@@ -1,64 +1,66 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { extend } from 'cooky-cutter';
+import { date, internet, name, helpers, random, image, address } from 'faker';
 
-import { UserProfileDTOV3 } from '../../dto';
-import { BattingOrientation, DKSubscription, PlayType, Position } from '../../enum';
-
+import { BattingOrientation } from './../../enum/batting-orientation';
+import { DKSubscription } from './../../enum/dk-subscription';
+import { PlayType } from './../../enum/play-type';
+import { Position } from './../../enum/position';
+import { AbstractSyncableDTOV3 } from './../../dto/v3/abstract-syncable.dto.v3';
+import { UserProfileDTOV3 } from './../../dto/v3/user-profile.dto.v3';
 import { mockUserAppVersionOverrideDTOV2 } from './../v2/user-app-version-override.dto.v2.mock';
 import { mockAbstractSyncableDTOV3 } from './abstract-syncable.dto.v3.mock';
 
-export const mockUserProfileDTOV3 = cookyCutter.define<UserProfileDTOV3>({
-	...mockAbstractSyncableDTOV3(),
-	primaryEmail: () => faker.internet.email(),
-	nickname: () => faker.internet.userName(),
-	firstName: () => faker.name.firstName(),
-	lastName: () => faker.name.lastName(),
-	secondaryEmail: () => faker.internet.email(),
-	preferences: () => JSON.stringify(faker.random.objectElement()),
-	bouncing: () => faker.random.boolean(),
-	secondaryBouncing: () => faker.random.boolean(),
-	claimSwingPlaneMetrics: () => faker.random.boolean(),
-	birthDate: () => faker.date.past(18).toISOString(),
-	height: () => faker.random.number(80).toString(),
-	weight: () => faker.random.number(250).toString(),
-	playType: () => faker.helpers.randomize<string>(PlayType.asArray(true).map(pt => pt.getName())),
-	battingOrientation: () => faker.helpers.randomize<string>(BattingOrientation.asArray().map(bo => bo.getName())),
-	throwsHandedness: () => faker.helpers.randomize<string>(BattingOrientation.asArray(true).map(bo => bo.getName())),
-	competitionLevelUuid: () => faker.random.uuid(),
-	coach: () => faker.random.boolean(),
-	hideFromSearch: () => faker.random.boolean(),
-	zipCode: () => faker.address.zipCode(),
-	profileImageUrl: () => faker.image.imageUrl(),
-	userMetaData: () => faker.random.objectElement(),
-	youthRegistration: () => faker.random.boolean(),
-	trialing: () => faker.random.boolean(),
-	activeMembership: () => faker.random.boolean(),
-	accountStatus: () => faker.random.word(),
-	renewalDate: () => faker.date.future(1).toISOString(),
-	appleRenewalDate: () => faker.date.future(1).toISOString(),
-	subscribed: () => faker.random.boolean(),
-	subscribedTo: () => faker.helpers.randomize<string>(
+export const mockUserProfileDTOV3 = extend<AbstractSyncableDTOV3, UserProfileDTOV3>(mockAbstractSyncableDTOV3, {
+	primaryEmail: () => internet.email(),
+	nickname: () => internet.userName(),
+	firstName: () => name.firstName(),
+	lastName: () => name.lastName(),
+	secondaryEmail: () => internet.email(),
+	preferences: () => JSON.stringify(random.objectElement()),
+	bouncing: () => random.boolean(),
+	secondaryBouncing: () => random.boolean(),
+	claimSwingPlaneMetrics: () => random.boolean(),
+	birthDate: () => date.past(18).toISOString(),
+	height: () => random.number(80).toString(),
+	weight: () => random.number(250).toString(),
+	playType: () => helpers.randomize(PlayType.asArray(true).map(pt => pt.getName())),
+	battingOrientation: () => helpers.randomize(BattingOrientation.asArray().map(bo => bo.getName())),
+	throwsHandedness: () => helpers.randomize(BattingOrientation.asArray(true).map(bo => bo.getName())),
+	competitionLevelUuid: () => random.uuid(),
+	coach: () => random.boolean(),
+	hideFromSearch: () => random.boolean(),
+	zipCode: () => address.zipCode(),
+	profileImageUrl: () => image.imageUrl(),
+	userMetaData: () => random.objectElement(),
+	youthRegistration: () => random.boolean(),
+	trialing: () => random.boolean(),
+	activeMembership: () => random.boolean(),
+	accountStatus: () => random.word(),
+	renewalDate: () => date.future(1).toISOString(),
+	appleRenewalDate: () => date.future(1).toISOString(),
+	subscribed: () => random.boolean(),
+	subscribedTo: () => helpers.randomize(
 		[DKSubscription.ANNUAL_PREMIUM_HITTER.getName(), DKSubscription.MONTHLY_PREMIUM_HITTER.getName()]
 	),
-	hadApplePaymentApplied: () => faker.random.boolean(),
-	referringOrganizationUuid: () => faker.random.uuid(),
-	pitchingAccountStatus: () => faker.random.word(),
-	pitchingRenewalDate: () => faker.date.future(1).toISOString(),
-	pitchingAppleRenewalDate: () => faker.date.future(1).toISOString(),
-	pitchingHadApplePaymentApplied: () => faker.random.boolean(),
-	pitchingTrialing: () => faker.random.boolean(),
-	pitchingActiveMembership: () => faker.random.boolean(),
-	pitchingSubscribed: () => faker.random.boolean(),
-	pitchingSubscribedTo: () => faker.helpers.randomize<string>(
+	hadApplePaymentApplied: () => random.boolean(),
+	referringOrganizationUuid: () => random.uuid(),
+	pitchingAccountStatus: () => random.word(),
+	pitchingRenewalDate: () => date.future(1).toISOString(),
+	pitchingAppleRenewalDate: () => date.future(1).toISOString(),
+	pitchingHadApplePaymentApplied: () => random.boolean(),
+	pitchingTrialing: () => random.boolean(),
+	pitchingActiveMembership: () => random.boolean(),
+	pitchingSubscribed: () => random.boolean(),
+	pitchingSubscribedTo: () => helpers.randomize(
 		[DKSubscription.ANNUAL_PREMIUM_PITCHER.getName(), DKSubscription.MONTHLY_PREMIUM_PITCHER.getName()]
 	),
-	axonBaseballId: () => faker.random.uuid(),
-	axonSoftballId: () => faker.random.uuid(),
-	paidViaLicense: () => faker.random.boolean(),
-	licenseOwner: () => faker.random.boolean(),
-	paidLicensesForCurrentBillingCycle: () => faker.random.number(),
+	axonBaseballId: () => random.uuid(),
+	axonSoftballId: () => random.uuid(),
+	paidViaLicense: () => random.boolean(),
+	licenseOwner: () => random.boolean(),
+	paidLicensesForCurrentBillingCycle: () => random.number(),
 	appVersionOverrides: () => Array.from({ length: 3 }, () => mockUserAppVersionOverrideDTOV2()),
-	state: () => faker.address.stateAbbr(),
-	graduationYear: () => faker.date.future().getFullYear().toString(),
-	position: () => faker.helpers.randomize<string>(Position.asArray().map(p => p.getName()))
+	state: () => address.stateAbbr(),
+	graduationYear: () => date.future().getFullYear().toString(),
+	position: () => helpers.randomize<string>(Position.asArray().map(p => p.getName()))
 });

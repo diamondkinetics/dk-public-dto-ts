@@ -1,9 +1,9 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { define } from 'cooky-cutter';
+import { date } from 'faker';
 
-import { AbstractTimestampDTOV4 } from '../../dto';
+import { AbstractTimestampDTOV4 } from './../../dto/v4/abstract-timestamp.dto.v4';
 
-export const mockAbstractTimestampDTOV4 = cookyCutter.define<AbstractTimestampDTOV4>({
-	creationDate: () => faker.date.past(1).toISOString(),
-	lastUpdate: () => faker.date.past(0.5).toISOString()
+export const mockAbstractTimestampDTOV4 = define<AbstractTimestampDTOV4>({
+	creationDate: () => date.past(1).toISOString(),
+	lastUpdate: () => date.past(0.5).toISOString()
 });

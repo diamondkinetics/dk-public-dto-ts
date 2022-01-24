@@ -1,76 +1,81 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { array, extend } from 'cooky-cutter';
+import { address, company, date, helpers, image, internet, name, random } from 'faker';
 
-import { BattingOrientation, DKSubscription, PlayType, Position } from '../../enum';
-import { UserProfileDTOV2 } from '../../dto';
-
+import { AbstractSyncableDTOV2 } from './../../dto/v2/abstract-syncable.dto.v2';
+import { UserProfileDTOV2 } from './../../dto/v2/user-profile.dto.v2';
+import { BattingOrientation } from './../../enum/batting-orientation';
+import { DKSubscription } from './../../enum/dk-subscription';
+import { PlayType } from './../../enum/play-type';
+import { Position } from './../../enum/position';
 import { mockAbstractSyncableDTOV2 } from './abstract-syncable.dto.v2.mock';
 import { mockUserAppVersionOverrideDTOV2 } from './user-app-version-override.dto.v2.mock';
 
-const appVersionOverrides = () => cookyCutter.array(mockUserAppVersionOverrideDTOV2, 3);
+const appVersionOverrides = () => array(mockUserAppVersionOverrideDTOV2, 3);
 
-export const mockUserProfileDTOV2 = cookyCutter.define<UserProfileDTOV2>({
-	...mockAbstractSyncableDTOV2(),
-	primaryEmail: () => faker.internet.email(),
-	nickname: () => faker.internet.userName(),
-	firstName: () => faker.name.firstName(),
-	lastName: () => faker.name.lastName(),
-	teamName: () => faker.company.companyName(),
-	secondaryEmail: () => faker.internet.email(),
-	bouncing: () => faker.random.boolean(),
-	secondaryBouncing: () => faker.random.boolean(),
-	claimSwingPlaneMetrics: () => faker.random.boolean(),
-	birthDate: () => faker.date.past(18).toISOString(),
-	height: () => faker.random.number(80).toString(),
-	weight: () => faker.random.number(250).toString(),
-	playType: () => faker.helpers.randomize<string>(PlayType.asArray(true).map(pt => pt.getName())),
-	battingOrientation: () => faker.helpers.randomize<string>(BattingOrientation.asArray().map(bo => bo.getName())),
-	throwsHandedness: () => faker.helpers.randomize<string>(BattingOrientation.asArray(true).map(bo => bo.getName())),
-	competitionLevelUuid: () => faker.random.uuid(),
-	coach: () => faker.random.boolean(),
-	hideFromSearch: () => faker.random.boolean(),
-	zipCode: () => faker.address.zipCode(),
-	profileImageUrl: () => faker.image.imageUrl(),
-	userMetaData: () => faker.random.objectElement(),
-	youthRegistration: () => faker.random.boolean(),
-	claimProfileEditingAllowed: () => faker.random.boolean(),
-	claimConnectionsAreAllowed: () => faker.random.boolean(),
-	claimVideoPersistingAllowed: () => faker.random.boolean(),
-	claimVideoSharingAllowed: () => faker.random.boolean(),
-	trialing: () => faker.random.boolean(),
-	activeMembership: () => faker.random.boolean(),
-	claimAllMetricsViewable: () => faker.random.boolean(),
-	claimGroupsAreAllowed: () => faker.random.boolean(),
-	claimWebHooksAreAllowed: () => faker.random.boolean(),
-	claimAnalysisAllowed: () => faker.random.boolean(),
-	claimTrainingContentAllowed: () => faker.random.boolean(),
-	accountStatus: () => faker.random.word(),
-	renewalDate: () => faker.date.future(1).toISOString(),
-	appleRenewalDate: () => faker.date.future(1).toISOString(),
-	subscribed: () => faker.random.boolean(),
-	subscribedTo: () => faker.helpers.randomize<string>(
-		[DKSubscription.ANNUAL_PREMIUM_HITTER.getName(), DKSubscription.MONTHLY_PREMIUM_HITTER.getName()]
-	),
-	hadApplePaymentApplied: () => faker.random.boolean(),
-	referringOrganizationUuid: () => faker.random.uuid(),
-	pitchingAccountStatus: () => faker.random.word(),
-	pitchingRenewalDate: () => faker.date.future(1).toISOString(),
-	pitchingAppleRenewalDate: () => faker.date.future(1).toISOString(),
-	pitchingHadApplePaymentApplied: () => faker.random.boolean(),
-	pitchingTrialing: () => faker.random.boolean(),
-	pitchingActiveMembership: () => faker.random.boolean(),
-	pitchingSubscribed: () => faker.random.boolean(),
-	pitchingSubscribedTo: () => faker.helpers.randomize<string>(
-		[DKSubscription.ANNUAL_PREMIUM_PITCHER.getName(), DKSubscription.MONTHLY_PREMIUM_PITCHER.getName()]
-	),
-	axonBaseballId: () => faker.random.uuid(),
-	axonSoftballId: () => faker.random.uuid(),
-	hittingGoal: () => faker.random.number(),
-	paidViaLicense: () => faker.random.boolean(),
-	licenseOwner: () => faker.random.boolean(),
-	paidLicensesForCurrentBillingCycle: () => faker.random.number(),
-	appVersionOverrides: appVersionOverrides(),
-	state: () => faker.address.stateAbbr(),
-	graduationYear: () => faker.date.future().getFullYear().toString(),
-	position: () => faker.helpers.randomize<string>(Position.asArray().map(p => p.getName()))
-});
+export const mockUserProfileDTOV2 = extend<AbstractSyncableDTOV2, UserProfileDTOV2>(
+	mockAbstractSyncableDTOV2,
+	{
+		primaryEmail: () => internet.email(),
+		nickname: () => internet.userName(),
+		firstName: () => name.firstName(),
+		lastName: () => name.lastName(),
+		teamName: () => company.companyName(),
+		secondaryEmail: () => internet.email(),
+		bouncing: () => random.boolean(),
+		secondaryBouncing: () => random.boolean(),
+		claimSwingPlaneMetrics: () => random.boolean(),
+		birthDate: () => date.past(18).toISOString(),
+		height: () => random.number(80).toString(),
+		weight: () => random.number(250).toString(),
+		playType: () => helpers.randomize(PlayType.asArray(true).map(pt => pt.getName())),
+		battingOrientation: () => helpers.randomize(BattingOrientation.asArray().map(bo => bo.getName())),
+		throwsHandedness: () => helpers.randomize(BattingOrientation.asArray(true).map(bo => bo.getName())),
+		competitionLevelUuid: () => random.uuid(),
+		coach: () => random.boolean(),
+		hideFromSearch: () => random.boolean(),
+		zipCode: () => address.zipCode(),
+		profileImageUrl: () => image.imageUrl(),
+		userMetaData: () => random.objectElement(),
+		youthRegistration: () => random.boolean(),
+		claimProfileEditingAllowed: () => random.boolean(),
+		claimConnectionsAreAllowed: () => random.boolean(),
+		claimVideoPersistingAllowed: () => random.boolean(),
+		claimVideoSharingAllowed: () => random.boolean(),
+		trialing: () => random.boolean(),
+		activeMembership: () => random.boolean(),
+		claimAllMetricsViewable: () => random.boolean(),
+		claimGroupsAreAllowed: () => random.boolean(),
+		claimWebHooksAreAllowed: () => random.boolean(),
+		claimAnalysisAllowed: () => random.boolean(),
+		claimTrainingContentAllowed: () => random.boolean(),
+		accountStatus: () => random.word(),
+		renewalDate: () => date.future(1).toISOString(),
+		appleRenewalDate: () => date.future(1).toISOString(),
+		subscribed: () => random.boolean(),
+		subscribedTo: () => helpers.randomize(
+			[DKSubscription.ANNUAL_PREMIUM_HITTER.getName(), DKSubscription.MONTHLY_PREMIUM_HITTER.getName()]
+		),
+		hadApplePaymentApplied: () => random.boolean(),
+		referringOrganizationUuid: () => random.uuid(),
+		pitchingAccountStatus: () => random.word(),
+		pitchingRenewalDate: () => date.future(1).toISOString(),
+		pitchingAppleRenewalDate: () => date.future(1).toISOString(),
+		pitchingHadApplePaymentApplied: () => random.boolean(),
+		pitchingTrialing: () => random.boolean(),
+		pitchingActiveMembership: () => random.boolean(),
+		pitchingSubscribed: () => random.boolean(),
+		pitchingSubscribedTo: () => helpers.randomize(
+			[DKSubscription.ANNUAL_PREMIUM_PITCHER.getName(), DKSubscription.MONTHLY_PREMIUM_PITCHER.getName()]
+		),
+		axonBaseballId: () => random.uuid(),
+		axonSoftballId: () => random.uuid(),
+		hittingGoal: () => random.number(),
+		paidViaLicense: () => random.boolean(),
+		licenseOwner: () => random.boolean(),
+		paidLicensesForCurrentBillingCycle: () => random.number(),
+		appVersionOverrides: appVersionOverrides(),
+		state: () => address.stateAbbr(),
+		graduationYear: () => date.future().getFullYear().toString(),
+		position: () => helpers.randomize(Position.asArray().map(p => p.getName()))
+	}
+);

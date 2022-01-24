@@ -1,11 +1,11 @@
-import * as cookyCutter from 'cooky-cutter';
+import { define } from 'cooky-cutter';
 
-import { RegisterWithProfileRequestDTOV2 } from '../../dto';
+import { RegisterWithProfileRequestDTOV2 } from './../../dto/v2/register-with-profile-request.dto.v2';
 import { mockUserProfileDTOV2 } from './user-profile.dto.v2.mock';
 
 const userProfile = () => mockUserProfileDTOV2();
 
-export const mockRegisterWithProfileRequestDTOV2 = cookyCutter.define<RegisterWithProfileRequestDTOV2>({
+export const mockRegisterWithProfileRequestDTOV2 = define<RegisterWithProfileRequestDTOV2>({
 	firstName: () => userProfile().firstName,
 	lastName: () => userProfile().lastName,
 	email: () => userProfile().primaryEmail,

@@ -1,14 +1,14 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { define } from 'cooky-cutter';
+import { company, image, random } from 'faker';
 
-import { GroupSummaryDTOV4 } from './../../dto';
+import { GroupSummaryDTOV4 } from './../../dto/v4/group-summary.dto.v4';
 
-export const mockGroupSummaryDTOV4 = cookyCutter.define<GroupSummaryDTOV4>({
-	uuid: () => faker.random.uuid(),
-	fullName: () => faker.company.companyName(),
-	description: () => faker.company.bsBuzz(),
-	groupImageUrl: () => faker.image.imageUrl(),
-	confirmedMemberCount: () => faker.random.number(100),
-	joinOpen: () => faker.random.boolean(),
-	canViewMembers: () => faker.random.boolean()
+export const mockGroupSummaryDTOV4 = define<GroupSummaryDTOV4>({
+	uuid: () => random.uuid(),
+	fullName: () => company.companyName(),
+	description: () => company.bsBuzz(),
+	groupImageUrl: () => image.imageUrl(),
+	confirmedMemberCount: () => random.number(100),
+	joinOpen: () => random.boolean(),
+	canViewMembers: () => random.boolean()
 });

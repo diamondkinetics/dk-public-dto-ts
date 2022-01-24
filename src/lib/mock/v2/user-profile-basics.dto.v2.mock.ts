@@ -1,28 +1,30 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { define } from 'cooky-cutter';
+import { address, company, date, helpers, image, internet, name, random } from 'faker';
 
-import { UserProfileBasicsDTOV2 } from '../../dto';
-import { AccountStatus, BattingOrientation, Position } from '../../enum';
+import { UserProfileBasicsDTOV2 } from './../../dto/v2/user-profile-basics.dto.v2';
+import { AccountStatus } from './../../enum/account-status';
+import { BattingOrientation } from './../../enum/batting-orientation';
+import { Position } from './../../enum/position';
 
-export const mockUserProfileBasicsDTOV2 = cookyCutter.define<UserProfileBasicsDTOV2>({
-	uuid: () => faker.random.uuid(),
-	firstName: () => faker.name.firstName(),
-	lastName: () => faker.name.lastName(),
-	teamName: () => faker.company.companyName(),
-	primaryEmail: () => faker.internet.email(),
-	nickname: () => faker.internet.userName(),
-	profileImageUrl: () => faker.image.imageUrl(),
-	height: () => faker.random.number(80).toString(),
-	weight: () => faker.random.number(250).toString(),
-	battingOrientation: () => BattingOrientation.RIGHTY.getName(),
-	throwsHandedness: () => BattingOrientation.RIGHTY.getName(),
+export const mockUserProfileBasicsDTOV2 = define<UserProfileBasicsDTOV2>({
+	uuid: () => random.uuid(),
+	firstName: () => name.firstName(),
+	lastName: () => name.lastName(),
+	teamName: () => company.companyName(),
+	primaryEmail: () => internet.email(),
+	nickname: () => internet.userName(),
+	profileImageUrl: () => image.imageUrl(),
+	height: () => random.number(80).toString(),
+	weight: () => random.number(250).toString(),
+	battingOrientation: () => helpers.randomize(BattingOrientation.asArray().map(bo => bo.getName())),
+	throwsHandedness: () => helpers.randomize(BattingOrientation.asArray(true).map(bo => bo.getName())),
 	position: () => Position.CENTER_FIELD.getName(),
-	state: () => faker.address.stateAbbr(),
-	graduationYear: () => faker.date.future().getFullYear().toString(),
+	state: () => address.stateAbbr(),
+	graduationYear: () => date.future().getFullYear().toString(),
 	deleted: () => false,
 	coach: () => false,
-	hittingAccountStatus: () => faker.helpers.randomize<string>(AccountStatus.asArray().map(s => s.getName())),
-	hittingRenewalDate: () => faker.date.future().toString(),
-	pitchingAccountStatus: () => faker.helpers.randomize<string>(AccountStatus.asArray().map(s => s.getName())),
-	pitchingRenewalDate: () => faker.date.future().toString(),
+	hittingAccountStatus: () => helpers.randomize(AccountStatus.asArray().map(s => s.getName())),
+	hittingRenewalDate: () => date.future().toString(),
+	pitchingAccountStatus: () => helpers.randomize(AccountStatus.asArray().map(s => s.getName())),
+	pitchingRenewalDate: () => date.future().toString(),
 });

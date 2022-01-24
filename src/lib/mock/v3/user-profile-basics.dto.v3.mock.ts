@@ -1,15 +1,15 @@
 import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { helpers, image, name, random } from 'faker';
 
-import { AccountStatus } from './../../enum';
-import { UserProfileBasicsDTOV3 } from './../../dto/v3';
+import { AccountStatus } from './../../enum/account-status';
+import { UserProfileBasicsDTOV3 } from './../../dto/v3/user-profile-basics.dto.v3';
 
 export const mockUserProfileBasicsDTOV3 = cookyCutter.define<UserProfileBasicsDTOV3>({
-	uuid: () => faker.random.uuid(),
-	firstName: () => faker.name.firstName(),
-	lastName: () => faker.name.lastName(),
-	profileImageUrl: () => faker.image.imageUrl(),
-	accountStatus: () => AccountStatus.PAID.getName(),
+	uuid: () => random.uuid(),
+	firstName: () => name.firstName(),
+	lastName: () => name.lastName(),
+	profileImageUrl: () => image.imageUrl(),
+	accountStatus: () => helpers.randomize(AccountStatus.asArray().map(s => s.getName())),
 	paid: () => true,
 	paidViaLicense: () => false,
 	state: () => undefined,

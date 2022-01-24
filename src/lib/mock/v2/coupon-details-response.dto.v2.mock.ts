@@ -1,11 +1,11 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { define } from 'cooky-cutter';
+import { helpers, random } from 'faker';
 
-import { CouponDetailsResponseDTOV2 } from '../../dto';
-import { DKSubscription } from '../../enum';
+import { CouponDetailsResponseDTOV2 } from './../../dto/v2/coupon-details-response.dto.v2';
+import { DKSubscription } from './../../enum/dk-subscription';
 
-export const mockCouponDetailsResponseDTOV2 = cookyCutter.define<CouponDetailsResponseDTOV2>({
-	id: () => faker.random.alphaNumeric(),
-	dkSubscription: () => DKSubscription.MONTHLY_PREMIUM_HITTER.getName(),
-	durationInMonths: () => faker.random.number(12)
+export const mockCouponDetailsResponseDTOV2 = define<CouponDetailsResponseDTOV2>({
+	id: () => random.alphaNumeric(),
+	dkSubscription: () => helpers.randomize(DKSubscription.asArray().map(s => s.getName())),
+	durationInMonths: () => random.number(12)
 });

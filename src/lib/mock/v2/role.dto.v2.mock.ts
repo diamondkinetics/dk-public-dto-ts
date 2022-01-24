@@ -1,13 +1,13 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
+import { define } from 'cooky-cutter';
+import { company, random } from 'faker';
 
-import { RoleDTOV2 } from './../../dto/v2';
+import { RoleDTOV2 } from './../../dto/v2/role.dto.v2';
 
-export const mockRoleDTOV2 = cookyCutter.define<RoleDTOV2>({
-	shortName: () => faker.company.bsNoun(),
-	fullName: () => faker.company.bsAdjective(),
-	desc: () => faker.company.bsBuzz(),
-	hierarchy: () => faker.random.number(1000),
-	isAdmin: () => faker.random.boolean(),
+export const mockRoleDTOV2 = define<RoleDTOV2>({
+	shortName: () => company.bsNoun(),
+	fullName: () => company.bsAdjective(),
+	desc: () => company.bsBuzz(),
+	hierarchy: () => random.number(1000),
+	isAdmin: () => random.boolean(),
 	isMember: () => true
 });

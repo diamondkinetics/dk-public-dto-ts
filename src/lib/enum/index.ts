@@ -16,3 +16,4 @@ export { PitchingMetric } from './pitching-metric';
 export { GroupMembershipRole } from './group-membership-role';
 export { ExportEventType } from './export-event-type';
 export { ExportEventSource } from './export-event-source';
+export { GroupImportConflictType } from './group-import-conflict-type';
