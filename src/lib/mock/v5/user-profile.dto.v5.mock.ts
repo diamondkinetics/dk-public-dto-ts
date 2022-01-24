@@ -25,27 +25,27 @@ import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
 
 export const mockUserProfileUpdateRequestV5 = cookyCutter.define<UserProfileUpdateRequestV5>({
     ...mockAbstractSyncableUpdateRequestV5(),
-    playType: faker.helpers.randomize([PlayType.BASEBALL.getName(), PlayType.FAST_PITCH_SOFTBALL.getName()]),
-    battingOrientation: faker.helpers.randomize(['Righty', 'Lefty']),
-    throwsHandedness: faker.helpers.randomize(['Righty', 'Lefty']),
-    competitionLevelUuid: faker.random.uuid(),
-    weight: faker.random.number({max: 200, min: 100, precision: 0.1}).toString(),
-    height: faker.random.number({max: 200, min: 100, precision: 0.1}).toString(),
-    zipCode: faker.random.number({max: 99999, min: 1000, precision: 1}).toString(),
-    birthDate: faker.date.past().toDateString(),
-    nickname: faker.internet.userName(),
-    parentalConsent: faker.random.boolean()
+    playType: () => faker.helpers.randomize(PlayType.asArray(true).map(pt => pt.getName())),
+    battingOrientation: () => faker.helpers.randomize(BattingOrientation.asArray().map(bo => bo.getName())),
+    throwsHandedness: () => faker.helpers.randomize(BattingOrientation.asArray(true).map(bo => bo.getName())),
+    competitionLevelUuid: () => faker.random.uuid(),
+    weight: () => faker.random.number({max: 200, min: 100, precision: 0.1}).toString(),
+    height: () => faker.random.number({max: 200, min: 100, precision: 0.1}).toString(),
+    zipCode: () => faker.random.number({max: 99999, min: 1000, precision: 1}).toString(),
+    birthDate: () => faker.date.past().toDateString(),
+    nickname: () => faker.internet.userName(),
+    parentalConsent: () => faker.random.boolean()
 });
 
 export const mockAdminUserProfileUpdateRequestV5 = cookyCutter.define<AdminUserProfileUpdateRequestV5>({
     ...mockUserProfileUpdateRequestV5(),
-    accountType: faker.helpers.randomize(['MLB', 'Ripken']),
-    emailVerified: faker.random.boolean(),
-    deleted: faker.random.boolean(),
-    coach: faker.random.boolean(),
-    email: faker.internet.email(),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName()
+    accountType: () => faker.helpers.randomize(['MLB', 'Ripken']),
+    emailVerified: () => faker.random.boolean(),
+    deleted: () => faker.random.boolean(),
+    coach: () => faker.random.boolean(),
+    email: () => faker.internet.email(),
+    firstName: () => faker.name.firstName(),
+    lastName: () => faker.name.lastName()
 });
 
 // The following three mocks are needed to avoid circular dependency issues between these mocks and the v5 user account
@@ -65,9 +65,7 @@ const baseMockUserAccountResponseV5: UserAccountResponseV5 = {
     subscribedTo: DKSubscription.MONTHLY_PREMIUM_HITTER.getName()
 };
 
-const mockHittingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
-    ...baseMockUserAccountResponseV5
-});
+const mockHittingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>(baseMockUserAccountResponseV5);
 
 const mockPitchingUserAccountResponseV5 = cookyCutter.define<UserAccountResponseV5>({
     ...baseMockUserAccountResponseV5,
@@ -76,45 +74,45 @@ const mockPitchingUserAccountResponseV5 = cookyCutter.define<UserAccountResponse
 
 export const mockUserProfileResponseV5 = cookyCutter.define<UserProfileResponseV5>({
     ...mockAbstractSyncableResponseV5(),
-    primaryEmail: faker.internet.email(),
-    nickname: faker.internet.userName(),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    secondaryEmail: faker.internet.email(),
-    preferences: '',
-    bouncing: faker.random.boolean(),
-    secondaryBouncing: faker.random.boolean(),
-    birthDate: faker.date.past(15).toISOString(),
-    height: faker.random.number({max: 84, min: 36, precision: 1}).toString(),
-    weight: faker.random.number({max: 300, min: 50, precision: 1}).toString(),
-    playType: PlayType.BASEBALL.getName(),
-    battingOrientation: BattingOrientation.RIGHTY.getName(),
-    throwsHandedness: BattingOrientation.RIGHTY.getName(),
-    competitionLevelUuid: faker.random.uuid(),
-    coach: faker.random.boolean(),
-    privateProfile: faker.random.boolean(),
-    zipCode: faker.address.zipCode(),
-    profileImageUrl: faker.internet.avatar(),
-    userMetaData: '',
-    youthRegistration: faker.random.boolean(),
-    referringOrganizationUuid: faker.random.uuid(),
-    state: faker.address.stateAbbr(),
-    graduationYear: faker.date.future(8).getFullYear.toString(),
-    position: Position.CENTER_FIELD.getName(),
-    mlbId: faker.random.uuid(),
+    primaryEmail: () => faker.internet.email(),
+    nickname: () => faker.internet.userName(),
+    firstName: () => faker.name.firstName(),
+    lastName: () => faker.name.lastName(),
+    secondaryEmail: () => faker.internet.email(),
+    preferences: () => '',
+    bouncing: () => faker.random.boolean(),
+    secondaryBouncing: () => faker.random.boolean(),
+    birthDate: () => faker.date.past(15).toISOString(),
+    height: () => faker.random.number({max: 84, min: 36, precision: 1}).toString(),
+    weight: () => faker.random.number({max: 300, min: 50, precision: 1}).toString(),
+    playType: () => faker.helpers.randomize(PlayType.asArray(true).map(pt => pt.getName())),
+    battingOrientation: () => faker.helpers.randomize(BattingOrientation.asArray().map(bo => bo.getName())),
+    throwsHandedness: () => faker.helpers.randomize(BattingOrientation.asArray(true).map(bo => bo.getName())),
+    competitionLevelUuid: () => faker.random.uuid(),
+    coach: () => faker.random.boolean(),
+    privateProfile: () => faker.random.boolean(),
+    zipCode: () => faker.address.zipCode(),
+    profileImageUrl: () => faker.internet.avatar(),
+    userMetaData: () => '',
+    youthRegistration: () => faker.random.boolean(),
+    referringOrganizationUuid: () => faker.random.uuid(),
+    state: () => faker.address.stateAbbr(),
+    graduationYear: () => faker.date.future(8).getFullYear.toString(),
+    position: () => faker.helpers.randomize(Position.asArray().map(p => p.getName())),
+    mlbId: () => faker.random.uuid(),
     hittingAccount: () => mockHittingUserAccountResponseV5(),
     pitchingAccount: () => mockPitchingUserAccountResponseV5()
 });
 
 export const mockUserProfileEnhancedResponseV5 = cookyCutter.define<UserProfileEnhancedResponseV5>({
     ...mockUserProfileResponseV5(),
-    customerId: faker.random.alphaNumeric(10)
+    customerId: () => faker.random.alphaNumeric(10)
 });
 
 export const mockAdminUserProfileResponseV5 = cookyCutter.define<AdminUserProfileResponseV5>({
     ...mockUserProfileEnhancedResponseV5(),
-    accountType: faker.helpers.randomize(['MLB', 'Ripken']),
-    emailVerified: faker.random.boolean()
+    accountType: () => faker.helpers.randomize(['MLB', 'Ripken']),
+    emailVerified: () => faker.random.boolean()
 });
 
 export const mockUserProfileCollectionResponseV5 = cookyCutter.define<UserProfileCollectionResponseV5>({

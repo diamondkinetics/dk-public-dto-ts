@@ -9,12 +9,12 @@ import { mockBatModelDTOV2 } from './bat-model.dto.v2.mock';
 
 export const mockUserBatDTOV2 = cookyCutter.define<UserBatDTOV2>({
 	...mockAbstractSyncableDTOV2(),
-	userUuid: faker.random.uuid(),
-	name: 'The bazooka',
-	model: mockBatModelDTOV2(),
-	length: 34,
-	weight: 31,
-	price: faker.random.number(400),
-	materialType: MaterialType.ALUMINUM.getName(),
-	embedded: mockBatModelDTOV2().embedded
+	userUuid: () => faker.random.uuid(),
+	name: () => 'The bazooka',
+	model: () => mockBatModelDTOV2(),
+	length: () => 34,
+	weight: () => 31,
+	price: () => faker.random.number(400),
+	materialType: () => MaterialType.ALUMINUM.getName(),
+	embedded: () => mockBatModelDTOV2().embedded
 });

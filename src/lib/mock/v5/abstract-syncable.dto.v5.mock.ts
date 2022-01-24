@@ -23,6 +23,6 @@ export const mockAbstractSyncableResponseV5 = cookyCutter.define<AbstractSyncabl
 
 export const mockAbstractSyncableCollectionResponseSummaryV5 = cookyCutter.define<AbstractSyncableCollectionResponseSummaryV5>({
     ...mockCollectionResponseSummaryV5(),
-    countDeleted: 1,
+    countDeleted: () => 1,
     maxLastUpdated: () => faker.date.recent(7).toISOString()
 });

@@ -14,6 +14,6 @@ export const mockLeaderboardResultDTOV2 = cookyCutter.define<LeaderboardResultDT
 	leaderboardRank: () => faker.random.number(10),
 	metricValue: () => faker.random.number(3000),
 	metricUnit: () => faker.finance.currencyCode(),
-	change: undefined,
-	numReps: undefined
+	change: () => undefined,
+	numReps: () => undefined
 });

@@ -12,10 +12,10 @@ export const mockAbstractSensorSessionResponseV5 = cookyCutter.define<AbstractSe
     userUuid: () => faker.random.uuid(),
     extensionType: () => ExtensionType.STANDARD.getName(),
     extensionDetails: () => ({}),
-    playType: () => faker.helpers.randomize<string>([PlayType.BASEBALL.getName(), PlayType.FAST_PITCH_SOFTBALL.getName()]),
+    playType: () => faker.helpers.randomize<string>(PlayType.asArray(true).map(pt => pt.getName())),
     notes: () => faker.random.words(),
     events: () => Array.from({length: faker.random.number({max: 15, min: 2, precision: 1}) },
         () => mockAbstractSensorEventCollectionResponseSummaryV5()),
     associatedGroupUuid: () => faker.random.uuid(),
-    extensionClass: () => ('')
+    extensionClass: () => ''
 });

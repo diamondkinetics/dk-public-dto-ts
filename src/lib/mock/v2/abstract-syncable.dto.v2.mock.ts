@@ -6,6 +6,6 @@ import { mockAbstractTimestampDTOV2 } from './abstract-timestamp.dto.v2.mock';
 
 export const mockAbstractSyncableDTOV2 = cookyCutter.define<AbstractSyncableDTOV2>({
 	...mockAbstractTimestampDTOV2(),
-	uuid: faker.random.uuid(),
-	deleted: faker.random.boolean()
+	uuid: () => faker.random.uuid(),
+	deleted: () => faker.random.boolean()
 });
