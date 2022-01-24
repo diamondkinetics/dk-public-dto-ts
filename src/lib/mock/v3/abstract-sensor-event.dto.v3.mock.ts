@@ -1,7 +1,7 @@
 import * as cookyCutter from 'cooky-cutter';
 import * as faker from 'faker';
-import { BattingOrientation } from 'src/lib/enum';
 
+import { BattingOrientation } from './../../enum/batting-orientation';
 import { AbstractSensorEventDTOV3 } from './../../dto/v3/abstract-sensor-event.dto.v3';
 import { mockAbstractSyncableDTOV3 } from './abstract-syncable.dto.v3.mock';
 import { mockVideoDTOV3 } from './video.dto.v3.mock';
