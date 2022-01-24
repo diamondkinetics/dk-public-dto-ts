@@ -15,4 +15,8 @@ export interface UserProfileBasicsDTOV2 {
 	state?: string;
 	coach?: boolean;
 	deleted?: boolean;
+	hittingAccountStatus?: string;
+	hittingRenewalDate?: string;
+	pitchingAccountStatus?: string;
+	pitchingRenewalDate?: string;
 }
