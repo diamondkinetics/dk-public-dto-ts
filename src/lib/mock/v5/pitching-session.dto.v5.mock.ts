@@ -1,16 +1,20 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
-import { PitchingSessionCollectionResponseV5, PitchingSessionResponseV5 } from "../../dto";
-import { mockAbstractSensorSessionResponseV5 } from "./abstract-sensor-session.dto.v5.mock";
-import { mockCollectionResponseV5 } from "./collection.dto.v5.mock";
+import { define, extend } from 'cooky-cutter';
+import { random } from 'faker';
 
-export const mockPitchingSessionResponseV5 = cookyCutter.define<PitchingSessionResponseV5>({
-    ...mockAbstractSensorSessionResponseV5(),
-    name: () => faker.random.word(),
-    flagged: () => faker.random.boolean(),
-    searchable: () => faker.random.boolean()
-});
+import { AbstractSensorSessionResponseV5 } from './../../dto/v5/abstract-sensor-session.dto.v5';
+import { PitchingSessionCollectionResponseV5, PitchingSessionResponseV5 } from './../../dto/v5/pitching-session.dto.v5';
+import { mockAbstractSensorSessionResponseV5 } from './abstract-sensor-session.dto.v5.mock';
+import { mockCollectionResponseV5 } from './collection.dto.v5.mock';
 
-export const mockPitchingSessionCollectionResponseV5 = cookyCutter.define<PitchingSessionCollectionResponseV5>({
-    ...mockCollectionResponseV5<PitchingSessionResponseV5>(mockPitchingSessionResponseV5)()
-});
+export const mockPitchingSessionResponseV5 = extend<AbstractSensorSessionResponseV5, PitchingSessionResponseV5>(
+    mockAbstractSensorSessionResponseV5,
+    {
+        name: () => random.word(),
+        flagged: () => random.boolean(),
+        searchable: () => random.boolean()
+    }
+);
+
+export const mockPitchingSessionCollectionResponseV5 = define<PitchingSessionCollectionResponseV5>(
+    mockCollectionResponseV5<PitchingSessionResponseV5>(mockPitchingSessionResponseV5)()
+);

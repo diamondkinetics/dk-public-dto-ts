@@ -1,47 +1,48 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
-import { PitchingMetricDTOV5 } from "../../dto";
+import { define } from 'cooky-cutter';
+import { random } from 'faker';
 
-export const mockPitchingMetricDTOV5 = cookyCutter.define<PitchingMetricDTOV5>({
-    releaseSpeed: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    releaseAngle: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    releaseSpinRate: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    extensionFt: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    perceivedSpeedMPH: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    releaseHeightFt: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    headingAngleDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+import { PitchingMetricDTOV5 } from './../../dto/v5/pitching-metric.dto.v5';
 
-    spinAxisX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisZ: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisSensorX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisSensorY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisSensorZ: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinAxisRad: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinEfficiency: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    breakForceX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    breakForceY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    breakForceZ: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    spinDirection: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+export const mockPitchingMetricDTOV5 = define<PitchingMetricDTOV5>({
+    releaseSpeed: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    releaseAngle: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    releaseSpinRate: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    extensionFt: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    perceivedSpeedMPH: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    releaseHeightFt: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    headingAngleDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
+
+    spinAxisX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisZ: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisSensorX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisSensorY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisSensorZ: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinAxisRad: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinEfficiency: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    breakForceX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    breakForceY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    breakForceZ: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    spinDirection: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Delivery Metrics
-    deliveryOverall: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    deliverySetToExtension: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    deliveryExtensionToRelease: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    deliveryTimeToPlate: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    deliveryOverall: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    deliverySetToExtension: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    deliveryExtensionToRelease: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    deliveryTimeToPlate: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Effort Metrics
-    effortBallForce: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    effortBallTorque: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    effortBallForce: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    effortBallTorque: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Flight Metrics
-    flightProjectedDistance: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    flightHorizontalBreak: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    flightVerticalBreak: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    flightProjectedDistance: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    flightHorizontalBreak: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    flightVerticalBreak: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Charting
-    locationX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    locationY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    intendedLocationX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    intendedLocationY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    locationX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    locationY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    intendedLocationX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    intendedLocationY: () => random.number({max: 100, min: 0, precision: 0.00001}),
 });

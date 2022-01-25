@@ -1,9 +1,10 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
-import { AbstractTimestampResponseV5 } from "../../dto";
+import { define } from 'cooky-cutter';
+import { date } from 'faker';
+
+import { AbstractTimestampResponseV5 } from './../../dto/v5/abstract-timestamp.dto.v5';
 
 
-export const mockAbstractTimeStampResponseV5 = cookyCutter.define<AbstractTimestampResponseV5>({
-    serverCreatedTime: () => faker.date.past(1).toISOString(),
-    serverUpdatedTime: () => faker.date.past(0.5).toISOString()
+export const mockAbstractTimeStampResponseV5 = define<AbstractTimestampResponseV5>({
+    serverCreatedTime: () => date.past(1).toISOString(),
+    serverUpdatedTime: () => date.past(0.5).toISOString()
 });

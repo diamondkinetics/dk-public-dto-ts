@@ -1,21 +1,26 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
-import { AbstractReadableResponseV5, CollectionResponseSummaryV5, CollectionResponseV5 } from "../../dto";
+import { array, define, extend, Factory } from 'cooky-cutter';
+import { random } from 'faker';
 
-export const mockCollectionResponseSummaryV5 = cookyCutter.define<CollectionResponseSummaryV5>({
-    totalCount: faker.random.number({max: 100, min: 1, precision: 1})
+import { AbstractReadableResponseV5 } from './../../dto/v5/abstract-readable.dto.v5';
+import { CollectionResponseSummaryV5, CollectionResponseV5 } from './../../dto/v5/collection.dto.v5';
+
+export const mockCollectionResponseSummaryV5 = define<CollectionResponseSummaryV5>({
+    totalCount: random.number({ max: 100, min: 1, precision: 1 })
 });
 
-export const mockCollectionResponseV5 = <RESPONSE extends AbstractReadableResponseV5> (mockResponse: cookyCutter.Factory<RESPONSE>) => {
+export const mockCollectionResponseV5 = <RESPONSE extends AbstractReadableResponseV5>(mockResponse: Factory<RESPONSE>) => {
     const pageSize: number = 20;
-    const total = () => faker.random.number({max: 100, min: 1, precision: 1});
-    const totalPages = () => Math.ceil(total() / pageSize);
+    const total = () => random.number({ max: 100, min: 1, precision: 1 });
+    const totalPages = Math.ceil(total() / pageSize);
+    const data = array(mockResponse, total());
 
-    return cookyCutter.define<CollectionResponseV5<any>>({
-        ...mockCollectionResponseSummaryV5(),
-        pageNumber: () => faker.random.number({max: totalPages(), min: 1, precision: 1}),
-        pageSize,
-        totalPages: totalPages(),
-        data: () => Array.from({length: total()}, () => mockResponse())
-    });
+    return extend<CollectionResponseSummaryV5, CollectionResponseV5<any>>(
+        mockCollectionResponseSummaryV5,
+        {
+            pageNumber: () => random.number({ max: totalPages, min: 1, precision: 1 }),
+            pageSize,
+            totalPages,
+            data
+        }
+    );
 }

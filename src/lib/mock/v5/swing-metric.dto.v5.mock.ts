@@ -1,55 +1,56 @@
-import * as cookyCutter from 'cooky-cutter';
-import * as faker from 'faker';
-import { SwingMetricDTOV5 } from "../../dto";
+import { define } from 'cooky-cutter';
+import { random } from 'faker';
 
-export const mockSwingMetricDtoV5 = cookyCutter.define<SwingMetricDTOV5>({
-    powerApplied: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    powerAccelMax: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    powerMomentumImpact: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+import { SwingMetricDTOV5 } from './../../dto/v5/swing-metric.dto.v5';
+
+export const mockSwingMetricDtoV5 = define<SwingMetricDTOV5>({
+    powerApplied: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    powerAccelMax: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    powerMomentumImpact: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Speed Metrics
-    speedHandsMax: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    speedBarrelMax: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    speedEfficiency: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    speedHandsMax: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    speedBarrelMax: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    speedEfficiency: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Quickness Metrics
-    quicknessTriggerImpact: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    quicknessTriggerImpact: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Control Metrics
-    controlApproachAngleImpact: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    controlHandCastMax: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    controlDistanceInTheZone: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    controlBatVerticalAngleImpact: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    controlApproachAngleImpact: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    controlHandCastMax: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    controlDistanceInTheZone: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    controlBatVerticalAngleImpact: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Outcome Metrics
-    exitSpeedMph: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    exitDistanceFt: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    exitHeadingAngleDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    exitLaunchAngleDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    exitSpeedMph: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    exitDistanceFt: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    exitHeadingAngleDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    exitLaunchAngleDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Damage Potential Metrics
-    potentialExitSpeedMph: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    potentialExitDistanceFt: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    potentialExitHeadingAngleDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    potentialExitLaunchAngleDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    potentialExitSpeedMph: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    potentialExitDistanceFt: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    potentialExitHeadingAngleDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    potentialExitLaunchAngleDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
     // Dodgers Metrics
-    swingPlaneHeadingAngle: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    swingPlaneSteepnessAngle: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    swingPlaneTiltAngle: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    percentageOnSwingPlane: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    ballLocationAngle: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    swingPlaneHeadingAngle: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    swingPlaneSteepnessAngle: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    swingPlaneTiltAngle: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    percentageOnSwingPlane: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    ballLocationAngle: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
-    impactLocX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    impactLocY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    impactLocZ: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    slotDirX: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    slotDirY: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    slotDirZ: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    impactVelo: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    maxDist: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    impactLocX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    impactLocY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    impactLocZ: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    slotDirX: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    slotDirY: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    slotDirZ: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    impactVelo: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    maxDist: () => random.number({max: 100, min: 0, precision: 0.00001}),
 
-    pivotAlignmentPercent: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    pivotAccelerationRadS: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
-    pivotTiltDeg: () => faker.random.number({max: 100, min: 0, precision: 0.00001}),
+    pivotAlignmentPercent: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    pivotAccelerationRadS: () => random.number({max: 100, min: 0, precision: 0.00001}),
+    pivotTiltDeg: () => random.number({max: 100, min: 0, precision: 0.00001}),
 });
