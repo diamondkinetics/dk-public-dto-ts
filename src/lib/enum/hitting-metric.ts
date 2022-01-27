@@ -1,3 +1,5 @@
+import { PlayType } from './play-type';
+
 export class HittingMetric {
 
 	public static readonly POWER_BAT_AVERAGE = new HittingMetric(
@@ -5,74 +7,108 @@ export class HittingMetric {
 		'Applied Swing Power',
 		'powerApplied',
 		'WATTS',
-		'powerBatAvgUpperBound');
+		'powerBatAvgUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly POWER_BAT_ACCEL_MAX = new HittingMetric(
 		'POWER_BAT_ACCEL_MAX',
 		'Max Acceleration',
 		'powerAccelMax',
 		'G',
-		'powerBatCOMAccelMaxUpperBound');
+		'powerBatCOMAccelMaxUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly POWER_BAT_MOMENTUM = new HittingMetric(
 		'POWER_BAT_MOMENTUM',
 		'Impact Momentum',
 		'powerMomentumImpact',
 		'KG-M/SEC',
-		'powerBatMomentumImpactUpperBound');
+		'powerBatMomentumImpactUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		false);
+
 	public static readonly SPEED_HANDS_MAX = new HittingMetric(
 		'SPEED_HANDS_MAX',
 		'Max Hand Speed',
 		'speedHandsMax',
 		'MPH',
-		'speedHandsMaxUpperBound');
+		'speedHandsMaxUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly SPEED_BAT_BARREL_MAX = new HittingMetric(
 		'SPEED_BAT_BARREL_MAX',
 		'Max Barrel Speed',
 		'speedBarrelMax',
 		'MPH',
-		'speedBatBarrelMaxUpperBound');
+		'speedBatBarrelMaxUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		false);
+
 	public static readonly SPEED_IMPACT_EFFICIENCY = new HittingMetric(
 		'SPEED_IMPACT_EFFICIENCY',
 		'Speed Efficiency',
 		'speedEfficiency',
 		'%',
-		'speedBatTimeImpactMaxUpperBound');
+		'speedBatTimeImpactMaxUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly QUICKNESS_BAT_TTI = new HittingMetric(
 		'QUICKNESS_BAT_TTI',
 		'Trigger To Impact',
 		'quicknessTriggerImpact',
 		'MSEC',
-		'quicknessBatTimeTriggerImpactLowerBound');
+		'quicknessBatTimeTriggerImpactLowerBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		false);
+
 	public static readonly CONTROL_BAT_APPROACH_ANGLE = new HittingMetric(
 		'CONTROL_BAT_APPROACH_ANGLE',
 		'Attack Angle',
 		'controlApproachAngleImpact',
 		'DEG',
-		'controlBatApproachAngleImpactUpperBound');
+		'controlBatApproachAngleImpactUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		false);
+
 	public static readonly CONTROL_HANDS_CASTING = new HittingMetric(
 		'CONTROL_HANDS_CASTING',
 		'Hand Cast',
 		'controlHandCastMax',
 		'IN',
-		'controlHandsDistanceAwayMaxUpperBound');
+		'controlHandsDistanceAwayMaxUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly CONTROL_BAT_TO_PITCHER = new HittingMetric(
 		'CONTROL_BAT_TO_PITCHER',
 		'Distance In The Zone',
 		'controlDistanceInTheZone',
 		'IN',
-		'controlBatDistanceTraveledTowardPitcherUpperBound');
+		'controlBatDistanceTraveledTowardPitcherUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	public static readonly CONTROL_BAT_VERTICAL_ANGLE = new HittingMetric(
 		'CONTROL_BAT_VERTICAL_ANGLE',
 		'Vertical Bat Angle',
 		'controlBatVerticalAngleImpact',
 		'DEG',
-		'controlBatVerticalAngleImpactUpperBound');
+		'controlBatVerticalAngleImpactUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
 
 	constructor(
 		private readonly key: string,
 		private readonly name: string,
 		private readonly propertyName: string,
 		private readonly unit: string,
-		private readonly populationDataProperty: string
+		private readonly populationDataProperty: string,
+		private readonly playTypes: PlayType[],
+		private readonly subscriptionRequired: boolean
 	) {}
 
 	public getKey(): string {
@@ -93,6 +129,14 @@ export class HittingMetric {
 
 	public getPopulationDataProperty(): string {
 		return this.populationDataProperty;
+	}
+
+	public getPlayTypes(): PlayType[] {
+		return this.playTypes;
+	}
+
+	public isSubscriptionRequired(): boolean {
+		return this.subscriptionRequired;
 	}
 
 	public static asArray() {
