@@ -9,3 +9,4 @@ export * from './v5';
 export * from './abstract-syncable.dto';
 export * from './reset-password-request.dto';
 export * from './logged-in-user.dto';
+export * from './forgot-password-request.dto';
