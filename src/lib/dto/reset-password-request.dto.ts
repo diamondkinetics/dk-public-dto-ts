@@ -2,6 +2,6 @@ export interface ResetPasswordRequestDTO {
 	email: string;
 	username?: string;
 	oldPassword?: string;
-	forgotOldPasswordSecret?: string;
+	forgotPasswordSecret?: string;
 	newPassword: string;
 }
