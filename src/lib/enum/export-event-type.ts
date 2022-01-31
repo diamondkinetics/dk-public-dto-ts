@@ -1,6 +1,7 @@
 export class ExportEventType {
 
 	public static readonly SWINGS = new ExportEventType('Swings');
+	public static readonly SWINGS_LITE = new ExportEventType('Swings Lite');
 	public static readonly PITCHES = new ExportEventType('Pitches');
 
 	constructor(private readonly name: string) {}
