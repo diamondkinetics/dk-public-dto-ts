@@ -53,7 +53,7 @@ export class PitchingMetric {
 	public static readonly DELIVERY_TIME_TO_PLATE = new PitchingMetric(
 		'DELIVERY_TIME_TO_PLATE',
 		'Time to Plate',
-		'timeToPlate',
+		'deliveryTimeToPlate',
 		[PlayType.BASEBALL],
 		true,
 		'SEC');
