@@ -110,6 +110,13 @@ export class PitchingMetric {
 		true,
 		'%');
 
+	public static readonly SPIN_DIRECTION = new PitchingMetric(
+		'SPIN_DIRECTION',
+		'Spin Direction',
+		'spinDirection',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true);
+
 	constructor(
 		private readonly key: string,
 		private readonly name: string,
