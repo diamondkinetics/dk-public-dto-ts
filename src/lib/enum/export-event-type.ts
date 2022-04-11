@@ -17,6 +17,7 @@ export class ExportEventType {
 	public static asArray(): ExportEventType[] {
 		return [
 			ExportEventType.SWINGS,
+			ExportEventType.SWINGS_LITE,
 			ExportEventType.PITCHES
 		];
 	}
