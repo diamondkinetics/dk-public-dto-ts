@@ -156,7 +156,7 @@ export class HittingMetric {
 	}
 
 	public static byKey(key: string): HittingMetric | undefined {
-		return HittingMetric.asArray().find(m => m.key === key);
+		return HittingMetric.asArray().find(m => m.getKey() === key);
 	}
 
 	public static isHittingMetric(metric: any): metric is HittingMetric {

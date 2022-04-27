@@ -170,7 +170,7 @@ export class PitchingMetric {
 	}
 
 	public static byKey(key: string): PitchingMetric | undefined {
-		return PitchingMetric.asArray().find(m => m.key === key);
+		return PitchingMetric.asArray().find(m => m.getKey() === key);
 	}
 
 	public static isPitchingMetric(metric: any): metric is PitchingMetric {
