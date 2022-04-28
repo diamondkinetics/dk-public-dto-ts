@@ -2,6 +2,7 @@ import { UserProfileBasicsDTOV2 } from '../v2';
 
 export interface GroupMembershipSummaryDTOV4 {
 	uuid: string;
+	deleted: boolean;
 	groupUuid: string;
 	parentGroupUuid?: string;
 	groupFullName: string;

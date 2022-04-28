@@ -8,6 +8,7 @@ const membership = () => mockGroupMembershipDTOV4();
 
 export const mockGroupMembershipSummaryDTOV4 = define<GroupMembershipSummaryDTOV4>({
 	uuid: () => random.uuid(),
+	deleted: () => random.boolean(),
 	groupUuid: () => membership().group?.uuid ?? random.uuid(),
 	parentGroupUuid: () => membership().group?.parentGroup?.uuid ?? random.uuid(),
 	groupFullName: () => membership().group?.fullName ?? company.companyName(),
