@@ -10,6 +10,7 @@ export { CompetitionLevelDTOV2 } from './competition-level.dto.v2';
 export { CouponDetailsResponseDTOV2 } from './coupon-details-response.dto.v2';
 export { CouponRequestDTOV2 } from './coupon-request.dto.v2';
 export { CreateCouponRequestDTOV2 } from './create-coupon-request.dto.v2';
+export { CreateCouponResponseDTOV2 } from './create-coupon-response.dto.v2';
 export { DeletedCardDTOV2 } from './deleted-card.dto.v2';
 export { EventDTOV2 } from './event.dto.v2';
 export { LeaderboardDTOV2 } from './leaderboard.dto.v2';
