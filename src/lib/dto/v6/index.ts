@@ -1,4 +1,10 @@
 /**
+ * Request Interfaces
+ */
+export { AbstractSyncableCreateRequestV6 } from './request/abstract-syncable-create-request-v6';
+export { AbstractSyncableUpdateRequestV6 } from './request/abstract-syncable-update-request-v6';
+
+/**
  * Response Interfaces
  */
  export { AbstractTimestampResponseV6 } from './response/abstract-timestamp-response-v6';
