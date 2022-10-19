@@ -1,6 +1,6 @@
 import { AbstractSyncableCreateRequestV6 } from './abstract-syncable-create-request-v6';
 
-export interface UserProfileCreateRequestNoCredentials extends AbstractSyncableCreateRequestV6 {
+export interface UserProfileCreateRequestNoCredentialsV6 extends AbstractSyncableCreateRequestV6 {
   firstName: string;
   lastName: string;
   coach: boolean;
