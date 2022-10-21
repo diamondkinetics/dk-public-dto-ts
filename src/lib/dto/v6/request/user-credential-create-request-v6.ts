@@ -6,6 +6,6 @@ export interface UserCredentialCreateRequestV6 extends AbstractSyncableCreateReq
   password?: string;
   secondaryEmail?: string;
   idProvider?: string;
-  isPrimary?: boolean;
+  primary?: boolean;
   externalId?: string;
 }
