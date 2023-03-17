@@ -17,8 +17,13 @@ export interface UserProfileResponseV6 extends AbstractSyncableResponseV6 {
   privateProfile?: boolean;
   zipCode?: string;
   profileImageUrl?: string;
+  backgroundImageUrl?: string;
   userMetaData?: string;
   xpAndLevel: UserXPLevelResponseV6;
+  avatarUuid?: string;
+  cardDesignUuid?: string;
+  badgeUuid?: string;
+  playerNumber?: string;
   youthRegistration?: boolean;
   referringOrganizationUuid?: string;
   state?: string;
