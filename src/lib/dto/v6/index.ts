@@ -5,6 +5,7 @@ export { AbstractSyncableCreateRequestV6 } from './request/abstract-syncable-cre
 export { AbstractSyncableUpdateRequestV6 } from './request/abstract-syncable-update-request-v6';
 export { UserProfileCreateRequestNoCredentialsV6 } from './request/user-profile-create-request-no-credentials-v6';
 export { UserProfileCreateRequestV6 } from './request/user-profile-create-request-v6';
+export { UserProfileUpdateRequestV6 } from './request/user-profile-update-request-v6';
 export { UserCredentialCreateRequestV6 } from './request/user-credential-create-request-v6';
 
 /**
@@ -22,5 +23,6 @@ export { UserCredentialCreateRequestV6 } from './request/user-credential-create-
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
  export { UserCredentialCollectionResponseSummaryV6 } from './response/user-credential-collection-response-summary-v6';
  export { UserProfileResponseV6 } from './response/user-profile-response-v6';
+ export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
