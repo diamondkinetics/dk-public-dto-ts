@@ -27,6 +27,17 @@ export class DKSubscription {
 		'Monthly Hitting Seat License',
 		SubscriptionType.HITTING,
 		1);
+	public static readonly DK_PLUS_MONTHLY = new DKSubscription(
+		'DK_PLUS_MONTHLY',
+		'DK+ Monthly',
+		SubscriptionType.DK_PLUS,
+		1);
+	public static readonly DK_PLUS_YEARLY = new DKSubscription(
+		'DK_PLUS_YEARLY',
+		'DK+ Yearly',
+		SubscriptionType.DK_PLUS,
+		12);
+
 
 	constructor(
 		private readonly name: string,
@@ -53,6 +64,8 @@ export class DKSubscription {
 
 	public static asArray(): DKSubscription[] {
 		return [
+			DKSubscription.DK_PLUS_MONTHLY,
+			DKSubscription.DK_PLUS_YEARLY,
 			DKSubscription.ANNUAL_PREMIUM_HITTER,
 			DKSubscription.ANNUAL_PREMIUM_PITCHER,
 			DKSubscription.MONTHLY_PREMIUM_HITTER,
@@ -64,5 +77,4 @@ export class DKSubscription {
 	public static byName(name: string): DKSubscription | undefined {
 		return DKSubscription.asArray().find(sub => sub.getName() === name);
 	}
-
 }
