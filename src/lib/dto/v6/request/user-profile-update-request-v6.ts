@@ -15,4 +15,5 @@ export interface UserProfileUpdateRequestV6 {
   cardDesignUuid: string;
   badgeUuid: string;
   playerNumber: string;
+  clientUpdatedTime: string;
 }
