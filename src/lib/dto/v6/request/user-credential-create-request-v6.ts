@@ -1,11 +1,11 @@
 import { AbstractSyncableCreateRequestV6 } from './abstract-syncable-create-request-v6';
 
 export interface UserCredentialCreateRequestV6 extends AbstractSyncableCreateRequestV6 {
-  email?: string;
+  email: string;
   nickname?: string;
   password?: string;
   secondaryEmail?: string;
   idProvider?: string;
   primary?: boolean;
-  externalId?: string;
+  externalId: string;
 }
