@@ -1,6 +1,7 @@
+import { Metric } from './metric';
 import { PlayType } from './play-type';
 
-export class PitchingMetric {
+export class PitchingMetric implements Metric {
 
 	public static readonly RELEASE_SPEED = new PitchingMetric(
 		'RELEASE_SPEED',
@@ -144,6 +145,10 @@ export class PitchingMetric {
 
 	public getPlayTypes(): PlayType[] {
 		return this.playTypes;
+	}
+
+	public getPopulationDataProperty(): string | undefined {
+		return;
 	}
 
 	public isSubscriptionRequired(): boolean {
