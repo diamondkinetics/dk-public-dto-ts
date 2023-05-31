@@ -11,6 +11,7 @@ export { PitchType } from './pitch-type';
 export { PlayType } from './play-type';
 export { Position } from './position';
 export { SessionType } from './session-type';
+export { Metric } from './metric';
 export { HittingMetric } from './hitting-metric';
 export { PitchingMetric } from './pitching-metric';
 export { GroupMembershipRole } from './group-membership-role';
