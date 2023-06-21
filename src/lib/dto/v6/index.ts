@@ -28,3 +28,5 @@ export { UserCredentialCreateRequestV6 } from './request/user-credential-create-
  export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
+ export { ActivityDefinitionCollectionResponseV6 } from './response/activity-definition-collection-response-v6';
+ export { ActivityDefinitionResponseV6 } from './response/activity-definition-response-v6';
