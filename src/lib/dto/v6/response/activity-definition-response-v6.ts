@@ -5,26 +5,32 @@ export interface ActivityDefinitionResponseV6 extends AbstractSyncableResponseV6
   smallActivityImageURL: string;
   largeActivityImageURL: string;
   isPremium: boolean;
-  introConfig: {
-    introVideoUrl: string;
-    introVideoThumbnail: string;
-    coverImageURL: string;
-    description: string;
-    aboutImageUrls: string[];
-    aboutDescription: string;
-  };
+  introConfig: IntroConfig; 
   engineType: string;
-  engineConfig: {
-    blocks: VideoBlock[];
-    assets: AssetEntry[];
-  };
-  rewards: {
-    totalCount: number;
-    pageNumber: number;
-    pageSize: number;
-    totalPages: number;
-    data: RewardData[];
-  };
+  engineConfig: EngineConfig;
+  rewards: Rewards; 
+}
+
+export interface IntroConfig { 
+  introVideoUrl: string;
+  introVideoThumbnail: string;
+  coverImageURL: string;
+  description: string;
+  aboutImageUrls: string[];
+  aboutDescription: string;
+}
+
+export interface EngineConfig {
+  blocks: VideoBlock[];
+  assets: AssetEntry[];
+}
+
+export interface Rewards{ 
+  totalCount: number;
+  pageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  data: RewardData[];
 }
 
 export interface VideoBlock {
@@ -33,10 +39,7 @@ export interface VideoBlock {
   displayMetric: string;
   displayChart: string;
   videoUrl: string;
-  advanceCondition: {
-    condition: string;
-    threshold: number;
-  };
+  advanceCondition: AdvanceCondition;
   blockIndex: number;
 }
 
@@ -56,30 +59,41 @@ export interface RewardData {
   description: string;
   fullName: string;
   xpEarned: number;
-  earnedItem: {
-    serverCreatedTime: string;
-    serverUpdatedTime: string;
-    clientCreatedTime: string;
-    clientUpdatedTime: string;
-    uuid: string;
-    deleted: boolean;
-    startDateTime: string;
-    endDateTime: string;
-    templateUuid: string;
-    publicItem: boolean;
-    fullName: string;
-    description: string;
-    assets: {
-      additionalProp1: string;
-      additionalProp2: string;
-      additionalProp3: string;
-    };
-    config: {
-      additionalProp1: string;
-      additionalProp2: string;
-      additionalProp3: string;
-    };
-  };
+  earnedItem: EarnedItem;
   criteriaType: string;
   criteriaThreshold: number;
+}
+
+export interface AdvanceCondition { 
+  condition: string;
+  threshold: number;
+}
+
+export interface EarnedItem { 
+  serverCreatedTime: string;
+  serverUpdatedTime: string;
+  clientCreatedTime: string;
+  clientUpdatedTime: string;
+  uuid: string;
+  deleted: boolean;
+  startDateTime: string;
+  endDateTime: string;
+  templateUuid: string;
+  publicItem: boolean;
+  fullName: string;
+  description: string;
+  assets: Assets;
+  config: Config;
+}
+
+export interface Assets { 
+  additionalProp1: string;
+  additionalProp2: string;
+  additionalProp3: string;
+}
+
+export interface Config { 
+  additionalProp1: string;
+  additionalProp2: string;
+  additionalProp3: string;
 }
