@@ -3,6 +3,8 @@
  */
 export { AbstractSyncableCreateRequestV6 } from './request/abstract-syncable-create-request-v6';
 export { AbstractSyncableUpdateRequestV6 } from './request/abstract-syncable-update-request-v6';
+export { ActivityDefinitionCreateRequestV6 } from './request/activity-definition-create-request-v6';
+export { ActivityDefinitionUpdateRequestV6 } from './request/activity-definition-update-request-v6';
 export { UserProfileCreateRequestNoCredentialsV6 } from './request/user-profile-create-request-no-credentials-v6';
 export { UserProfileCreateRequestV6 } from './request/user-profile-create-request-v6';
 export { UserProfileUpdateRequestV6 } from './request/user-profile-update-request-v6';
