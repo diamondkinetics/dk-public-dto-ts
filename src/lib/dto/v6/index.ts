@@ -9,11 +9,14 @@ export { UserProfileCreateRequestNoCredentialsV6 } from './request/user-profile-
 export { UserProfileCreateRequestV6 } from './request/user-profile-create-request-v6';
 export { UserProfileUpdateRequestV6 } from './request/user-profile-update-request-v6';
 export { UserCredentialCreateRequestV6 } from './request/user-credential-create-request-v6';
+export { ViewEntryCreateRequestV6 } from './request/view-entry-create-request-v6';
+export { ViewEntryUpdateRequestV6 } from './request/view-entry-update-request-v6';
 
 /**
  * Response Interfaces
  */
  export { AbstractTimestampResponseV6 } from './response/abstract-timestamp-response-v6';
+ export { AbstractTimeWindowResponseV6 } from './response/abstract-timewindow-response-v6';
  export { AbstractSyncableCollectionResponseSummaryV6 } from './response/abstract-syncable-collection-response-summary-v6';
  export { AbstractSyncableResponseV6 } from './response/abstract-syncable-response-v6';
  export { AbstractUserOwnedResponseV6 } from './response/abstract-user-owned-response-v6';
@@ -32,3 +35,5 @@ export { UserCredentialCreateRequestV6 } from './request/user-credential-create-
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
  export { ActivityDefinitionCollectionResponseV6 } from './response/activity-definition-collection-response-v6';
  export { ActivityDefinitionResponseV6 } from './response/activity-definition-response-v6';
+ export { ViewEntryResponseV6 } from './response/view-entry-response-v6';
+ export { ViewEntryCollectionResponseV6 } from './response/view-entry-collection-response-v6';
