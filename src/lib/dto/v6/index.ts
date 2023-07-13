@@ -11,6 +11,8 @@ export { UserProfileUpdateRequestV6 } from './request/user-profile-update-reques
 export { UserCredentialCreateRequestV6 } from './request/user-credential-create-request-v6';
 export { ViewEntryCreateRequestV6 } from './request/view-entry-create-request-v6';
 export { ViewEntryUpdateRequestV6 } from './request/view-entry-update-request-v6';
+export { ViewSectionCreateRequestV6 } from './request/view-section-create-request-v6';
+export { ViewSectionUpdateRequestV6 } from './request/view-section-update-request-v6';
 
 /**
  * Response Interfaces
@@ -40,3 +42,5 @@ export { ViewEntryUpdateRequestV6 } from './request/view-entry-update-request-v6
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
 
+ export { ViewSectionResponseV6 } from './response/view-section-response-v6';
+ export { ViewSectionCollectionResponseV6 } from './response/view-section-collection-response-v6';
