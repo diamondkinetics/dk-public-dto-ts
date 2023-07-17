@@ -43,4 +43,5 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
  export { ViewSectionResponseV6 } from './response/view-section-response-v6';
  export { ViewSectionCollectionResponseV6 } from './response/view-section-collection-response-v6'; 
-
+ export { ItemResponseV6 } from './response/activity-reward-response-v6';
+ export { AbstractItemResponseV6 } from './response/abstract-item-response-v6';

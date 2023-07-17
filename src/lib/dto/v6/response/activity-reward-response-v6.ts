@@ -6,18 +6,13 @@ export interface ActivityRewardResponseV6 extends AbstractSyncableResponseV6{
     description: string; 
     fullName: string; 
     xpEarned: number;
-    earnedItem: ItemResponseV6;
-    criteriaType: string;
-    criteriaThreshold: number;
+    earnedItem?: ItemResponseV6;
+    criteriaType?: string;
+    criteriaThreshold?: number;
 }
 
 export interface ItemResponseV6 extends AbstractItemResponseV6{ 
-    assets: AssetConfigInterface;
-    config: AssetConfigInterface;
+    assets: {};
+    config: {};
 }
 
-export interface AssetConfigInterface{
-    additionalProp1: string;
-    additionalProp2: string; 
-    additionalProp3: string;
-}
