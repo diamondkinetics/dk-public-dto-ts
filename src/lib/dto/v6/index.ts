@@ -41,8 +41,5 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ViewEntryCollectionResponseV6 } from './response/view-entry-collection-response-v6';
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
-
  export { ViewSectionResponseV6 } from './response/view-section-response-v6';
- export { ViewSectionCollectionResponseV6 } from './response/view-section-collection-response-v6'; export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
- export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
-
+ export { ViewSectionCollectionResponseV6 } from './response/view-section-collection-response-v6'; 
