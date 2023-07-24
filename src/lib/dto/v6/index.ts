@@ -36,7 +36,7 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { UserResponseV6 } from './response/user-response-v6';
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
  export { ActivityDefinitionCollectionResponseV6 } from './response/activity-definition-collection-response-v6';
- export { ActivityDefinitionResponseV6 } from './response/activity-definition-response-v6';
+ export * from './response/activity-definition-response-v6';
  export { ViewEntryResponseV6 } from './response/view-entry-response-v6';
  export { ViewEntryCollectionResponseV6 } from './response/view-entry-collection-response-v6';
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';

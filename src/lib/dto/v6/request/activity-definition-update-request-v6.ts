@@ -1,3 +1,9 @@
+import { AdvanceConditionType } from './../../../enum/advance-condition-type';
+import { DisplayChart } from './../../../enum/display-chart';
+import { DisplayMetric } from './../../../enum/display-metric';
+import { EngineType } from './../../../enum/engine-type';
+import { EventSource } from './../../../enum/event-source';
+import { VideoBlockType } from './../../../enum/video-block-type';
 import { AbstractSyncableUpdateRequestV6 } from './abstract-syncable-update-request-v6';
 
 export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdateRequestV6 {
@@ -6,7 +12,7 @@ export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdat
   largeActivityImageUrl: string;
   isPremium: boolean;
   introConfig: IntroScreenConfigUpdateRequestV6;
-  engineType: string;
+  engineType: EngineType;
   blocks: VideoBlockUpdateRequestV6[];
   assets: AssetEntryUpdateRequestV6[];
   rewardUuids: string[];
@@ -22,17 +28,17 @@ export interface IntroScreenConfigUpdateRequestV6 {
 }
 
 export interface VideoBlockUpdateRequestV6 {
-  type: string;
-  eventSource: string;
-  displayMetric?: string;
-  displayChart?: string;
+  type: VideoBlockType;
+  eventSource: EventSource;
+  displayMetric?: DisplayMetric;
+  displayChart?: DisplayChart;
   videoUrl: string;
   advanceCondition: AdvanceConditionUpdateRequestV6;
   blockIndex: number;  
 }
 
 export interface AdvanceConditionUpdateRequestV6 {
-  condition: string;
+  condition: AdvanceConditionType;
   threshold: number;
 }
 

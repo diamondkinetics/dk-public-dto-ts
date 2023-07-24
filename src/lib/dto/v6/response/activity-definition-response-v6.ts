@@ -1,4 +1,10 @@
+import { AdvanceConditionType } from './../../../enum/advance-condition-type';
+import { DisplayChart } from './../../../enum/display-chart';
+import { DisplayMetric } from './../../../enum/display-metric';
+import { EngineType } from './../../../enum/engine-type';
+import { EventSource } from './../../../enum/event-source';
 import { AbstractSyncableResponseV6 } from './abstract-syncable-response-v6';
+import { ActivityRewardCollectionResponseV6 } from './activity-reward-collection-response-v6';
 
 export interface ActivityDefinitionResponseV6 extends AbstractSyncableResponseV6 {
   name: string;
@@ -6,9 +12,9 @@ export interface ActivityDefinitionResponseV6 extends AbstractSyncableResponseV6
   largeActivityImageURL: string;
   isPremium: boolean;
   introConfig: IntroConfig; 
-  engineType: string;
+  engineType: EngineType;
   engineConfig: EngineConfig;
-  rewards: Rewards; 
+  rewards: ActivityRewardCollectionResponseV6; 
 }
 
 export interface IntroConfig { 
@@ -25,19 +31,11 @@ export interface EngineConfig {
   assets: AssetEntry[];
 }
 
-export interface Rewards{ 
-  totalCount: number;
-  pageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  data: RewardData[];
-}
-
 export interface VideoBlock {
   type: string;
-  eventSource: string;
-  displayMetric: string;
-  displayChart: string;
+  eventSource: EventSource;
+  displayMetric: DisplayMetric;
+  displayChart: DisplayChart;
   videoUrl: string;
   advanceCondition: AdvanceCondition;
   blockIndex: number;
@@ -48,52 +46,7 @@ export interface AssetEntry {
   value: string;
 }
 
-export interface RewardData {
-  serverCreatedTime: string;
-  serverUpdatedTime: string;
-  clientCreatedTime: string;
-  clientUpdatedTime: string;
-  uuid: string;
-  deleted: boolean;
-  type: string;
-  description: string;
-  fullName: string;
-  xpEarned: number;
-  earnedItem: EarnedItem;
-  criteriaType: string;
-  criteriaThreshold: number;
-}
-
 export interface AdvanceCondition { 
-  condition: string;
+  condition: AdvanceConditionType;
   threshold: number;
-}
-
-export interface EarnedItem { 
-  serverCreatedTime: string;
-  serverUpdatedTime: string;
-  clientCreatedTime: string;
-  clientUpdatedTime: string;
-  uuid: string;
-  deleted: boolean;
-  startDateTime: string;
-  endDateTime: string;
-  templateUuid: string;
-  publicItem: boolean;
-  fullName: string;
-  description: string;
-  assets: Assets;
-  config: Config;
-}
-
-export interface Assets { 
-  additionalProp1: string;
-  additionalProp2: string;
-  additionalProp3: string;
-}
-
-export interface Config { 
-  additionalProp1: string;
-  additionalProp2: string;
-  additionalProp3: string;
 }
