@@ -3,4 +3,5 @@ export interface LeaderboardEntryResponseV6 {
   avatarUrl: string;
   name: string;
   value: number;
+  levelStatusName: string;
 }
