@@ -1,7 +1,0 @@
-export enum EventSource {
-  SWING = 'SWING',
-  SWING_VIDEO = 'SWING_VIDEO',
-  PITCH = 'PITCH',
-  PITCH_VIDEO = 'PITCH_VIDEO',
-  PITCH_CHART = 'PITCH_CHART'
-}

@@ -1,6 +1,0 @@
-export enum ActivityRewardType {
-  ACTIVITY = 'ACTIVITY',
-  PERFORMANCE = 'PERFORMANCE',
-  MILESTONE = 'MILESTONE',
-  NETWORK = 'NETWORK'
-}

@@ -1,7 +1,7 @@
 import { AbstractSyncableResponseV6 } from './abstract-syncable-response-v6';
-import { AbstractItemResponseV6 } from './abstract-item-response-v6';
-import { ActivityRewardType } from './../../../enum/activity-reward-type';
-import { CriteriaType } from './../../../enum/criteria-type';
+import { ActivityRewardType } from './../../../types/activity-reward-type';
+import { CriteriaType } from './../../../types/criteria-type';
+import { ItemResponseV6 } from './item-response-v6';
 
 export interface ActivityRewardResponseV6 extends AbstractSyncableResponseV6 {
   type: ActivityRewardType;
@@ -11,9 +11,4 @@ export interface ActivityRewardResponseV6 extends AbstractSyncableResponseV6 {
   earnedItem?: ItemResponseV6;
   criteriaType?: CriteriaType;
   criteriaThreshold?: number;
-}
-
-export interface ItemResponseV6 extends AbstractItemResponseV6 {
-  assets: {};
-  config: {};
 }

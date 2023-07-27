@@ -1,9 +1,9 @@
-import { AdvanceConditionType } from './../../../enum/advance-condition-type';
-import { VideoBlockType } from './../../../enum/video-block-type';
-import { EngineType } from './../../../enum/engine-type';
-import { EventSource } from './../../../enum/event-source';
-import { DisplayMetric } from './../../../enum/display-metric';
-import { DisplayChart } from './../../../enum/display-chart';
+import { AdvanceConditionType } from './../../../types/advance-condition-type';
+import { VideoBlockType } from './../../../types/video-block-type';
+import { EngineType } from './../../../types/engine-type';
+import { EventSource } from './../../../types/event-source';
+import { DisplayMetric } from './../../../types/display-metric';
+import { DisplayChart } from './../../../types/display-chart';
 import { AbstractSyncableCreateRequestV6 } from './abstract-syncable-create-request-v6';
 
 export interface ActivityDefinitionCreateRequestV6 extends AbstractSyncableCreateRequestV6 {
