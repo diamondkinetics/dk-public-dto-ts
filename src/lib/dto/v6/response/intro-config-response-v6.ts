@@ -1,7 +1,7 @@
 export interface IntroConfigResponseV6 { 
   introVideoUrl: string;
   introVideoThumbnail: string;
-  coverImageURL: string;
+  coverImageUrl: string;
   description: string;
   aboutImageUrls: string[];
   aboutDescription: string;
