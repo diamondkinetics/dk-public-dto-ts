@@ -1,10 +1,11 @@
+import { VideoBlockType } from './../../../types/video-block-type';
 import { DisplayChart } from './../../../types/display-chart';
 import { DisplayMetric } from './../../../types/display-metric';
 import { EventSource } from './../../../types/event-source';
 import { AdvanceConditionResponseV6 } from './advance-condition-response-v6';
 
 export interface VideoBlockResponseV6 {
-  type: string;
+  type: VideoBlockType;
   eventSource: EventSource;
   displayMetric: DisplayMetric;
   displayChart: DisplayChart;
