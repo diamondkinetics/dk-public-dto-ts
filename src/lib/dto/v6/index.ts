@@ -7,6 +7,7 @@ export { AbstractUserOwnedCreateRequestV6 } from './request/abstract-user-owned-
 export { ActivityDefinitionCreateRequestV6 } from './request/activity-definition-create-request-v6';
 export { ActivityDefinitionUpdateRequestV6 } from './request/activity-definition-update-request-v6';
 export { ChallengeProgressCreateRequestV6 } from './request/challenge-progress-create-request-v6';
+export { ChallengeProgressUpdateRequestV6 } from './request/challenge-progress-update-request-v6';
 export { UserProfileCreateRequestNoCredentialsV6 } from './request/user-profile-create-request-no-credentials-v6';
 export { UserProfileCreateRequestV6 } from './request/user-profile-create-request-v6';
 export { UserProfileUpdateRequestV6 } from './request/user-profile-update-request-v6';
