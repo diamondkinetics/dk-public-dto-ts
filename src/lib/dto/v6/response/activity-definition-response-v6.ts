@@ -9,8 +9,8 @@ import { WebViewConfigResponseV6 } from './web-view-config-response-v6';
 
 export interface ActivityDefinitionResponseV6 extends AbstractTimeWindowResponseV6 {
   name: string;
-  smallActivityImageURL: string;
-  largeActivityImageURL: string;
+  smallActivityImageUrl: string;
+  largeActivityImageUrl: string;
   isPremium: boolean;
   introConfig: IntroConfigResponseV6; 
   engineType: EngineType;
