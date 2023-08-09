@@ -1,7 +1,7 @@
-import { AssetEntryCollectionResponseV6 } from './asset-entry-collection-response-v6';
-import { VideoBlockCollectionResponseV6 } from './video-block-collection-response-v6';
+import { AssetEntryResponseV6 } from './asset-entry-response-v6';
+import { VideoBlockResponseV6 } from './video-block-response-v6';
 
 export interface EngineConfigResponseV6 {
-  blocks: VideoBlockCollectionResponseV6;
-  assets: AssetEntryCollectionResponseV6;
+  blocks: VideoBlockResponseV6[];
+  assets: AssetEntryResponseV6[];
 }
