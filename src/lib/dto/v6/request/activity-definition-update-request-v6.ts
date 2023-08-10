@@ -11,6 +11,7 @@ export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdat
   smallActivityImageUrl: string;
   largeActivityImageUrl: string;
   isPremium: boolean;
+  xpEarned: number;
   introConfig: IntroScreenConfigUpdateRequestV6;
   engineType: EngineType;
   blocks: VideoBlockUpdateRequestV6[];
