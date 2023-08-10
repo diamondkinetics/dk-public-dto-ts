@@ -11,6 +11,7 @@ export interface ActivityDefinitionCreateRequestV6 extends AbstractSyncableCreat
   smallActivityImageUrl: string;
   largeActivityImageUrl: string;
   isPremium: boolean;
+  xpEarned: number;
   introConfig: IntroScreenConfigCreateRequestV6;
   engineType: EngineType;
   engineConfig: EngineConfigCreateRequestV6;
