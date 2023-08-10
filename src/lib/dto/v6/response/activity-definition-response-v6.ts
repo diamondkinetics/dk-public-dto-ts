@@ -12,6 +12,7 @@ export interface ActivityDefinitionResponseV6 extends AbstractTimeWindowResponse
   smallActivityImageUrl: string;
   largeActivityImageUrl: string;
   isPremium: boolean;
+  xpEarned: number;
   introConfig: IntroConfigResponseV6; 
   engineType: EngineType;
   engineConfig: EngineConfigResponseV6;
