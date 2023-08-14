@@ -52,9 +52,11 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
  export { QuestionResponseV6 } from './response/question-response-v6';
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
+ export { UserActivityResponseV6 } from './response/user-activity-response-v6';
  export { UserCredentialResponseV6 } from './response/user-credential-response-v6';
  export { UserCredentialCollectionResponseV6 } from './response/user-credential-collection-response-v6';
  export { UserCredentialCollectionResponseSummaryV6 } from './response/user-credential-collection-response-summary-v6';
+ export { UserOwnedItemResponseV6 } from './response/user-owned-item-response-v6';
  export { UserProfileResponseV6 } from './response/user-profile-response-v6';
  export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
