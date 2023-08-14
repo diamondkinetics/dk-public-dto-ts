@@ -38,6 +38,12 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { AnswerResponseV6 } from './response/answer-response-v6';
  export { AssetEntryResponseV6 } from './response/asset-entry-response-v6';
  export { AssetEntryCollectionResponseV6 } from './response/asset-entry-collection-response-v6';
+ export { AvatarResponseV6 } from './response/avatar-response-v6';
+ export { AvatarCollectionResponseV6 } from './response/avatar-collection-response-v6';
+ export { BadgesResponseV6 } from './response/badges-response-v6';
+ export { BadgesCollectionResponseV6 } from './response/badges-collection-response-v6';
+ export { CardDesignsResponseV6 } from './response/card-designs-response-v6';
+ export { CardDesignsCollectionResponseV6 } from './response/card-designs-collection-response-v6'
  export { ChallengeResponseV6 } from './response/challenge-response-v6';
  export { ChallengeCollectionResponseV6 } from './response/challenge-collection-response-v6';
  export { ChallengeConfigResponseV6 } from './response/challenge-config-response-v6';
