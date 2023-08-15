@@ -1,12 +1,6 @@
-import { AbstractSyncableResponseV6 } from "./abstract-syncable-response-v6";
+import { AbstractItemResponseV6 } from './abstract-item-response-v6';
 
-export interface AvatarResponseV6 extends AbstractSyncableResponseV6 { 
-    startDateTime: string;
-    endDateTime: string;
-    templateUuid: string; 
-    publicItem: boolean;
-    fullName: string;
-    description: string; 
-    avatarURL: string;
-    backgroundColor: string;
+export interface AvatarResponseV6 extends AbstractItemResponseV6 {
+  avatarURL?: string;
+  backgroundColor?: string;
 }

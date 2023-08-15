@@ -31,6 +31,7 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ActivityRewardCreateRequestV6 } from './request/activity-reward-create-request-v6';
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
+ export { ActivityRewardSetResponseV6 } from './response/activity-reward-set-response-v6';
  export { AccountGroupResponseV6 } from './response/account-group-response-v6';
  export { AccountGroupMembershipResponseV6 } from './response/account-group-membership-response-v6';
  export { AccountGroupMembershipCollectionResponseV6 } from './response/account-group-membership-collection-response-v6';
@@ -40,10 +41,10 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { AssetEntryCollectionResponseV6 } from './response/asset-entry-collection-response-v6';
  export { AvatarResponseV6 } from './response/avatar-response-v6';
  export { AvatarCollectionResponseV6 } from './response/avatar-collection-response-v6';
- export { BadgesResponseV6 } from './response/badges-response-v6';
- export { BadgesCollectionResponseV6 } from './response/badges-collection-response-v6';
- export { CardDesignsResponseV6 } from './response/card-designs-response-v6';
- export { CardDesignsCollectionResponseV6 } from './response/card-designs-collection-response-v6'
+ export { BadgeResponseV6 } from './response/badge-response-v6';
+ export { BadgeCollectionResponseV6 } from './response/badge-collection-response-v6';
+ export { CardDesignResponseV6 } from './response/card-design-response-v6';
+ export { CardDesignCollectionResponseV6 } from './response/card-design-collection-response-v6';
  export { ChallengeResponseV6 } from './response/challenge-response-v6';
  export { ChallengeCollectionResponseV6 } from './response/challenge-collection-response-v6';
  export { ChallengeConfigResponseV6 } from './response/challenge-config-response-v6';
@@ -59,9 +60,11 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
  export { QuestionResponseV6 } from './response/question-response-v6';
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
+ export { UserActivityResponseV6 } from './response/user-activity-response-v6';
  export { UserCredentialResponseV6 } from './response/user-credential-response-v6';
  export { UserCredentialCollectionResponseV6 } from './response/user-credential-collection-response-v6';
  export { UserCredentialCollectionResponseSummaryV6 } from './response/user-credential-collection-response-summary-v6';
+ export { UserOwnedItemResponseV6 } from './response/user-owned-item-response-v6';
  export { UserProfileResponseV6 } from './response/user-profile-response-v6';
  export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
