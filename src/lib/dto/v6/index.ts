@@ -30,6 +30,7 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ActivityDefinitionCollectionResponseV6 } from './response/activity-definition-collection-response-v6';
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
+ export { ActivityRewardSetResponseV6 } from './response/activity-reward-set-response-v6';
  export { AccountGroupResponseV6 } from './response/account-group-response-v6';
  export { AccountGroupMembershipResponseV6 } from './response/account-group-membership-response-v6';
  export { AccountGroupMembershipCollectionResponseV6 } from './response/account-group-membership-collection-response-v6';
