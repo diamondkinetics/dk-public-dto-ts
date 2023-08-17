@@ -5,5 +5,4 @@ export interface ViewSectionCreateRequestV6 extends AbstractSyncableCreateReques
   name?: string;
   description?: string;
   displayOrder: number;
-  entryUuids: string[];
 }

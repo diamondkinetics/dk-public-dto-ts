@@ -5,5 +5,4 @@ export interface ViewSectionUpdateRequestV6 extends AbstractSyncableUpdateReques
   name?: string;
   description?: string;
   displayOrder: number;
-  entryUuids: string[];
 }
