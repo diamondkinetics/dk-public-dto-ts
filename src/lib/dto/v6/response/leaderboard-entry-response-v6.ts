@@ -1,4 +1,5 @@
 export interface LeaderboardEntryResponseV6 {
+  userUuid: string;
   rank: number;
   avatarUrl: string;
   name: string;
