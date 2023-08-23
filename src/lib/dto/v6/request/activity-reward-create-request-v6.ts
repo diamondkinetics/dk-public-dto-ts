@@ -2,6 +2,8 @@ import { AbstractSyncableCreateRequestV6 } from "./abstract-syncable-create-requ
 
 export interface ActivityRewardCreateRequestV6 extends AbstractSyncableCreateRequestV6 { 
     itemUuid: string; 
-    criteria: string; 
-    criteriaThreshold: string;
+    multiplicity: number;
+    criteria?: string; 
+    criteriaThreshold?: string;
+    activityRewardSetUuid?: string;
 }
