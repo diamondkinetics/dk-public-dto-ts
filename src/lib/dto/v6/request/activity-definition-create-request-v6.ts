@@ -15,7 +15,7 @@ export interface ActivityDefinitionCreateRequestV6 extends AbstractSyncableCreat
   introConfig: IntroScreenConfigCreateRequestV6;
   engineType: EngineType;
   engineConfig: EngineConfigCreateRequestV6;
-  rewardUuids: string[];
+  rewardSetUuid: string;
 }
 
 export interface IntroScreenConfigCreateRequestV6 {

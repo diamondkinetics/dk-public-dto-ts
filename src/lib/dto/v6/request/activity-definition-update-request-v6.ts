@@ -16,7 +16,7 @@ export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdat
   engineType: EngineType;
   blocks: VideoBlockUpdateRequestV6[];
   assets: AssetEntryUpdateRequestV6[];
-  rewardUuids: string[];
+  rewardSetUuid: string;
 }
 
 export interface IntroScreenConfigUpdateRequestV6 {
