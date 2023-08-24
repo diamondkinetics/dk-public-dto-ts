@@ -4,6 +4,9 @@
 export { AbstractSyncableCreateRequestV6 } from './request/abstract-syncable-create-request-v6';
 export { AbstractSyncableUpdateRequestV6 } from './request/abstract-syncable-update-request-v6';
 export { AbstractUserOwnedCreateRequestV6 } from './request/abstract-user-owned-create-request-v6';
+export { ActivityRewardCreateRequestV6 } from './request/activity-reward-create-request-v6';
+export { ActivityRewardSetCreateRequestV6 } from './request/activity-reward-set-create-request-v6';
+export { ActivityRewardSetUpdateRequestV6 } from './request/activity-reward-set-update-request-v6';
 export { ActivityDefinitionCreateRequestV6 } from './request/activity-definition-create-request-v6';
 export { ActivityDefinitionUpdateRequestV6 } from './request/activity-definition-update-request-v6';
 export { ChallengeProgressCreateRequestV6 } from './request/challenge-progress-create-request-v6';
@@ -28,7 +31,6 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { AbstractUserOwnedResponseV6 } from './response/abstract-user-owned-response-v6';
  export { ActivityDefinitionResponseV6 } from './response/activity-definition-response-v6';
  export { ActivityDefinitionCollectionResponseV6 } from './response/activity-definition-collection-response-v6';
- export { ActivityRewardCreateRequestV6 } from './request/activity-reward-create-request-v6';
  export { ActivityRewardResponseV6 } from './response/activity-reward-response-v6';
  export { ActivityRewardCollectionResponseV6 } from './response/activity-reward-collection-response-v6';
  export { ActivityRewardSetResponseV6 } from './response/activity-reward-set-response-v6';
