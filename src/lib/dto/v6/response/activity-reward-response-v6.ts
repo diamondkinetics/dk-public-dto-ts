@@ -7,6 +7,7 @@ export interface ActivityRewardResponseV6 extends AbstractSyncableResponseV6 {
   type: ActivityRewardType;
   description: string;
   fullName: string;
+  xpEarned: number;
   earnedItem?: ItemResponseV6;
   multiplicity: number;
   criteriaType?: CriteriaType;
