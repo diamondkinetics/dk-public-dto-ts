@@ -8,6 +8,7 @@ export const CriteriaTypes = [
   'CONSECUTIVE_WEEKS',
   'UPDATE_AVATAR',
   'TOTAL_DISTANCE',
+  'TOTAL_POWER',
   'PERSONAL_BEST',
   'THROWS',
   'LEVEL_STATUS',
