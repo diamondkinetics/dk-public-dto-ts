@@ -55,6 +55,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ChallengeProgressCollectionResponseV6 } from './response/challenge-progress-collection-response-v6';
  export { CollectionResponseSummaryV6 } from './response/collection-response-summary-v6';
  export { CollectionResponseV6 } from './response/collection-response-v6';
+ export { CompetitionLevelResponseV6 } from './response/competition-level-response-v6';
+ export { CompetitionLevelCollectionResponseV6 } from './response/competition-level-collection-response-v6';
  export { EngineConfigResponseV6 } from './response/engine-config-response-v6';
  export { IntroConfigResponseV6 } from './response/intro-config-response-v6';
  export { ItemResponseV6 } from './response/item-response-v6';
