@@ -1,3 +1,4 @@
+import { HittingMetricCategory } from '../types';
 import { Metric } from './metric';
 import { PlayType } from './play-type';
 
@@ -10,6 +11,7 @@ export class HittingMetric implements Metric {
 		'powerBatAvgUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'POWER',
 		'WATTS');
 
 	public static readonly POWER_BAT_ACCEL_MAX = new HittingMetric(
@@ -19,6 +21,7 @@ export class HittingMetric implements Metric {
 		'powerBatCOMAccelMaxUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'POWER',
 		'G');
 
 	public static readonly POWER_BAT_MOMENTUM = new HittingMetric(
@@ -28,6 +31,7 @@ export class HittingMetric implements Metric {
 		'powerBatMomentumImpactUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		false,
+		'POWER',
 		'KG-M/SEC');
 
 	public static readonly SPEED_HANDS_MAX = new HittingMetric(
@@ -37,6 +41,7 @@ export class HittingMetric implements Metric {
 		'speedHandsMaxUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'SPEED',
 		'MPH');
 
 	public static readonly SPEED_BAT_BARREL_MAX = new HittingMetric(
@@ -46,6 +51,7 @@ export class HittingMetric implements Metric {
 		'speedBatBarrelMaxUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		false,
+		'SPEED',
 		'MPH');
 
 	public static readonly SPEED_IMPACT_EFFICIENCY = new HittingMetric(
@@ -55,6 +61,7 @@ export class HittingMetric implements Metric {
 		'speedBatTimeImpactMaxUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'SPEED',
 		'%');
 
 	public static readonly QUICKNESS_BAT_TTI = new HittingMetric(
@@ -64,6 +71,7 @@ export class HittingMetric implements Metric {
 		'quicknessBatTimeTriggerImpactLowerBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		false,
+		'QUICKNESS',
 		'MSEC');
 
 	public static readonly CONTROL_BAT_APPROACH_ANGLE = new HittingMetric(
@@ -73,6 +81,7 @@ export class HittingMetric implements Metric {
 		'controlBatApproachAngleImpactUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		false,
+		'CONTROL',
 		'DEG');
 
 	public static readonly CONTROL_HANDS_CASTING = new HittingMetric(
@@ -82,6 +91,7 @@ export class HittingMetric implements Metric {
 		'controlHandsDistanceAwayMaxUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'CONTROL',
 		'IN');
 
 	public static readonly CONTROL_BAT_TO_PITCHER = new HittingMetric(
@@ -91,6 +101,7 @@ export class HittingMetric implements Metric {
 		'controlBatDistanceTraveledTowardPitcherUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'CONTROL',
 		'IN');
 
 	public static readonly CONTROL_BAT_VERTICAL_ANGLE = new HittingMetric(
@@ -100,6 +111,7 @@ export class HittingMetric implements Metric {
 		'controlBatVerticalAngleImpactUpperBound',
 		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
 		true,
+		'CONTROL',
 		'DEG');
 
 	constructor(
@@ -109,7 +121,8 @@ export class HittingMetric implements Metric {
 		private readonly populationDataProperty: string,
 		private readonly playTypes: PlayType[],
 		private readonly subscriptionRequired: boolean,
-		private readonly unit?: string
+		private readonly category: HittingMetricCategory,
+		private readonly unit?: string,
 	) {}
 
 	public getKey(): string {
@@ -138,6 +151,10 @@ export class HittingMetric implements Metric {
 
 	public isSubscriptionRequired(): boolean {
 		return this.subscriptionRequired;
+	}
+
+	public getCategory(): HittingMetricCategory {
+		return this.category;
 	}
 
 	public static asArray() {

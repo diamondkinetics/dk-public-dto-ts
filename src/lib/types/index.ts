@@ -5,4 +5,5 @@ export { DisplayCharts, DisplayChart } from './display-chart';
 export { DisplayMetrics, DisplayMetric } from './display-metric';
 export { EngineTypes, EngineType } from './engine-type';
 export { EventSources, EventSource } from './event-source';
+export { HittingMetricCategories, HittingMetricCategory } from './hitting-metric-category';
 export { VideoBlockTypes, VideoBlockType } from './video-block-type';
