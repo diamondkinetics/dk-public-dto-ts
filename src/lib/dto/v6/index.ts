@@ -65,6 +65,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
  export { QuestionResponseV6 } from './response/question-response-v6';
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
+ export { SwingScoreResponseV6 } from './response/swing-score-response-v6';
+ export { SwingScoreCollectionResponseV6 } from './response/swing-score-collection-response-v6';
  export { UserActivityResponseV6 } from './response/user-activity-response-v6';
  export { UserCredentialResponseV6 } from './response/user-credential-response-v6';
  export { UserCredentialCollectionResponseV6 } from './response/user-credential-collection-response-v6';
