@@ -67,6 +67,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
  export { SwingScoreResponseV6 } from './response/swing-score-response-v6';
  export { SwingScoreCollectionResponseV6 } from './response/swing-score-collection-response-v6';
+ export { SwingScorePopulationResponseV6 } from './response/swing-score-population-response-v6';
+ export { SwingScorePopulationCollectionResponseV6 } from './response/swing-score-population-collection-response-v6';
  export { UserActivityResponseV6 } from './response/user-activity-response-v6';
  export { UserCredentialResponseV6 } from './response/user-credential-response-v6';
  export { UserCredentialCollectionResponseV6 } from './response/user-credential-collection-response-v6';
