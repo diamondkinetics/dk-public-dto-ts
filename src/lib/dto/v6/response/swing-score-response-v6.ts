@@ -18,4 +18,13 @@ export interface SwingScoreResponseV6 extends AbstractUserOwnedResponseV6 {
   handCastDistanceScore: number;
   distanceInTheZoneScore: number;
   quicknessScore: number;
+  averageAttackAngle: number;
+  averageHandCast: number;
+  averageDistanceInTheZone: number;
+  averageImpactMomentum: number;
+  averageMaxAcceleration: number;
+  averageAppliedPower: number;
+  averageTriggerToImpact: number;
+  averageMaxBarrelSpeed: number;
+  averageMaxHandSpeed: number;
 }
