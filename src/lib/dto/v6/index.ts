@@ -69,6 +69,7 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { LeaderboardEntryCollectionResponseV6 } from './response/leaderboard-entry-collection-response-v6';
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
  export { PitchResponseV6 } from './response/pitch-response-v6';
+ export { PitchCollectionResponseV6 } from './response/pitch-collection-response-v6';
  export { PitchMetricsResponseV6 } from './response/pitch-metrics-response-v6';
  export { PitchingSessionResponseV6 } from './response/pitching-session-response-v6';
  export { PitchingSessionCollectionResponseV6 } from './response/pitching-session-collection-response-v6';
@@ -76,6 +77,7 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
  export { SwingResponseV6 } from './response/swing-response-v6';
  export { SwingMetricsResponseV6 } from './response/swing-metrics-response-v6';
+ export { SwingCollectionResponseV6 } from './response/swing-collection-response-v6';
  export { SwingPerformanceComparisonResponseV6 } from './response/swing-performance-comparison-response-v6';
  export { SwingScoreResponseV6 } from './response/swing-score-response-v6';
  export { SwingScoreCollectionResponseV6 } from './response/swing-score-collection-response-v6';
