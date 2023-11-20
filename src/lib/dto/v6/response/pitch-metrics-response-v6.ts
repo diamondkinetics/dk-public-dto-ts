@@ -1,0 +1,34 @@
+export interface PitchMetricsResponseV6 {
+  releaseSpeed?: number;
+  releaseAngle?: number;
+  releaseSpinRate?: number;
+  extensionFt?: number;
+  perceivedSpeedMPH?: number;
+  releaseHeightFt?: number;
+  headingAngleDeg?: number;
+  spinAxisX?: number;
+  spinAxisY?: number;
+  spinAxisZ?: number;
+  spinAxisSensorX?: number;
+  spinAxisSensorY?: number;
+  spinAxisSensorZ?: number;
+  spinAxisRad?: number;
+  spinEfficiency?: number;
+  breakForceX?: number;
+  breakForceY?: number;
+  breakForceZ?: number;
+  spinDirection?: string;
+  deliveryOverall?: number;
+  deliverySetToExtension?: number;
+  deliveryExtensionToRelease?: number;
+  deliveryTimeToPlate?: number;
+  effortBallForce?: number;
+  effortBallTorque?: number;
+  flightProjectedDistance?: number;
+  flightHorizontalBreak?: number;
+  flightVerticalBreak?: number;
+  locationX?: number;
+  locationY?: number;
+  intendedLocationX?: number;
+  intendedLocationY?: number;
+}
