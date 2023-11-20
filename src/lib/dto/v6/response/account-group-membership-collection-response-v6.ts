@@ -2,7 +2,4 @@ import { AccountGroupMembershipResponseV6 } from './account-group-membership-res
 import { CollectionResponseV6 } from './collection-response-v6';
 
 export interface AccountGroupMembershipCollectionResponseV6
-  extends CollectionResponseV6<AccountGroupMembershipResponseV6>
-{
-
-}
+  extends CollectionResponseV6<AccountGroupMembershipResponseV6> {}
