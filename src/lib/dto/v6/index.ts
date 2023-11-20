@@ -26,6 +26,9 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { AbstractItemResponseV6 } from './response/abstract-item-response-v6';
  export { AbstractTimestampResponseV6 } from './response/abstract-timestamp-response-v6';
  export { AbstractTimeWindowResponseV6 } from './response/abstract-timewindow-response-v6';
+ export { AbstractSensorEventResponseV6 } from './response/abstract-sensor-event-response-v6';
+ export { AbstractSensorEventCollectionSummaryResponseV6 } from './response/abstract-sensor-event-collection-summary-response-v6';
+ export { AbstractSensorSessionResponseV6 } from './response/abstract-sensor-session-response-v6';
  export { AbstractSyncableCollectionResponseSummaryV6 } from './response/abstract-syncable-collection-response-summary-v6';
  export { AbstractSyncableResponseV6 } from './response/abstract-syncable-response-v6';
  export { AbstractUserOwnedResponseV6 } from './response/abstract-user-owned-response-v6';
@@ -46,6 +49,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { AvatarCollectionResponseV6 } from './response/avatar-collection-response-v6';
  export { BadgeResponseV6 } from './response/badge-response-v6';
  export { BadgeCollectionResponseV6 } from './response/badge-collection-response-v6';
+ export { BattingSessionResponseV6 } from './response/batting-session-response-v6';
+ export { BattingSessionCollectionResponseV6 } from './response/batting-session-collection-response-v6';
  export { CardDesignResponseV6 } from './response/card-design-response-v6';
  export { CardDesignCollectionResponseV6 } from './response/card-design-collection-response-v6';
  export { ChallengeResponseV6 } from './response/challenge-response-v6';
@@ -63,8 +68,14 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { LeaderboardEntryResponseV6 } from './response/leaderboard-entry-response-v6';
  export { LeaderboardEntryCollectionResponseV6 } from './response/leaderboard-entry-collection-response-v6';
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
+ export { PitchResponseV6 } from './response/pitch-response-v6';
+ export { PitchMetricsResponseV6 } from './response/pitch-metrics-response-v6';
+ export { PitchingSessionResponseV6 } from './response/pitching-session-response-v6';
+ export { PitchingSessionCollectionResponseV6 } from './response/pitching-session-collection-response-v6';
  export { QuestionResponseV6 } from './response/question-response-v6';
  export { SubscriptionResponseV6 } from './response/subscription-response-v6';
+ export { SwingResponseV6 } from './response/swing-response-v6';
+ export { SwingMetricsResponseV6 } from './response/swing-metrics-response-v6';
  export { SwingPerformanceComparisonResponseV6 } from './response/swing-performance-comparison-response-v6';
  export { SwingScoreResponseV6 } from './response/swing-score-response-v6';
  export { SwingScoreCollectionResponseV6 } from './response/swing-score-collection-response-v6';
@@ -80,6 +91,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
+ export { VideoResponseV6 } from './response/video-response-v6';
+ export { VideoAnalysisResponseV6 } from './response/video-analysis-response-v6';
  export { VideoBlockResponseV6 } from './response/video-block-response-v6';
  export { VideoBlockCollectionResponseV6 } from './response/video-block-collection-response-v6';
  export { ViewEntryResponseV6 } from './response/view-entry-response-v6';
