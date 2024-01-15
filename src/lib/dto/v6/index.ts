@@ -4,6 +4,7 @@
 export { AbstractSyncableCreateRequestV6 } from './request/abstract-syncable-create-request-v6';
 export { AbstractSyncableUpdateRequestV6 } from './request/abstract-syncable-update-request-v6';
 export { AbstractUserOwnedCreateRequestV6 } from './request/abstract-user-owned-create-request-v6';
+export { AccountGroupDeepLinkCreateRequestV6 } from './request/account-group-deep-link-create-request-v6';
 export { ActivityRewardCreateRequestV6 } from './request/activity-reward-create-request-v6';
 export { ActivityRewardSetCreateRequestV6 } from './request/activity-reward-set-create-request-v6';
 export { ActivityRewardSetUpdateRequestV6 } from './request/activity-reward-set-update-request-v6';
