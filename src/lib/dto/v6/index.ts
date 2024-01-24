@@ -93,6 +93,8 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { UserProfileResponseV6 } from './response/user-profile-response-v6';
  export { UserProfileCollectionResponseV6 } from './response/user-profile-collection-response-v6';
  export { UserResponseV6 } from './response/user-response-v6';
+ export { UserToUserConnectionResponseV6 } from './response/user-to-user-connection-response-v6';
+ export { UserToUserConnectionCollectionResponseV6 } from './response/user-to-user-connection-collection-response-v6';
  export { UserXPLevelResponseV6 } from './response/user-xp-level-response-v6';
  export { VideoResponseV6 } from './response/video-response-v6';
  export { VideoAnalysisResponseV6 } from './response/video-analysis-response-v6';
