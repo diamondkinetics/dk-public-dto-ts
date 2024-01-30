@@ -1,5 +1,5 @@
 import { AbstractSyncableResponseV6 } from './abstract-syncable-response-v6';
-import { UserCredentialCollectionResponseSummaryV6 } from './user-credential-collection-response-summary-v6';
+import { UserCredentialCollectionResponseV6 } from './user-credential-collection-response-v6';
 import { UserXPLevelResponseV6 } from './user-xp-level-response-v6';
 
 export interface UserProfileResponseV6 extends AbstractSyncableResponseV6 {
@@ -30,5 +30,5 @@ export interface UserProfileResponseV6 extends AbstractSyncableResponseV6 {
   graduationYear?: string;
   position?: string;
   mlbId?: string;
-  credentials?: UserCredentialCollectionResponseSummaryV6;
+  credentials?: UserCredentialCollectionResponseV6;
 }
