@@ -5,5 +5,6 @@ import { SubscriptionResponseV6 } from './subscription-response-v6';
 export interface AccountGroupResponseV6 extends AbstractUserOwnedResponseV6 {
   memberships: AccountGroupMembershipCollectionResponseV6;
   subscriptions: SubscriptionResponseV6[];
+  hardwareEligible: boolean;
   deepLink?: string;
 }
