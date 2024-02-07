@@ -68,6 +68,10 @@ export { ViewSectionUpdateRequestV6 } from './request/view-section-update-reques
  export { ItemResponseV6 } from './response/item-response-v6';
  export { LeaderboardEntryResponseV6 } from './response/leaderboard-entry-response-v6';
  export { LeaderboardEntryCollectionResponseV6 } from './response/leaderboard-entry-collection-response-v6';
+ export { LevelDefinitionResponseV6 } from './response/level-definition-response-v6';
+ export { LevelDefinitionCollectionResponseV6 } from './response/level-definition-collection-response-v6';
+ export { LevelStatusResponseV6 } from './response/level-status-response-v6';
+ export { LevelStatusCollectionResponseV6 } from './response/level-status-collection-response-v6';
  export { MiniGameConfigResponseV6 } from './response/mini-game-config-response-v6';
  export { PitchResponseV6 } from './response/pitch-response-v6';
  export { PitchCollectionResponseV6 } from './response/pitch-collection-response-v6';
