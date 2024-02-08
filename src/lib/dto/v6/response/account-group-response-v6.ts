@@ -7,4 +7,5 @@ export interface AccountGroupResponseV6 extends AbstractUserOwnedResponseV6 {
   subscriptions: SubscriptionResponseV6[];
   hardwareEligible: boolean;
   deepLink?: string;
+  claimHardwareOrderId?: number;
 }

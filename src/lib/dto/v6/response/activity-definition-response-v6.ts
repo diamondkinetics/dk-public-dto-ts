@@ -22,4 +22,6 @@ export interface ActivityDefinitionResponseV6 extends AbstractTimeWindowResponse
   challengeConfig?: ChallengeConfigResponseV6;
   rewards: ActivityRewardCollectionResponseV6;
   rewardSet?: ActivityRewardSetResponseV6;
+  rewardSetUuid?: string;
+  metadata: Record<string, string[]>;
 }
