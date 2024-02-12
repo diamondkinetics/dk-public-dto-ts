@@ -16,4 +16,6 @@ export interface UserProfileUpdateRequestV6 {
   badgeUuid: string;
   playerNumber: string;
   clientUpdatedTime: string;
+  privateProfile?: boolean;
+  inviteUuid?: string;
 }

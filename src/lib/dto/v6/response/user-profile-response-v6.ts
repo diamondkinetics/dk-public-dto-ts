@@ -31,4 +31,5 @@ export interface UserProfileResponseV6 extends AbstractSyncableResponseV6 {
   position?: string;
   mlbId?: string;
   credentials?: UserCredentialCollectionResponseV6;
+  inviteUuid?: string;
 }
