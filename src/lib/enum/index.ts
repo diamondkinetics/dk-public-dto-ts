@@ -14,7 +14,7 @@ export { SessionType } from './session-type';
 export { Metric } from './metric';
 export { HittingMetric } from './hitting-metric';
 export { PitchingMetric } from './pitching-metric';
-export { GroupMembershipRole } from './group-membership-role';
+export { GroupMembershipRoleDetails } from './group-membership-role-details';
 export { ExportEventType } from './export-event-type';
 export { ExportEventSource } from './export-event-source';
 export { GroupImportConflictType } from './group-import-conflict-type';

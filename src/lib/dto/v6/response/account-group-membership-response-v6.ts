@@ -1,4 +1,4 @@
-import { GroupMembershipRole } from './../../../enum';
+import { GroupMembershipRole } from './../../../types/group-membership-role';
 import { AbstractUserOwnedResponseV6 } from './abstract-user-owned-response-v6';
 
 export interface AccountGroupMembershipResponseV6 extends AbstractUserOwnedResponseV6 {

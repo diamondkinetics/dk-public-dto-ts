@@ -7,3 +7,4 @@ export { EngineTypes, EngineType } from './engine-type';
 export { EventSources, EventSource } from './event-source';
 export { HittingMetricCategories, HittingMetricCategory } from './hitting-metric-category';
 export { VideoBlockTypes, VideoBlockType } from './video-block-type';
+export { GroupMembershipRoles, GroupMembershipRole } from './group-membership-role';
