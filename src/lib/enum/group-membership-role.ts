@@ -1,10 +1,10 @@
 import { RoleDTOV2, RoleDTOV3 } from '../dto';
 
-export class GroupMembershipRole {
+export class GroupMembershipRoleDetails {
 
-	public static readonly ANYONE = new GroupMembershipRole(1, 'Anyone', 'anyone', false, false, '');
-	public static readonly MEMBER = new GroupMembershipRole(2, 'Member', 'member', false, true, '');
-	public static readonly ADMINISTRATOR = new GroupMembershipRole(4, 'Administrator', 'admin', true, true, '');
+	public static readonly ANYONE = new GroupMembershipRoleDetails(1, 'Anyone', 'anyone', false, false, '');
+	public static readonly MEMBER = new GroupMembershipRoleDetails(2, 'Member', 'member', false, true, '');
+	public static readonly ADMINISTRATOR = new GroupMembershipRoleDetails(4, 'Administrator', 'admin', true, true, '');
 
 	constructor(
 		private readonly priority: number,
@@ -42,27 +42,27 @@ export class GroupMembershipRole {
 		return this.uuid;
 	}
 
-	public static asArray(): GroupMembershipRole[] {
+	public static asArray(): GroupMembershipRoleDetails[] {
 		return [
-			GroupMembershipRole.ANYONE,
-			GroupMembershipRole.MEMBER,
-			GroupMembershipRole.ADMINISTRATOR
+			GroupMembershipRoleDetails.ANYONE,
+			GroupMembershipRoleDetails.MEMBER,
+			GroupMembershipRoleDetails.ADMINISTRATOR
 		];
 	}
 
-	public static byFriendlyName(friendlyName: string): GroupMembershipRole | undefined {
-		return GroupMembershipRole.asArray().find(r => r.getFriendlyName() === friendlyName);
+	public static byFriendlyName(friendlyName: string): GroupMembershipRoleDetails | undefined {
+		return GroupMembershipRoleDetails.asArray().find(r => r.getFriendlyName() === friendlyName);
 	}
 
-	public static byShortName(shortName: string): GroupMembershipRole | undefined {
-		return GroupMembershipRole.asArray().find(r => r.getShortName() === shortName);
+	public static byShortName(shortName: string): GroupMembershipRoleDetails | undefined {
+		return GroupMembershipRoleDetails.asArray().find(r => r.getShortName() === shortName);
 	}
 
-	public static fromDTO(dto: RoleDTOV2 | RoleDTOV3): GroupMembershipRole | undefined {
-		return GroupMembershipRole.byShortName(dto.shortName ?? '');
+	public static fromDTO(dto: RoleDTOV2 | RoleDTOV3): GroupMembershipRoleDetails | undefined {
+		return GroupMembershipRoleDetails.byShortName(dto.shortName ?? '');
 	}
 
-	public static toDTO(role: GroupMembershipRole): RoleDTOV2 | RoleDTOV3 {
+	public static toDTO(role: GroupMembershipRoleDetails): RoleDTOV2 | RoleDTOV3 {
 		return {
 			uuid: '',
 			fullName: role.getFriendlyName(),
