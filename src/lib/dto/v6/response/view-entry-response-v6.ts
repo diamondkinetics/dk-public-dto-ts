@@ -5,4 +5,5 @@ export interface ViewEntryResponseV6 extends AbstractTimeWindowResponseV6 {
   thumbnailUrl: string;
   displayOrder: number;
   activityDefinitionUuid: string;
+  title?: string;
 }
