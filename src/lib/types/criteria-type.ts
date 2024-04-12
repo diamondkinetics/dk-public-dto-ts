@@ -1,6 +1,8 @@
 export const CriteriaTypes = [
   'HOME_RUNS',
   'SWINGS',
+  'SENSORLESS_SWINGS',
+  'SENSOR_SWINGS',
   'GAMES_PLAYED',
   'GUIDED_SESSIONS',
   'OPEN_SESSIONS',
@@ -12,5 +14,7 @@ export const CriteriaTypes = [
   'PERSONAL_BEST',
   'THROWS',
   'LEVEL_STATUS',
+  'EXPERIENCE_GAINED',
+  'SWING_MINUTES',
 ] as const;
 export type CriteriaType = (typeof CriteriaTypes)[number];
