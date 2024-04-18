@@ -5,4 +5,5 @@ export interface LeaderboardEntryResponseV6 {
   value: number;
   levelStatusName: string;
   specifiedUser: boolean;
+  connection: boolean;
 }
