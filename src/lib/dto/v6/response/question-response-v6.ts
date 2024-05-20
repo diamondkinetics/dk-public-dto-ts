@@ -9,4 +9,10 @@ export interface QuestionResponseV6 extends AbstractSyncableResponseV6 {
   pauseAt: number;
   endAt: number;
   answers: AnswerResponseV6[];
+  countdownStartTime: number;
+  countdownDuration: number;
+  questionLeadIn: string;
+  onRevealText: string;
+  questionSubject: string;
+  questionSubjectDescription: string;
 }
