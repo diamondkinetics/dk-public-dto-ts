@@ -4,6 +4,7 @@ export const EngineTypes = [
   'HOME_RUN_DERBY_BURNOUT',
   'OPEN_SESSION',
   'GUIDED_SESSION',
+  'DYNAMIC_SESSION',
   'MINI_GAME',
   'CHALLENGE',
   'API_DRIVEN',
