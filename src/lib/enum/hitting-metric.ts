@@ -114,6 +114,28 @@ export class HittingMetric implements Metric {
 		'CONTROL',
 		'DEG');
 
+	public static readonly POTENTIAL_EXIT_SPEED_MPH = new HittingMetric(
+		'POTENTIAL_EXIT_SPEED_MPH',
+		'Potential Exit Velocity',
+		'potentialExitSpeedMph',
+		'potentialExitSpeedMphUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true,
+		'DAMAGE_POTENTIAL',
+		'MPH',
+	);
+
+	public static readonly POTENTIAL_EXIT_DISTANCE_FT = new HittingMetric(
+		'POTENTIAL_EXIT_DISTANCE_FT',
+		'Damage Potential',
+		'potentialExitDistanceFt',
+		'potentialExitDistanceFtUpperBound',
+		[PlayType.BASEBALL, PlayType.FAST_PITCH_SOFTBALL],
+		true,
+		'DAMAGE_POTENTIAL',
+		'FT',
+	);
+
 	constructor(
 		private readonly key: string,
 		private readonly name: string,
