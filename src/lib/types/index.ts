@@ -1,10 +1,14 @@
 export { ActivityRewardTypes, ActivityRewardType } from './activity-reward-type';
 export { AdvanceConditionTypes, AdvanceConditionType } from './advance-condition-type';
+export { BlockExpectationTypes, BlockExpectationType } from './block-expectation-type';
+export { BlockFeedbackTypes, BlockFeedbackType } from './block-feedback-type';
+export { BlockResults, BlockResult } from './block-result';
 export { CriteriaTypes, CriteriaType } from './criteria-type';
 export { DisplayCharts, DisplayChart } from './display-chart';
 export { DisplayMetrics, DisplayMetric } from './display-metric';
 export { EngineTypes, EngineType } from './engine-type';
 export { EventSources, EventSource } from './event-source';
-export { HittingMetricCategories, HittingMetricCategory } from './hitting-metric-category';
-export { VideoBlockTypes, VideoBlockType } from './video-block-type';
 export { GroupMembershipRoles, GroupMembershipRole } from './group-membership-role';
+export { HittingMetricCategories, HittingMetricCategory } from './hitting-metric-category';
+export { MetricExpectationTypes, MetricExpectationType } from './metric-expectation-type';
+export { VideoBlockTypes, VideoBlockType } from './video-block-type';
