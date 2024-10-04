@@ -13,8 +13,8 @@ export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdat
   xpEarned: number;
   introConfig: IntroScreenConfigUpdateRequestV6;
   engineType: EngineType;
-  blocks: VideoBlockUpdateRequestV6[];
-  assets: AssetEntryUpdateRequestV6[];
+  blocks?: VideoBlockUpdateRequestV6[];
+  assets?: AssetEntryUpdateRequestV6[];
   rewardSetUuid: string;
   dynamicSessionConfig?: DynamicSessionUpdateRequestV6;
 }

@@ -26,7 +26,6 @@ export { DynamicVideoBlockCreateRequestV6 } from './request/dynamic-video-block-
 export { DynamicVideoBlockUpdateRequestV6 } from './request/dynamic-video-block-update-request-v6';
 export { DynamicVideoBlockAssetCreateRequestV6 } from './request/dynamic-video-block-asset-create-request-v6';
 export { DynamicVideoBlockAssetUpdateRequestV6 } from './request/dynamic-video-block-asset-update-request-v6';
-export { EngineConfigCreateRequestV6 } from './request/engine-config-create-request-v6';
 export { IntroScreenConfigCreateRequestV6 } from './request/intro-screen-config-create-request-v6';
 export { UserProfileCreateRequestNoCredentialsV6 } from './request/user-profile-create-request-no-credentials-v6';
 export { UserProfileCreateRequestV6 } from './request/user-profile-create-request-v6';
