@@ -1,10 +1,8 @@
-import { AdvanceConditionType } from './../../../types/advance-condition-type';
-import { DisplayChart } from './../../../types/display-chart';
-import { DisplayMetric } from './../../../types/display-metric';
 import { EngineType } from './../../../types/engine-type';
-import { EventSource } from './../../../types/event-source';
-import { VideoBlockType } from './../../../types/video-block-type';
 import { AbstractSyncableUpdateRequestV6 } from './abstract-syncable-update-request-v6';
+import { AssetEntryUpdateRequestV6 } from './asset-entry-update-request-v6';
+import { IntroScreenConfigUpdateRequestV6 } from './intro-screen-config-update-request-v6';
+import { VideoBlockUpdateRequestV6 } from './video-block-update-request-v6';
 
 export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdateRequestV6 {
   name: string;
@@ -19,31 +17,3 @@ export interface ActivityDefinitionUpdateRequestV6 extends AbstractSyncableUpdat
   rewardSetUuid: string;
 }
 
-export interface IntroScreenConfigUpdateRequestV6 {
-  introVideoUrl: string;
-  introVideoThumbnailUrl: string;
-  coverImageUrl: string;
-  description: string;
-  aboutImagesUrls?: string[];
-  aboutDescription: string;
-}
-
-export interface VideoBlockUpdateRequestV6 {
-  type: VideoBlockType;
-  eventSource: EventSource;
-  displayMetric?: DisplayMetric;
-  displayChart?: DisplayChart;
-  videoUrl: string;
-  advanceCondition: AdvanceConditionUpdateRequestV6;
-  blockIndex: number;  
-}
-
-export interface AdvanceConditionUpdateRequestV6 {
-  condition: AdvanceConditionType;
-  threshold: number;
-}
-
-export interface AssetEntryUpdateRequestV6 {
-  key: string;
-  valueUrl: string;
-}
