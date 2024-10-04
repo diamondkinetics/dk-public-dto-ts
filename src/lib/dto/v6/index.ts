@@ -14,6 +14,8 @@ export { AdvanceConditionCreateRequestV6 } from './request/advance-condition-cre
 export { AdvanceConditionUpdateRequestV6 } from './request/advance-condition-update-request-v6';
 export { AssetEntryCreateRequestV6 } from './request/asset-entry-create-request-v6';
 export { AssetEntryUpdateRequestV6 } from './request/asset-entry-update-request-v6';
+export { BlockExpectationCreateRequestV6 } from './request/block-expectation-create-request-v6';
+export { BlockExpectationUpdateRequestV6 } from './request/block-expectation-update-request-v6';
 export { ChallengeProgressCreateRequestV6 } from './request/challenge-progress-create-request-v6';
 export { ChallengeProgressUpdateRequestV6 } from './request/challenge-progress-update-request-v6';
 export { DynamicSessionCreateRequestV6 } from './request/dynamic-session-create-request-v6';
