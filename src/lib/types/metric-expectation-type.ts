@@ -1,6 +1,6 @@
-export const MetricExpecationTypes = [
+export const MetricExpectationTypes = [
   'RANGE',
   'MIN',
   'MAX'
 ] as const;
-export type MetricExpectationType = typeof MetricExpecationTypes[number];
+export type MetricExpectationType = typeof MetricExpectationTypes[number];
